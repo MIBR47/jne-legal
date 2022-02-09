@@ -40,9 +40,12 @@ Route::prefix('/drafting')->group(function () {
     Route::get('/', [DraftingController::class, 'index'])->name('drafting-index');
 
     Route::get('/customer', [CustomerController::class, 'index'])->name('customer-index');
+    Route::post('/customer/post', [CustomerController::class, 'store'])->name('customer-post');
     Route::get('/customer/check', [CustomerController::class, 'check'])->name('customer-check');
 
     Route::get('/vendor-supplier', [VendorController::class, 'index'])->name('vendor-index');
+    Route::post('/vendor-supplier/post', [VendorController::class, 'store'])->name('vendor-post');
+
     Route::get('/vendor-supplier/check', [VendorController::class, 'check'])->name('vendor-check');
 
     Route::get('/lease', [LeaseController::class, 'index'])->name('lease-index');
