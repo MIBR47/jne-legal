@@ -25,9 +25,9 @@ class CreatePermitsTable extends Migration
             $table->string('file_document1');
             $table->string('file_document2');
             $table->string('file_document3');
-            $table->text('note');
-            $table->string('latest_photo');
-            $table->string('status');
+            $table->text('note')->nullable();
+            $table->string('latest_photo')->nullable();
+            $table->string('status')->default('PENDING');
             $table->timestamps();
 
             $table->foreign('user_id')->references('id')->on('users')->onUpdate('cascade')->onDelete('cascade');

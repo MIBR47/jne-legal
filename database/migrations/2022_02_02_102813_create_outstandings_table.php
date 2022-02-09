@@ -33,12 +33,12 @@ class CreateOutstandingsTable extends Migration
             $table->timestamps();
 
             $table->foreign('user_id')->references('id')->on('users')->onUpdate('cascade')->onDelete('cascade');
-            $table->foreign('file_data_recap')->references('id')->on('upload_files')->onUpdate('cascade')->onDelete('cascade');
-            $table->foreign('file_document_proof')->references('id')->on('upload_files')->onUpdate('cascade')->onDelete('cascade');
-            $table->foreign('file_agreement')->references('id')->on('upload_files')->onUpdate('cascade')->onDelete('cascade');
-            $table->foreign('file_billing_proof')->references('id')->on('upload_files')->onUpdate('cascade')->onDelete('cascade');
-            $table->foreign('file_disposition')->references('id')->on('upload_files')->onUpdate('cascade')->onDelete('cascade');
-            $table->foreign('file_other_document')->references('id')->on('upload_files')->onUpdate('cascade')->onDelete('cascade');
+            // $table->foreign('file_data_recap')->references('id')->on('upload_files')->onUpdate('cascade')->onDelete('cascade');
+            // $table->foreign('file_document_proof')->references('id')->on('upload_files')->onUpdate('cascade')->onDelete('cascade');
+            // $table->foreign('file_agreement')->references('id')->on('upload_files')->onUpdate('cascade')->onDelete('cascade');
+            // $table->foreign('file_billing_proof')->references('id')->on('upload_files')->onUpdate('cascade')->onDelete('cascade');
+            // $table->foreign('file_disposition')->references('id')->on('upload_files')->onUpdate('cascade')->onDelete('cascade');
+            // $table->foreign('file_other_document')->references('id')->on('upload_files')->onUpdate('cascade')->onDelete('cascade');
         });
     }
 
