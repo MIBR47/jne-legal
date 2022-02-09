@@ -12,6 +12,7 @@ use App\Http\Controllers\Litigation\FraudController;
 use App\Http\Controllers\Litigation\LitigationController;
 use App\Http\Controllers\Litigation\OtherController;
 use App\Http\Controllers\Litigation\OutstandingController;
+use App\Http\Controllers\Permit\LegalPermitController;
 use App\Http\Controllers\Permit\PerizinanBaruController;
 use App\Http\Controllers\Permit\PermitController;
 use Illuminate\Support\Carbon;
@@ -80,7 +81,7 @@ Route::prefix('/permit')->group(function () {
 });
 
 Route::prefix('/legal-permit')->group(function () {
-    Route::get('/', function () { return view('pages.permit.legal-permit.index'); });
+    Route::get('/', [LegalPermitController::class, 'index'])->name('legal-permit-dashboard');
 });
 
 Route::prefix('/admin-legal')->middleware('IsAdmin')->group(function () {

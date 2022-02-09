@@ -44,6 +44,8 @@ class LoginController extends Controller
         {
             if (auth()->user()->role == 'ADMIN') {
                 return redirect()->route('admin-dashboard');
+            }elseif(auth()->user()->role == 'LEGALPERMIT'){
+                return redirect()->route('legal-permit-dashboard');
             }elseif(auth()->user()->role == 'USER'){
                 return redirect()->route('home');
             }
