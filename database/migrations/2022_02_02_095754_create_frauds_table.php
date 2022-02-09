@@ -26,9 +26,9 @@ class CreateFraudsTable extends Migration
             $table->string('incident_scane');
             $table->text('incident_chronology');
             $table->string('fraud_classification');
-            $table->boolean('witness1');
+            $table->string('witness1');
             $table->string('witness1_department');
-            $table->boolean('witness2');
+            $table->string('witness2');
             $table->string('witness2_department');
             $table->string('file_document_proof');
             $table->string('file_perpetrator_statement');
