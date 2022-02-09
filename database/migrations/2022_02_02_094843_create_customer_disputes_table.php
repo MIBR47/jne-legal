@@ -17,7 +17,9 @@ class CreateCustomerDisputesTable extends Migration
             $table->string('id')->unique();
             $table->string('user_id');
             $table->date('date');
+            $table->string('case_type');
             $table->string('causative_factor');
+            $table->string('causative_factor_others');
             $table->string('total_loss');
             $table->string('connote');
             $table->date('incident_date');
@@ -25,7 +27,8 @@ class CreateCustomerDisputesTable extends Migration
             $table->string('shipping_type');
             $table->boolean('assurance');
             $table->text('incident_chronology');
-            $table->string('file_shipping_form');
+            $table->string('shipping_form');
+            $table->string('detail_shipping_form');
             $table->string('file_witness_testimony');
             $table->string('file_letter_document');
             $table->string('file_claim_form_document');
@@ -36,14 +39,14 @@ class CreateCustomerDisputesTable extends Migration
             $table->timestamps();
 
             $table->foreign('user_id')->references('id')->on('users')->onUpdate('cascade')->onDelete('cascade');
-            $table->foreign('file_shipping_form')->references('id')->on('upload_files')->onUpdate('cascade')->onDelete('cascade');
-            $table->foreign('file_witness_testimony')->references('id')->on('upload_files')->onUpdate('cascade')->onDelete('cascade');
-            $table->foreign('file_letter_document')->references('id')->on('upload_files')->onUpdate('cascade')->onDelete('cascade');
-            $table->foreign('file_claim_form_document')->references('id')->on('upload_files')->onUpdate('cascade')->onDelete('cascade');
-            $table->foreign('file_other_document')->references('id')->on('upload_files')->onUpdate('cascade')->onDelete('cascade');
-            $table->foreign('file_evidence')->references('id')->on('upload_files')->onUpdate('cascade')->onDelete('cascade');
-            $table->foreign('file_document_completeness')->references('id')->on('upload_files')->onUpdate('cascade')->onDelete('cascade');
-            $table->foreign('file_other_evidence')->references('id')->on('upload_files')->onUpdate('cascade')->onDelete('cascade');
+            // $table->foreign('file_shipping_form')->references('id')->on('upload_files')->onUpdate('cascade')->onDelete('cascade');
+            // $table->foreign('file_witness_testimony')->references('id')->on('upload_files')->onUpdate('cascade')->onDelete('cascade');
+            // $table->foreign('file_letter_document')->references('id')->on('upload_files')->onUpdate('cascade')->onDelete('cascade');
+            // $table->foreign('file_claim_form_document')->references('id')->on('upload_files')->onUpdate('cascade')->onDelete('cascade');
+            // $table->foreign('file_other_document')->references('id')->on('upload_files')->onUpdate('cascade')->onDelete('cascade');
+            // $table->foreign('file_evidence')->references('id')->on('upload_files')->onUpdate('cascade')->onDelete('cascade');
+            // $table->foreign('file_document_completeness')->references('id')->on('upload_files')->onUpdate('cascade')->onDelete('cascade');
+            // $table->foreign('file_other_evidence')->references('id')->on('upload_files')->onUpdate('cascade')->onDelete('cascade');
         });
     }
 

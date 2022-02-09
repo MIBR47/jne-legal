@@ -4,6 +4,7 @@ namespace App\Models\Litigation;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Haruncpi\LaravelIdGenerator\IdGenerator;
 
 class LegalLitigation extends Model
 {
