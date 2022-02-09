@@ -12,6 +12,7 @@ use App\Http\Controllers\Litigation\FraudController;
 use App\Http\Controllers\Litigation\LitigationController;
 use App\Http\Controllers\Litigation\OtherController;
 use App\Http\Controllers\Litigation\OutstandingController;
+use App\Http\Controllers\Permit\LegalPermitController;
 use App\Http\Controllers\Permit\PerizinanBaruController;
 use App\Http\Controllers\Permit\PermitController;
 use Illuminate\Support\Carbon;
@@ -57,6 +58,7 @@ Route::prefix('/litigation')->group(function () {
     Route::post('/customer-dispute/post', [CustomerDisputeController::class, 'store'])->name('customer-dispute-post');
 
     Route::get('/fraud', [FraudController::class, 'index'])->name('fraud-index');
+    Route::post('/fraud/post', [FraudController::class, 'store'])->name('fraud-post');
     Route::get('/fraud/check', [FraudController::class, 'check'])->name('fraud-check');
     Route::get('/fraud/report', [FraudController::class, 'report'])->name('fraud-report');
 
@@ -81,7 +83,7 @@ Route::prefix('/permit')->group(function () {
 });
 
 Route::prefix('/legal-permit')->group(function () {
-    Route::get('/', function () { return view('pages.permit.legal-permit.index'); });
+    Route::get('/', [LegalPermitController::class, 'index'])->name('legal-permit-dashboard');
 });
 
 Route::prefix('/admin-legal')->middleware('IsAdmin')->group(function () {

@@ -40,13 +40,13 @@ class CreateFraudsTable extends Migration
             $table->timestamps();
 
             $table->foreign('user_id')->references('id')->on('users')->onUpdate('cascade')->onDelete('cascade');
-            $table->foreign('file_document_proof')->references('id')->on('upload_files')->onUpdate('cascade')->onDelete('cascade');
-            $table->foreign('file_perpetrator_statement')->references('id')->on('upload_files')->onUpdate('cascade')->onDelete('cascade');
-            $table->foreign('file_witness_statement')->references('id')->on('upload_files')->onUpdate('cascade')->onDelete('cascade');
-            $table->foreign('file_other')->references('id')->on('upload_files')->onUpdate('cascade')->onDelete('cascade');
-            $table->foreign('file_evidence_documentation')->references('id')->on('upload_files')->onUpdate('cascade')->onDelete('cascade');
-            $table->foreign('file_investigation_document')->references('id')->on('upload_files')->onUpdate('cascade')->onDelete('cascade');
-            $table->foreign('file_other_evidence')->references('id')->on('upload_files')->onUpdate('cascade')->onDelete('cascade');
+            // $table->foreign('file_document_proof')->references('id')->on('upload_files')->onUpdate('cascade')->onDelete('cascade');
+            // $table->foreign('file_perpetrator_statement')->references('id')->on('upload_files')->onUpdate('cascade')->onDelete('cascade');
+            // $table->foreign('file_witness_statement')->references('id')->on('upload_files')->onUpdate('cascade')->onDelete('cascade');
+            // $table->foreign('file_other')->references('id')->on('upload_files')->onUpdate('cascade')->onDelete('cascade');
+            // $table->foreign('file_evidence_documentation')->references('id')->on('upload_files')->onUpdate('cascade')->onDelete('cascade');
+            // $table->foreign('file_investigation_document')->references('id')->on('upload_files')->onUpdate('cascade')->onDelete('cascade');
+            // $table->foreign('file_other_evidence')->references('id')->on('upload_files')->onUpdate('cascade')->onDelete('cascade');
         });
     }
 

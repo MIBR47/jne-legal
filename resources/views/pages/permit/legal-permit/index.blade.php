@@ -4,33 +4,27 @@
     <div class="container mx-auto">
         <div class="flex flex-col">
             <div class="w-full">
-                <div class="p-4 border-b border-gray-200 shadow">
+                <div class="p-4 mt-5 border-b border-gray-200 shadow">
                     <!-- <table> -->
-                    <table id="dataTable" class="p-4">
+                    <table id="crudTable" class="p-4">
                         <thead class="bg-gray-50">
                             <tr>
-                                <th class="p-8 text-xs text-gray-500">
+                                <th class="text-xs text-gray-500">
                                     ID
                                 </th>
-                                <th class="p-8 text-xs text-gray-500">
+                                <th class="text-xs text-gray-500">
                                     Name
                                 </th>
-                                <th class="p-8 text-xs text-gray-500">
+                                <th class="text-xs text-gray-500">
                                     Email
                                 </th>
-                                <th class="p-8 text-xs text-gray-500">
-                                    Created_at
-                                </th>
-                                <th class="px-6 py-2 text-xs text-gray-500">
-                                    Edit
-                                </th>
-                                <th class="px-6 py-2 text-xs text-gray-500">
-                                    Delete
+                                <th class="text-xs text-gray-500">
+                                    Email
                                 </th>
                             </tr>
                         </thead>
                         <tbody class="bg-white">
-                            <tr class="whitespace-nowrap">
+                            {{-- <tr class="whitespace-nowrap">
                                 <td class="px-6 py-4 text-sm text-center text-gray-500">
                                     1
                                 </td>
@@ -101,8 +95,7 @@
                                     <a href="#"
                                         class="px-4 py-1 text-sm text-red-700 hover:text-white border border-red-700 hover:bg-red-800 focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-center dark:border-red-500 dark:text-red-500 dark:hover:text-white dark:hover:bg-red-600 dark:focus:ring-red-800">Delete</a>
                                 </td>
-                            </tr>
-
+                            </tr> --}}
                         </tbody>
                     </table>
                 </div>
@@ -110,10 +103,48 @@
         </div>
     </div>
 
-    <script>
+    {{-- <script>
         $(document).ready(function() {
             $('#dataTable').DataTable();
 
         });
+    </script> --}}
+
+    <script>
+        var datatable = $('#crudTable').DataTable({
+            processing: true,
+            serverSide: true,
+            ordering: true,
+            ajax: {
+                url: '{!! url()->current() !!}',
+            },
+            columns: [
+                // // { data: 'id', name:'id' }
+
+                {
+                    data: 'id',
+                    name: 'id'
+                },
+                {
+                    data: 'permit_type',
+                    name: 'permit_type'
+                },
+                {
+                    data: 'location',
+                    name: 'location'
+                },
+
+                // { data: 'user.fraud.tanggal', name:'user.fraud.tanggal' },
+                {
+                    data: 'action',
+                    name: 'action',
+                    orderable: false,
+                    searcable: false,
+                    width: '15%'
+                },
+            ]
+
+
+        })
     </script>
 @endsection
