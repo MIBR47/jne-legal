@@ -28,28 +28,30 @@ class CreateCustomersTable extends Migration
             $table->date('end_date');
             $table->integer('discount');
             $table->text('other_point');
+            $table->string('shipping_type');
+            $table->string('shipping_type_description');
             $table->string('file_mom');
             $table->string('file_agreement_draft');
-            $table->string('file_customer_entity');
+            $table->string('file_claim_form');
             $table->string('file_sk_menkumham');
             $table->string('file_nib');
             $table->string('file_npwp');
             $table->string('file_business_permit');
             $table->string('file_director_id_card');
             $table->string('file_other')->nullable();
-            $table->string('status');
+            $table->string('status')->default('PENDING');
             $table->timestamps();
 
             $table->foreign('user_id')->references('id')->on('users')->onUpdate('cascade')->onDelete('cascade');
-            $table->foreign('file_mom')->references('id')->on('upload_files')->onUpdate('cascade')->onDelete('cascade');
-            $table->foreign('file_agreement_draft')->references('id')->on('upload_files')->onUpdate('cascade')->onDelete('cascade');
-            $table->foreign('file_customer_entity')->references('id')->on('upload_files')->onUpdate('cascade')->onDelete('cascade');
-            $table->foreign('file_sk_menkumham')->references('id')->on('upload_files')->onUpdate('cascade')->onDelete('cascade');
-            $table->foreign('file_nib')->references('id')->on('upload_files')->onUpdate('cascade')->onDelete('cascade');
-            $table->foreign('file_npwp')->references('id')->on('upload_files')->onUpdate('cascade')->onDelete('cascade');
-            $table->foreign('file_business_permit')->references('id')->on('upload_files')->onUpdate('cascade')->onDelete('cascade');
-            $table->foreign('file_director_id_card')->references('id')->on('upload_files')->onUpdate('cascade')->onDelete('cascade');
-            $table->foreign('file_other')->references('id')->on('upload_files')->onUpdate('cascade')->onDelete('cascade');
+            // $table->foreign('file_mom')->references('id')->on('upload_files')->onUpdate('cascade')->onDelete('cascade');
+            // $table->foreign('file_agreement_draft')->references('id')->on('upload_files')->onUpdate('cascade')->onDelete('cascade');
+            // $table->foreign('file_customer_entity')->references('id')->on('upload_files')->onUpdate('cascade')->onDelete('cascade');
+            // $table->foreign('file_sk_menkumham')->references('id')->on('upload_files')->onUpdate('cascade')->onDelete('cascade');
+            // $table->foreign('file_nib')->references('id')->on('upload_files')->onUpdate('cascade')->onDelete('cascade');
+            // $table->foreign('file_npwp')->references('id')->on('upload_files')->onUpdate('cascade')->onDelete('cascade');
+            // $table->foreign('file_business_permit')->references('id')->on('upload_files')->onUpdate('cascade')->onDelete('cascade');
+            // $table->foreign('file_director_id_card')->references('id')->on('upload_files')->onUpdate('cascade')->onDelete('cascade');
+            // $table->foreign('file_other')->references('id')->on('upload_files')->onUpdate('cascade')->onDelete('cascade');
         });
     }
 

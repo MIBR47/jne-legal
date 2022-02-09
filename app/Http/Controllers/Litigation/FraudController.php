@@ -11,8 +11,7 @@ class FraudController extends Controller
 {
     public function index()
     {
-         $datenow =
-        date('d-M-Y',strtotime(Carbon::now()));
+        $datenow = date('d-M-Y',strtotime(Carbon::now()));
         $dateNow = date('Y-m-d') . ' 00:00:00';
         $check_user = Fraud::select('*')
             ->whereDate('created_at', '>=', $dateNow)
