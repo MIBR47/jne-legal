@@ -25,10 +25,10 @@ class CreateVendorSuppliersTable extends Migration
             $table->string('vendor_type');
             $table->date('start_date');
             $table->date('end_date');
-            $table->boolean('guarantee');
+            $table->string('guarantee');
             $table->integer('guarantee_nominal');
             $table->string('relation_period');
-            $table->date('relation_date');
+            $table->string('relation_date');
             $table->text('other_point');
             $table->string('file_vendor_offer');
             $table->string('file_mom');
@@ -41,7 +41,7 @@ class CreateVendorSuppliersTable extends Migration
             $table->string('file_business_permit');
             $table->string('file_director_id_card');
             $table->string('file_other')->nullable();
-            $table->string('status');
+            $table->string('status')->default('PENDING');
             $table->timestamps();
 
             $table->foreign('user_id')->references('id')->on('users')->onUpdate('cascade')->onDelete('cascade');
