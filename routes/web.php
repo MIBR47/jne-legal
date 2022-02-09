@@ -73,6 +73,8 @@ Route::prefix('/permit')->group(function () {
     Route::get('/', [PermitController::class, 'index'])->name('permit-index');
 
     Route::get('/perizinan-baru', [PerizinanBaruController::class, 'index'])->name('perizinan-baru-index');
+    Route::post('/perizinan-baru/post', [PerizinanBaruController::class, 'store'])->name('perizinan-baru-post');
+
     Route::get('/perizinan-baru/approval', [PerizinanBaruController::class, 'approval'])->name('perizinan-baru-approval');
     Route::get('/perizinan-baru/check', [PerizinanBaruController::class, 'check'])->name('perizinan-baru-check');
 });

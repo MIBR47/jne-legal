@@ -16,7 +16,7 @@ class CreatePermitsTable extends Migration
         Schema::create('permits', function (Blueprint $table) {
             $table->string('id')->unique();
             $table->string('user_id');
-           
+
             $table->string('permit_type');
             $table->string('location');
             $table->string('specification');
@@ -31,11 +31,11 @@ class CreatePermitsTable extends Migration
             $table->timestamps();
 
             $table->foreign('user_id')->references('id')->on('users')->onUpdate('cascade')->onDelete('cascade');
-          
-            $table->foreign('file_disposition')->references('id')->on('upload_files')->onUpdate('cascade')->onDelete('cascade');
-            $table->foreign('file_document1')->references('id')->on('upload_files')->onUpdate('cascade')->onDelete('cascade');
-            $table->foreign('file_document2')->references('id')->on('upload_files')->onUpdate('cascade')->onDelete('cascade');
-            $table->foreign('file_document3')->references('id')->on('upload_files')->onUpdate('cascade')->onDelete('cascade');
+
+            // $table->foreign('file_disposition')->references('id')->on('upload_files')->onUpdate('cascade')->onDelete('cascade');
+            // $table->foreign('file_document1')->references('id')->on('upload_files')->onUpdate('cascade')->onDelete('cascade');
+            // $table->foreign('file_document2')->references('id')->on('upload_files')->onUpdate('cascade')->onDelete('cascade');
+            // $table->foreign('file_document3')->references('id')->on('upload_files')->onUpdate('cascade')->onDelete('cascade');
         });
     }
 
