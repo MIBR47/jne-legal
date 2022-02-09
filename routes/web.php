@@ -57,6 +57,7 @@ Route::prefix('/litigation')->group(function () {
     Route::get('/customer-dispute/report', [CustomerDisputeController::class, 'report'])->name('customer-dispute-report');
 
     Route::get('/fraud', [FraudController::class, 'index'])->name('fraud-index');
+    Route::post('/fraud/post', [FraudController::class, 'store'])->name('fraud-post');
     Route::get('/fraud/check', [FraudController::class, 'check'])->name('fraud-check');
     Route::get('/fraud/report', [FraudController::class, 'report'])->name('fraud-report');
 
