@@ -49,6 +49,7 @@ Route::prefix('/drafting')->group(function () {
     Route::get('/vendor-supplier/check', [VendorController::class, 'check'])->name('vendor-check');
 
     Route::get('/lease', [LeaseController::class, 'index'])->name('lease-index');
+    Route::post('/lease/post', [LeaseController::class, 'store'])->name('lease-post');
     Route::get('/lease/check', [LeaseController::class, 'check'])->name('lease-check');
 });
 

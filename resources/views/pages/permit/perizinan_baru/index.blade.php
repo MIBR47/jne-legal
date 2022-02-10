@@ -26,6 +26,7 @@
                             </select>
                         </div>
                     </div>
+                    <input type="hidden" name="id" value="{{ $no_kasus }}">
                     <input type="hidden" name="user_id" value="{{ auth()->user()->id }}">
                     <div class="flex">
                         <label for="text"
