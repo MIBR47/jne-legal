@@ -12,6 +12,7 @@ use App\Http\Controllers\Litigation\FraudController;
 use App\Http\Controllers\Litigation\LitigationController;
 use App\Http\Controllers\Litigation\OtherController;
 use App\Http\Controllers\Litigation\OutstandingController;
+use App\Http\Controllers\Litigation\TeamCsController;
 use App\Http\Controllers\Permit\LegalPermitController;
 use App\Http\Controllers\Permit\PerizinanBaruController;
 use App\Http\Controllers\Permit\PermitController;
@@ -107,5 +108,5 @@ Route::prefix('/legal-manager')->group(function () {
 });
 
 Route::prefix('/team-cs')->group(function () {
-    Route::get('/', function () { return view('pages.litigation.team-cs.index'); });
+    Route::get('/',[TeamCsController::class, 'index'])->name('team-cs-dashboard');
 });

@@ -65,11 +65,11 @@ class CreateUsersSeeder extends Seeder
             ],
             [
                 'id'=>'USR007',
-                'name'=>'Isfan',
-                'username'=>'isfan',
+                'name'=>'abc',
+                'username'=>'abc',
                 'role'=>'TEAMCS',
-                'email'=>'isfan@jne.co.id',
-                'password'=> bcrypt('isfan'),
+                'email'=>'abc@jne.co.id',
+                'password'=> bcrypt('abc'),
             ],
         ];
 
