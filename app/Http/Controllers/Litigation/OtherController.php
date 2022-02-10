@@ -54,29 +54,38 @@ class OtherController extends Controller
         $name4 = $request->file('file_proof3')->getClientOriginalName();
         $name5 = $request->file('file_disposition')->getClientOriginalName();
         $name6 = $request->file('file_other_document')->getClientOriginalName();
+
+        $data['file_document'] = $request->file('file_document')->storeAs('public/files/file_document',$name,'public');
+        $data['file_proof1'] = $request->file('file_proof1')->storeAs('public/files/file_proof1',$name2,'public');
+        $data['file_proof2'] = $request->file('file_proof2')->storeAs('public/files/file_proof2',$name3,'public');
+        $data['file_proof3'] = $request->file('file_proof3')->storeAs('public/files/file_proof3',$name4,'public');
+        $data['file_disposition'] = $request->file('file_disposition')->storeAs('public/files/file_disposition',$name5,'public');
+        $data['file_other_document'] = $request->file('file_other_document')->storeAs('public/files/file_other_document',$name6,'public');
+
+
         
-        $path = $request->file('file_document')->store('public/files');
-        $path2= $request->file('file_proof1')->store('public/files');
-        $path3 = $request->file('file_proof2')->store('public/files');
-        $path4 = $request->file('file_proof3')->store('public/files');
-        $path5 = $request->file('file_disposition')->store('public/files');
-        $path6 = $request->file('file_other_document')->store('public/files'); 
+        // $path = $request->file('file_document')->store('public/files');
+        // $path2= $request->file('file_proof1')->store('public/files');
+        // $path3 = $request->file('file_proof2')->store('public/files');
+        // $path4 = $request->file('file_proof3')->store('public/files');
+        // $path5 = $request->file('file_disposition')->store('public/files');
+        // $path6 = $request->file('file_other_document')->store('public/files'); 
 
-        $save = new Other;
+        // $save = new Other;
  
-        $save->name = $name;
-        $save->name = $name2;
-        $save->name = $name3;
-        $save->name = $name4;
-        $save->name = $name5;
-        $save->name = $name6;
+        // $save->name = $name;
+        // $save->name = $name2;
+        // $save->name = $name3;
+        // $save->name = $name4;
+        // $save->name = $name5;
+        // $save->name = $name6;
 
-        $save->path = $path;
-        $save->path = $path2;
-        $save->path = $path3;
-        $save->path = $path4;
-        $save->path = $path5;
-        $save->path = $path6;
+        // $save->path = $path;
+        // $save->path = $path2;
+        // $save->path = $path3;
+        // $save->path = $path4;
+        // $save->path = $path5;
+        // $save->path = $path6;
 
         // UploadFile::create($validatedData2);
         Other::create($validatedData);
