@@ -21,12 +21,12 @@ class CreateLeasesTable extends Migration
             $table->string('third_party');
             $table->string('agreement_draft');
             $table->string('addendum');
-            $table->string('rantal_value');
+            $table->integer('rantal_value');
             $table->string('rental_address');
             $table->string('regional');
             $table->date('start_date');
             $table->date('end_date');
-            $table->boolean('deposit');
+            $table->string('deposit');
             $table->integer('deposit_amount');
             $table->text('other_point');
             $table->string('landlord_type');
