@@ -19,7 +19,7 @@ class LegalPermitController extends Controller
             ->addIndexColumn()
                 ->addColumn('action',function($permit){
                     return '
-                        <a href = "'.route('home',$permit->id_permit).'">
+                        <a href = "'.route('perizinan-baru-approval',$permit->id).'">
                         <button type="button" class="text-white bg-blue-700
                         hover:bg-blue-800 focus:ring-4 focus:ring-blue-300
                         font-medium rounded-full text-sm px-5 py-2.5 text-center mr-2 mb-2
