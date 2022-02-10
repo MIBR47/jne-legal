@@ -91,7 +91,7 @@ Route::middleware('auth')->group(function () {
         Route::post('/perizinan-baru/post', [PerizinanBaruController::class, 'store'])->name('perizinan-baru-post');
 
         Route::get('/perizinan-baru/approval/{id}', [PerizinanBaruController::class, 'approval'])->name('perizinan-baru-approval');
-        Route::post('/perizinan-baru/approval/{id}', [PerizinanBaruController::class, 'approval'])->name('perizinan-baru-approval-post');
+        Route::post('/perizinan-baru/approval/{id}', [LegalPermitController::class, 'store'])->name('perizinan-baru-approval-post');
         Route::get('/perizinan-baru/check', [PerizinanBaruController::class, 'check'])->name('perizinan-baru-check');
     });
 

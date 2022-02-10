@@ -36,4 +36,29 @@ class LegalPermitController extends Controller
 
         return view('pages.permit.legal-permit.index');
     }
+
+    public function store(Request $request, $id)
+    {
+        switch ($request->input('action')) {
+            case 'return':
+                $data = $request->all();
+
+                $item = Permit::findOrFail($id);
+
+                $item->update([$data, 'status' => 'RETURN']);
+
+                return redirect()->route('legal-permit-dashboard');
+                break;
+
+            case 'approve':
+                $data = $request->all();
+
+                $item = Permit::findOrFail($id);
+
+                $item->update([$data, 'status' => 'APPROVE']);
+
+                return redirect()->route('legal-permit-dashboard');
+                break;
+        }
+    }
 }
