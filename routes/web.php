@@ -30,83 +30,97 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', [HomeController::class, 'index'])->name('home');
-Route::get('/contact-us', [HomeController::class, 'contactUs'])->name('contactUs');
-Route::get('/login', [HomeController::class, 'login'])->name('login');
+
+Route::get('/login', [HomeController::class, 'login'])->name('login')->middleware('guest');
 Route::post('/login', [LoginController::class, 'login'])->name('login-attempt');
 Route::get('/logout', [LoginController::class, 'logout'])->name('logout');
-Route::get('/database', function () { return view('pages.database.index'); });
-
-Route::prefix('/drafting')->group(function () {
-    Route::get('/', [DraftingController::class, 'index'])->name('drafting-index');
-
-    Route::get('/customer', [CustomerController::class, 'index'])->name('customer-index');
-    Route::post('/customer/post', [CustomerController::class, 'store'])->name('customer-post');
-    Route::get('/customer/check', [CustomerController::class, 'check'])->name('customer-check');
-
-    Route::get('/vendor-supplier', [VendorController::class, 'index'])->name('vendor-index');
-    Route::post('/vendor-supplier/post', [VendorController::class, 'store'])->name('vendor-post');
-
-    Route::get('/vendor-supplier/check', [VendorController::class, 'check'])->name('vendor-check');
-
-    Route::get('/lease', [LeaseController::class, 'index'])->name('lease-index');
-    Route::post('/lease/post', [LeaseController::class, 'store'])->name('lease-post');
-    Route::get('/lease/check', [LeaseController::class, 'check'])->name('lease-check');
+Route::get('/database', function () {
+    return view('pages.database.index');
 });
 
-Route::prefix('/litigation')->group(function () {
-    Route::get('/', [LitigationController::class, 'index'])->name('litigation-index');
+Route::middleware('auth')->group(function () {
+    Route::get('/home', function () {
+        return redirect('/');
+    });
+    Route::get('/', [HomeController::class, 'index'])->name('home');
+    Route::get('/contact-us', [HomeController::class, 'contactUs'])->name('contactUs');
+    Route::prefix('/drafting')->group(function () {
+        Route::get('/', [DraftingController::class, 'index'])->name('drafting-index');
 
-    Route::get('/customer-dispute', [CustomerDisputeController::class, 'index'])->name('customer-dispute-index');
-    Route::get('/customer-dispute/check', [CustomerDisputeController::class, 'check'])->name('customer-dispute-check');
-    Route::get('/customer-dispute/report', [CustomerDisputeController::class, 'report'])->name('customer-dispute-report');
-    Route::post('/customer-dispute/post', [CustomerDisputeController::class, 'store'])->name('customer-dispute-post');
+        Route::get('/customer', [CustomerController::class, 'index'])->name('customer-index');
+        Route::post('/customer/post', [CustomerController::class, 'store'])->name('customer-post');
+        Route::get('/customer/check', [CustomerController::class, 'check'])->name('customer-check');
 
-    Route::get('/fraud', [FraudController::class, 'index'])->name('fraud-index');
-    Route::post('/fraud/post', [FraudController::class, 'store'])->name('fraud-post');
-    Route::get('/fraud/check', [FraudController::class, 'check'])->name('fraud-check');
-    Route::get('/fraud/report', [FraudController::class, 'report'])->name('fraud-report');
+        Route::get('/vendor-supplier', [VendorController::class, 'index'])->name('vendor-index');
+        Route::post('/vendor-supplier/post', [VendorController::class, 'store'])->name('vendor-post');
 
-    Route::get('/outstanding', [OutstandingController::class, 'index'])->name('outstanding-index');
-    Route::get('/outstanding/check', [OutstandingController::class, 'check'])->name('outstanding-check');
-    Route::get('/outstanding/report', [OutstandingController::class, 'report'])->name('outstanding-report');
+        Route::get('/vendor-supplier/check', [VendorController::class, 'check'])->name('vendor-check');
 
-    Route::get('/other', [OtherController::class, 'index'])->name('other-index');
-    Route::get('/other/check', [OtherController::class, 'check'])->name('other-check');
-    Route::get('/other/report', [OtherController::class, 'report'])->name('other-report');
-    Route::post('/other/post', [OtherController::class, 'store'])->name('other-post');
-});
+        Route::get('/lease', [LeaseController::class, 'index'])->name('lease-index');
+        Route::post('/lease/post', [LeaseController::class, 'store'])->name('lease-post');
+        Route::get('/lease/check', [LeaseController::class, 'check'])->name('lease-check');
+    });
 
-Route::prefix('/permit')->group(function () {
-    Route::get('/', [PermitController::class, 'index'])->name('permit-index');
+    Route::prefix('/litigation')->group(function () {
+        Route::get('/', [LitigationController::class, 'index'])->name('litigation-index');
 
-    Route::get('/perizinan-baru', [PerizinanBaruController::class, 'index'])->name('perizinan-baru-index');
-    Route::post('/perizinan-baru/post', [PerizinanBaruController::class, 'store'])->name('perizinan-baru-post');
+        Route::get('/customer-dispute', [CustomerDisputeController::class, 'index'])->name('customer-dispute-index');
+        Route::get('/customer-dispute/check', [CustomerDisputeController::class, 'check'])->name('customer-dispute-check');
+        Route::get('/customer-dispute/report', [CustomerDisputeController::class, 'report'])->name('customer-dispute-report');
+        Route::post('/customer-dispute/post', [CustomerDisputeController::class, 'store'])->name('customer-dispute-post');
 
-    Route::get('/perizinan-baru/approval', [PerizinanBaruController::class, 'approval'])->name('perizinan-baru-approval');
-    Route::get('/perizinan-baru/check', [PerizinanBaruController::class, 'check'])->name('perizinan-baru-check');
-});
+        Route::get('/fraud', [FraudController::class, 'index'])->name('fraud-index');
+        Route::post('/fraud/post', [FraudController::class, 'store'])->name('fraud-post');
+        Route::get('/fraud/check', [FraudController::class, 'check'])->name('fraud-check');
+        Route::get('/fraud/report', [FraudController::class, 'report'])->name('fraud-report');
 
-Route::prefix('/legal-permit')->group(function () {
-    Route::get('/', [LegalPermitController::class, 'index'])->name('legal-permit-dashboard');
-});
+        Route::get('/outstanding', [OutstandingController::class, 'index'])->name('outstanding-index');
+        Route::get('/outstanding/check', [OutstandingController::class, 'check'])->name('outstanding-check');
+        Route::get('/outstanding/report', [OutstandingController::class, 'report'])->name('outstanding-report');
 
-Route::prefix('/admin-legal')->middleware('IsAdmin')->group(function () {
-    Route::get('/', [DashboardController::class, 'index'])->name('admin-dashboard');
-});
+        Route::get('/other', [OtherController::class, 'index'])->name('other-index');
+        Route::get('/other/check', [OtherController::class, 'check'])->name('other-check');
+        Route::get('/other/report', [OtherController::class, 'report'])->name('other-report');
+        Route::post('/other/post', [OtherController::class, 'store'])->name('other-post');
+    });
 
-Route::prefix('/legal-litigation-1')->group(function () {
-    Route::get('/', function () { return view('pages.litigation.legal-litigation-1.index'); });
-});
+    Route::prefix('/permit')->group(function () {
+        Route::get('/', [PermitController::class, 'index'])->name('permit-index');
 
-Route::prefix('/legal-litigation-2')->group(function () {
-    Route::get('/', function () { return view('pages.litigation.legal-litigation-2.index'); });
-});
+        Route::get('/perizinan-baru', [PerizinanBaruController::class, 'index'])->name('perizinan-baru-index');
+        Route::post('/perizinan-baru/post', [PerizinanBaruController::class, 'store'])->name('perizinan-baru-post');
 
-Route::prefix('/legal-manager')->group(function () {
-    Route::get('/', function () { return view('pages.litigation.legal-manager.index'); });
-});
+        Route::get('/perizinan-baru/approval', [PerizinanBaruController::class, 'approval'])->name('perizinan-baru-approval');
+        Route::get('/perizinan-baru/check', [PerizinanBaruController::class, 'check'])->name('perizinan-baru-check');
+    });
 
-Route::prefix('/team-cs')->group(function () {
-    Route::get('/', [TeamCsController::class, 'index'])->name('team-cs-dashboard');
+    Route::prefix('/legal-permit')->middleware('IsLegalPermit')->group(function () {
+        Route::get('/', [LegalPermitController::class, 'index'])->name('legal-permit-dashboard');
+    });
+
+    Route::prefix('/admin-legal')->middleware('IsAdmin')->group(function () {
+        Route::get('/', [DashboardController::class, 'index'])->name('admin-dashboard');
+    });
+
+    Route::prefix('/legal-litigation-1')->group(function () {
+        Route::get('/', function () {
+            return view('pages.litigation.legal-litigation-1.index');
+        });
+    });
+
+    Route::prefix('/legal-litigation-2')->group(function () {
+        Route::get('/', function () {
+            return view('pages.litigation.legal-litigation-2.index');
+        });
+    });
+
+    Route::prefix('/legal-manager')->group(function () {
+        Route::get('/', function () {
+            return view('pages.litigation.legal-manager.index');
+        });
+    });
+
+    Route::prefix('/team-cs')->middleware('IsTeamCs')->group(function () {
+        Route::get('/', [TeamCsController::class, 'index'])->name('team-cs-dashboard');
+    });
 });

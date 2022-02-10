@@ -19,7 +19,7 @@ class LoginController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/home';
+    protected $redirectTo = '/';
 
     /**
      * Create a new controller instance.
@@ -42,6 +42,7 @@ class LoginController extends Controller
 
         if(auth()->attempt(array('email' => $input['email'], 'password' => $input['password'])))
         {
+            $request->session()->regenerate();
             if (auth()->user()->role == 'ADMIN') {
                 return redirect()->route('admin-dashboard');
             }elseif(auth()->user()->role == 'LEGALPERMIT'){
