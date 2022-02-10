@@ -1,13 +1,14 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Litigation;
 
+use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
 class TeamCsController extends Controller
 {
     public function index()
     {
-        return view('pages.team-cs.index');
+        return view('pages.litigation.team-cs.index');
     }
 }

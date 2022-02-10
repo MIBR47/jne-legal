@@ -46,10 +46,10 @@ class LoginController extends Controller
                 return redirect()->route('admin-dashboard');
             }elseif(auth()->user()->role == 'LEGALPERMIT'){
                 return redirect()->route('legal-permit-dashboard');
-            }elseif(auth()->user()->role == 'USER'){
-                return redirect()->route('home');
             }elseif(auth()->user()->role == 'TEAMCS'){
                 return redirect()->route('team-cs-dashboard');
+            }elseif(auth()->user()->role == 'USER'){
+                return redirect()->route('home');
             }
         }else{
             return redirect()->route('login')

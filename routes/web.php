@@ -108,5 +108,5 @@ Route::prefix('/legal-manager')->group(function () {
 });
 
 Route::prefix('/team-cs')->group(function () {
-    Route::get('/',[TeamCsController::class, 'index'])->name('team-cs-dashboard');
+    Route::get('/', [TeamCsController::class, 'index'])->name('team-cs-dashboard');
 });

@@ -4,7 +4,7 @@
     <div class="container mx-auto">
         <div class="flex flex-col">
             <div class="w-full">
-                <div class="p-4 border-b border-gray-200 shadow">
+                <div class="p-4 mt-5 border-b border-gray-200 shadow">
                     <!-- <table> -->
                     <table id="dataTable" class="p-4">
                         <thead class="bg-gray-50">
