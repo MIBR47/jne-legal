@@ -89,14 +89,22 @@ Route::middleware('auth')->group(function () {
 
         Route::get('/perizinan-baru', [PerizinanBaruController::class, 'index'])->name('perizinan-baru-index');
         Route::post('/perizinan-baru/post', [PerizinanBaruController::class, 'store'])->name('perizinan-baru-post');
-
-        Route::get('/perizinan-baru/approval/{id}', [PerizinanBaruController::class, 'approval'])->name('perizinan-baru-approval');
-        Route::post('/perizinan-baru/approval/{id}', [LegalPermitController::class, 'store'])->name('perizinan-baru-approval-post');
-        Route::get('/perizinan-baru/check', [PerizinanBaruController::class, 'check'])->name('perizinan-baru-check');
     });
 
     Route::prefix('/legal-permit')->middleware('IsLegalPermit')->group(function () {
         Route::get('/', [LegalPermitController::class, 'index'])->name('legal-permit-dashboard');
+
+        Route::get('/perizinan-baru/approval/{id}', [PerizinanBaruController::class, 'approval'])->name('perizinan-baru-approval');
+        Route::post('/perizinan-baru/approval/{id}', [LegalPermitController::class, 'store'])->name('perizinan-baru-approval-post');
+
+        Route::get('/perizinan-baru/check/{id}', [PerizinanBaruController::class, 'check'])->name('perizinan-baru-check');
+        Route::post('/perizinan-baru/check/{id}', [LegalPermitController::class, 'checkPost'])->name('perizinan-baru-check-post');
+
+        Route::get('/perizinan-baru/update/{id}', [LegalPermitController::class, 'update'])->name('perizinan-baru-update');
+        Route::post('/perizinan-baru/update/{id}', [LegalPermitController::class, 'updatePost'])->name('perizinan-baru-update-post');
+
+        Route::get('/perizinan-baru/finish/{id}', [LegalPermitController::class, 'finish'])->name('perizinan-baru-finish');
+        Route::post('/perizinan-baru/finish/{id}', [LegalPermitController::class, 'finishPost'])->name('perizinan-baru-finish-post');
     });
 
     Route::prefix('/admin-legal')->middleware('IsAdmin')->group(function () {

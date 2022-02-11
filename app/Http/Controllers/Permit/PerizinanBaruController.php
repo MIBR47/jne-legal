@@ -41,9 +41,12 @@ class PerizinanBaruController extends Controller
         ]);
     }
 
-    public function check()
+    public function check($id)
     {
-        return view('pages.permit.perizinan_baru.check');
+        $data = Permit::where('id', $id)->firstOrFail();
+        return view('pages.permit.perizinan_baru.check', [
+            'data' => $data
+        ]);
     }
 
     public function approval($id)

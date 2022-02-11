@@ -16,10 +16,10 @@
                                     Name
                                 </th>
                                 <th class="text-xs text-gray-500">
-                                    Email
+                                    Status
                                 </th>
                                 <th class="text-xs text-gray-500">
-                                    Email
+                                    Action
                                 </th>
                             </tr>
                         </thead>
@@ -130,8 +130,8 @@
                     name: 'permit_type'
                 },
                 {
-                    data: 'location',
-                    name: 'location'
+                    data: 'status',
+                    name: 'status'
                 },
 
                 // { data: 'user.fraud.tanggal', name:'user.fraud.tanggal' },

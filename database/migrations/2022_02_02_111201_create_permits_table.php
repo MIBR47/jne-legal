@@ -26,7 +26,8 @@ class CreatePermitsTable extends Migration
             $table->string('file_document2');
             $table->string('file_document3');
             $table->text('note')->nullable();
-            $table->string('latest_photo')->nullable();
+            $table->string('latest_skpd')->nullable();
+            $table->string('proof_of_payment')->nullable();
             $table->string('status')->default('PENDING');
             $table->timestamps();
 
