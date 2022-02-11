@@ -38,10 +38,10 @@
                     </div>
                     <a href="#" class="text-xs text-gray-500 float-right mb-4">Forgot Password?</a>
                     <button type="submit"
-                        class="w-full py-2 mb-3 rounded-full bg-red-600 hover:bg-red-700 text-gray-100 focus:outline-none">Login</button>
-                    <a href="/" type="submit"
+                        class="w-full py-2 mb-3 rounded-full bg-blue-600 hover:bg-blue-700 text-gray-100 focus:outline-none">Login</button>
+                    {{-- <a href="/" type="submit"
                         class="w-full py-2 rounded-full bg-blue-600 hover:bg-blue-700 text-gray-100 focus:outline-none text-center">Back
-                        to Home</a>
+                        to Home</a> --}}
                 </div>
             </form>
         </div>
