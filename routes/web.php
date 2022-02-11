@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Auth\LoginController;
+use App\Http\Controllers\DatabaseController;
 use App\Http\Controllers\Drafting\CustomerController;
 use App\Http\Controllers\Drafting\DraftingController;
 use App\Http\Controllers\Drafting\LeaseController;
@@ -34,14 +35,12 @@ use Illuminate\Support\Facades\Route;
 Route::get('/login', [HomeController::class, 'login'])->name('login')->middleware('guest');
 Route::post('/login', [LoginController::class, 'login'])->name('login-attempt');
 Route::get('/logout', [LoginController::class, 'logout'])->name('logout');
-Route::get('/database', function () {
-    return view('pages.database.index');
-});
 
 Route::middleware('auth')->group(function () {
     Route::get('/home', function () {
         return redirect('/');
     });
+    Route::get('/database', [DatabaseController::class, 'index'])->name('database');
     Route::get('/', [HomeController::class, 'index'])->name('home');
     Route::get('/contact-us', [HomeController::class, 'contactUs'])->name('contactUs');
     Route::prefix('/drafting')->group(function () {
