@@ -86,6 +86,8 @@ Route::middleware('auth')->group(function () {
     Route::prefix('/permit')->group(function () {
         Route::get('/', [PermitController::class, 'index'])->name('permit-index');
 
+        Route::get('/perizinan-baru/check/{id}', [PerizinanBaruController::class, 'check'])->name('perizinan-baru-check');
+
         Route::get('/perizinan-baru', [PerizinanBaruController::class, 'index'])->name('perizinan-baru-index');
         Route::post('/perizinan-baru/post', [PerizinanBaruController::class, 'store'])->name('perizinan-baru-post');
     });
@@ -96,7 +98,6 @@ Route::middleware('auth')->group(function () {
         Route::get('/perizinan-baru/approval/{id}', [PerizinanBaruController::class, 'approval'])->name('perizinan-baru-approval');
         Route::post('/perizinan-baru/approval/{id}', [LegalPermitController::class, 'store'])->name('perizinan-baru-approval-post');
 
-        Route::get('/perizinan-baru/check/{id}', [PerizinanBaruController::class, 'check'])->name('perizinan-baru-check');
         Route::post('/perizinan-baru/check/{id}', [LegalPermitController::class, 'checkPost'])->name('perizinan-baru-check-post');
 
         Route::get('/perizinan-baru/update/{id}', [LegalPermitController::class, 'update'])->name('perizinan-baru-update');

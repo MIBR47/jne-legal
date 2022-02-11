@@ -19,12 +19,12 @@
                                 class="bg-gray-50 border border-gray-300 text-gray-900 text-md rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                                 placeholder="" readonly>
                         </div>
-                        <div class="grid grid-cols-2 ml-4 gap-2">
+                        {{-- <div class="grid grid-cols-2 ml-4 gap-2">
                             <select name="status_permit_type" id="">
                                 <option value="APPROVE">APPROVE</option>
                                 <option value="REJECT">REJECT</option>
                             </select>
-                        </div>
+                        </div> --}}
                     </div>
                     <div class="flex">
                         <label for="text"
@@ -34,12 +34,12 @@
                                 class="bg-gray-50 border border-gray-300 text-gray-900 text-md rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                                 placeholder="" readonly>
                         </div>
-                        <div class="grid grid-cols-2 ml-4 gap-2">
+                        {{-- <div class="grid grid-cols-2 ml-4 gap-2">
                             <select name="status_location" id="">
                                 <option value="APPROVE">APPROVE</option>
                                 <option value="REJECT">REJECT</option>
                             </select>
-                        </div>
+                        </div> --}}
                     </div>
                     <div class="flex">
                         <label for="text"
@@ -49,12 +49,12 @@
                                 class="bg-gray-50 border border-gray-300 text-gray-900 text-md rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                                 placeholder="" readonly>
                         </div>
-                        <div class="grid grid-cols-2 ml-4 gap-2">
+                        {{-- <div class="grid grid-cols-2 ml-4 gap-2">
                             <select name="status_specification" id="">
                                 <option value="APPROVE">APPROVE</option>
                                 <option value="REJECT">REJECT</option>
                             </select>
-                        </div>
+                        </div> --}}
                     </div>
                     <div class="flex">
                         <label for="text"
@@ -65,12 +65,12 @@
                                 class="bg-gray-50 border border-gray-300 text-gray-900 text-md rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                                 placeholder="" readonly>
                         </div>
-                        <div class="grid grid-cols-2 ml-4 gap-2">
+                        {{-- <div class="grid grid-cols-2 ml-4 gap-2">
                             <select name="status_application_reason" id="">
                                 <option value="APPROVE">APPROVE</option>
                                 <option value="REJECT">REJECT</option>
                             </select>
-                        </div>
+                        </div> --}}
                     </div>
                     <div class="flex">
                     </div>
@@ -94,12 +94,12 @@
                                 class="p-2.5 block w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 cursor-pointer dark:text-gray-400 focus:outline-none focus:border-transparent dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400"
                                 readonly type="text">
                         </div>
-                        <div class="grid grid-cols-2 ml-4 gap-2">
+                        {{-- <div class="grid grid-cols-2 ml-4 gap-2">
                             <select name="status_file_disposition" id="">
                                 <option value="APPROVE">APPROVE</option>
                                 <option value="REJECT">REJECT</option>
                             </select>
-                        </div>
+                        </div> --}}
                     </div>
                     <div class="flex">
                         <label for="date"
@@ -110,12 +110,12 @@
                                 class="p-2.5 block w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 cursor-pointer dark:text-gray-400 focus:outline-none focus:border-transparent dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400"
                                 readonly type="text">
                         </div>
-                        <div class="grid grid-cols-2 ml-4 gap-2">
+                        {{-- <div class="grid grid-cols-2 ml-4 gap-2">
                             <select name="status_file_document1" id="">
                                 <option value="APPROVE">APPROVE</option>
                                 <option value="REJECT">REJECT</option>
                             </select>
-                        </div>
+                        </div> --}}
                     </div>
                     <div class="flex">
                         <label for="date"
@@ -126,12 +126,12 @@
                                 class="p-2.5 block w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 cursor-pointer dark:text-gray-400 focus:outline-none focus:border-transparent dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400"
                                 readonly type="text">
                         </div>
-                        <div class="grid grid-cols-2 ml-4 gap-2">
+                        {{-- <div class="grid grid-cols-2 ml-4 gap-2">
                             <select name="status_file_document2" id="">
                                 <option value="APPROVE">APPROVE</option>
                                 <option value="REJECT">REJECT</option>
                             </select>
-                        </div>
+                        </div> --}}
                     </div>
                     <div class="flex">
                         <label for="date"
@@ -142,17 +142,17 @@
                                 class="p-2.5 block w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 cursor-pointer dark:text-gray-400 focus:outline-none focus:border-transparent dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400"
                                 readonly type="text">
                         </div>
-                        <div class="grid grid-cols-2 ml-4 gap-2">
+                        {{-- <div class="grid grid-cols-2 ml-4 gap-2">
                             <select name="status_file_document3" id="">
                                 <option value="APPROVE">APPROVE</option>
                                 <option value="REJECT">REJECT</option>
                             </select>
-                        </div>
+                        </div> --}}
                     </div>
                 </div>
             </div>
 
-            <div class="flex">
+            {{-- <div class="flex">
                 <label for="text"
                     class="flex items-center flex-[3] mb-2 text-md font-medium text-gray-900 dark:text-gray-300">Manager
                     Pemohon</label>
@@ -161,9 +161,9 @@
                         class="block p-2 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                         placeholder=""></textarea>
                 </div>
-            </div>
+            </div> --}}
 
-            <div class="flex">
+            {{-- <div class="flex">
                 <label for="text"
                     class="flex items-center flex-[3] mb-2 text-md font-medium text-gray-900 dark:text-gray-300">Kepala
                     Divisi
@@ -173,9 +173,9 @@
                         class="block p-2 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                         placeholder=""></textarea>
                 </div>
-            </div>
+            </div> --}}
 
-            <div class="flex">
+            {{-- <div class="flex">
                 <label for="text"
                     class="flex items-center flex-[3] mb-2 text-md font-medium text-gray-900 dark:text-gray-300">Risk
                     Management</label>
@@ -184,9 +184,9 @@
                         class="block p-2 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                         placeholder=""></textarea>
                 </div>
-            </div>
+            </div> --}}
 
-            <div class="flex">
+            {{-- <div class="flex">
                 <label for="text"
                     class="flex items-center flex-[3] mb-2 text-md font-medium text-gray-900 dark:text-gray-300">Purchasing</label>
                 <div class="flex-[7]">
@@ -194,9 +194,9 @@
                         class="block p-2 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                         placeholder=""></textarea>
                 </div>
-            </div>
+            </div> --}}
 
-            <div class="flex">
+            {{-- <div class="flex">
                 <label for="text"
                     class="flex items-center flex-[3] mb-2 text-md font-medium text-gray-900 dark:text-gray-300">General
                     Affairs</label>
@@ -205,9 +205,9 @@
                         class="block p-2 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                         placeholder=""></textarea>
                 </div>
-            </div>
+            </div> --}}
 
-            <div class="flex">
+            {{-- <div class="flex">
                 <label for="text"
                     class="flex items-center flex-[3] mb-2 text-md font-medium text-gray-900 dark:text-gray-300">Manager
                     Legal
@@ -217,7 +217,7 @@
                         class="block p-2 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                         placeholder=""></textarea>
                 </div>
-            </div>
+            </div> --}}
 
             <div class="flex flex-col gap-4 mb-4">
                 <div class="block">
@@ -227,17 +227,17 @@
                     <div class="flex-[4]">
                         <textarea id="message" rows="4"
                             class="block p-2 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                            placeholder=""></textarea>
+                            placeholder="" readonly>{{ $data->note }}</textarea>
                     </div>
                 </div>
             </div>
 
-            <div class="flex justify-end items-center">
+            {{-- <div class="flex justify-end items-center">
                 <button type="submit" value="return" name="action"
                     class="text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-xl px-20 py-4 text-center mr-2 mb-2 dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-900">Return</button>
                 <button type="submit" value="approve" name="action"
                     class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-xl px-20 py-4 text-center mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-900">Approve</button>
-            </div>
+            </div> --}}
         </form>
     </div>
 
