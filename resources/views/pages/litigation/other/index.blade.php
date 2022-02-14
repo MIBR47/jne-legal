@@ -19,7 +19,7 @@
                                 placeholder="" name="nomor_kasus" required>
                         </div>
                     </div>
-                    <input type="text" name="user_id" value="{{ auth()->user()->id }}">
+                    <input type="hidden" name="user_id" value="{{ auth()->user()->id }}">
                     <div class="flex">
                         <label for="text"
                             class="flex items-center flex-[3] mb-2 text-md font-medium text-gray-900 dark:text-gray-300">Tanggal</label>
@@ -165,9 +165,10 @@
             </div>
 
             <div class="flex justify-end items-center">
-                <input type="submit" class="text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-xl px-20 py-4 text-center mr-2 mb-2 dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-900" name="btnADD" id="btnADD"
-                value="Submit"
-                onclick="this.disabled=true;this.value='Sending, please wait...';this.form.submit();" />
+                <input type="submit"
+                    class="text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-xl px-20 py-4 text-center mr-2 mb-2 dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-900"
+                    name="btnADD" id="btnADD" value="Submit"
+                    onclick="this.disabled=true;this.value='Sending, please wait...';this.form.submit();" />
                 {{-- <button type="button"
                     class="">Submit</button> --}}
             </div>

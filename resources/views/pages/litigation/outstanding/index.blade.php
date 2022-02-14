@@ -18,7 +18,7 @@
                                 placeholder="" required>
                         </div>
                     </div>
-                    <input type="text" name="user_id" value="{{ auth()->user()->id }}">
+                    <input type="hidden" name="user_id" value="{{ auth()->user()->id }}">
                     <div class="flex">
                         <label for="text"
                             class="flex items-center flex-[3] mb-2 text-md font-medium text-gray-900 dark:text-gray-300">Tanggal</label>

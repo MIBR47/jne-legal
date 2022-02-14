@@ -131,5 +131,8 @@ Route::middleware('auth')->group(function () {
 
     Route::prefix('/team-cs')->middleware('IsTeamCs')->group(function () {
         Route::get('/', [TeamCsController::class, 'index'])->name('team-cs-dashboard');
+
+        Route::get('/update/{id}', [TeamCsController::class, 'update'])->name('cs-update');
+        Route::post('/update/{id}', [TeamCsController::class, 'updatePost'])->name('cs-update-post');
     });
 });
