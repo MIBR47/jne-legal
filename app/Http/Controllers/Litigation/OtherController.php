@@ -2,16 +2,42 @@
 
 namespace App\Http\Controllers\Litigation;
 
-use App\Http\Controllers\Controller;
-use App\Models\Litigation\Other;
+use Carbon\Carbon;
 use App\Models\UploadFile;
 use Illuminate\Http\Request;
+use App\Models\Litigation\Cs;
+use App\Models\Litigation\Other;
+use App\Http\Controllers\Controller;
 
 class OtherController extends Controller
 {
     public function index()
     {
-        return view('pages.litigation.other.index');
+        $datenow = date('d-M-Y',strtotime(Carbon::now()));
+        $dateNow = date('Y-m-d') . ' 00:00:00';
+        $check_user = Other::select('*')
+            ->whereDate('created_at', '>=', $dateNow)
+            ->count();
+
+        if ($check_user === 0) {
+            $no_kasus = 'OTH' . date('dmy') . '0001';
+        } else {
+            $item = $check_user + 1;
+            if ($item < 10) {
+                $no_kasus = 'OTH' . date('dmy') . '000' . $item;
+            } elseif ($item >= 10 && $item <= 99) {
+                $no_kasus = 'OTH' . date('dmy') . '00' . $item;
+            } elseif ($item >= 100 && $item <= 999) {
+                $no_kasus = 'OTH' . date('dmy') . '0' . $item;
+            } elseif ($item >= 1000 && $item <= 9999) {
+                $no_kasus = 'OTH' . date('dmy') . $item;
+            }
+        }
+
+        return view('pages.litigation.other.index', [
+            'no_kasus' => $no_kasus,
+            'datenow'=>$datenow
+        ]);
     }
 
     public function check()
@@ -26,27 +52,30 @@ class OtherController extends Controller
 
     public function store(Request $request){
 
-        $validatedData = $request->validate([
-            'user_id' => 'required',
-            'date' => 'required',
-            'party_name' => 'required',
-            'department' => 'required',
-            'document_number' => 'required',
-            'total_loss' => 'required',
-            'incident_chronology' => 'required',
-            'file_document' => 'required',
-            'file_proof1' => 'required',
-            'file_proof2' => 'required',
-            'file_proof3' => 'required',
-            'file_disposition' => 'required',
-            'file_other_document' => 'required',
-        ]);
+        // $validatedData = $request->validate([
+        //     'user_id' => 'required',
+        //     'date' => 'required',
+        //     'party_name' => 'required',
+        //     'department' => 'required',
+        //     'document_number' => 'required',
+        //     'total_loss' => 'required',
+        //     'incident_chronology' => 'required',
+        //     'file_document' => 'required',
+        //     'file_proof1' => 'required',
+        //     'file_proof2' => 'required',
+        //     'file_proof3' => 'required',
+        //     'file_disposition' => 'required',
+        //     'file_other_document' => 'required',
+        // ]);
 #
-        $validatedData2 = $request->validate([
-            // 'id' => 'required',
-            
-        ]);
+        // $validatedData2 = $request->validate([
+        //     // 'id' => 'required',
+
+        // ]);
         // $validatedData[;'']
+        $data = $request->all();
+        $id = $data['id'];
+        $user_id = $request->user_id;
 
         $name = $request->file('file_document')->getClientOriginalName();
         $name2 = $request->file('file_proof1')->getClientOriginalName();
@@ -63,16 +92,16 @@ class OtherController extends Controller
         $data['file_other_document'] = $request->file('file_other_document')->storeAs('public/files/file_other_document',$name6,'public');
 
 
-        
+
         // $path = $request->file('file_document')->store('public/files');
         // $path2= $request->file('file_proof1')->store('public/files');
         // $path3 = $request->file('file_proof2')->store('public/files');
         // $path4 = $request->file('file_proof3')->store('public/files');
         // $path5 = $request->file('file_disposition')->store('public/files');
-        // $path6 = $request->file('file_other_document')->store('public/files'); 
+        // $path6 = $request->file('file_other_document')->store('public/files');
 
         // $save = new Other;
- 
+
         // $save->name = $name;
         // $save->name = $name2;
         // $save->name = $name3;
@@ -88,8 +117,8 @@ class OtherController extends Controller
         // $save->path = $path6;
 
         // UploadFile::create($validatedData2);
-        Other::create($validatedData);
-
+        Other::create($data);
+        Cs::create(['form_id'=> $id,'user_id'=> $user_id]);
 
         return redirect()->route('home');
     }

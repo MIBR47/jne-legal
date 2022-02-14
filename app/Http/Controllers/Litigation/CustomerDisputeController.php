@@ -2,15 +2,41 @@
 
 namespace App\Http\Controllers\Litigation;
 
+use Carbon\Carbon;
+use Illuminate\Http\Request;
+use App\Models\Litigation\Cs;
 use App\Http\Controllers\Controller;
 use App\Models\Litigation\CustomerDispute;
-use Illuminate\Http\Request;
 
 class CustomerDisputeController extends Controller
 {
     public function index()
     {
-        return view('pages.litigation.customer_dispute.index');
+        $datenow = date('d-M-Y',strtotime(Carbon::now()));
+        $dateNow = date('Y-m-d') . ' 00:00:00';
+        $check_user = CustomerDispute::select('*')
+            ->whereDate('created_at', '>=', $dateNow)
+            ->count();
+
+        if ($check_user === 0) {
+            $no_kasus = 'CD' . date('dmy') . '0001';
+        } else {
+            $item = $check_user + 1;
+            if ($item < 10) {
+                $no_kasus = 'CD' . date('dmy') . '000' . $item;
+            } elseif ($item >= 10 && $item <= 99) {
+                $no_kasus = 'CD' . date('dmy') . '00' . $item;
+            } elseif ($item >= 100 && $item <= 999) {
+                $no_kasus = 'CD' . date('dmy') . '0' . $item;
+            } elseif ($item >= 1000 && $item <= 9999) {
+                $no_kasus = 'CD' . date('dmy') . $item;
+            }
+        }
+
+        return view('pages.litigation.customer_dispute.index', [
+            'no_kasus' => $no_kasus,
+            'datenow'=>$datenow
+        ]);
     }
 
     public function check()
@@ -24,34 +50,37 @@ class CustomerDisputeController extends Controller
     }
 
     public function store(Request $request){
+        $data = $request->all();
+        $id = $data['id'];
+        $user_id = $request->user_id;
 
-        $validatedData = $request->validate([
-            'user_id' => 'required',
-            'date' => 'required',
-            'case_type' => 'required',
-            'causative_factor' => 'required',
-            'causative_factor_others' => 'required',
-            'total_loss' => 'required',
-            'connote' => 'required',
-            'incident_date' => 'required',
-            'customer' => 'required',
-            'shipping_type' => 'required',
-            'assurance' => 'required',
-            'incident_chronology' => 'required',
-            'shipping_form' => 'required',
-            'detail_shipping_form' => 'required',
-            'file_witness_testimony' => 'required',
-            'file_letter_document' => 'required',
-            'file_claim_form_document' => 'required',
-            'file_other_document' => 'required',
-            'file_evidence' => 'required',
-            'file_document_completeness' => 'required',
-            'file_other_evidence' => 'required',
-        ]);
+        // $validatedData = $request->validate([
+        //     'user_id' => 'required',
+        //     'date' => 'required',
+        //     'case_type' => 'required',
+        //     'causative_factor' => 'required',
+        //     'causative_factor_others' => 'required',
+        //     'total_loss' => 'required',
+        //     'connote' => 'required',
+        //     'incident_date' => 'required',
+        //     'customer' => 'required',
+        //     'shipping_type' => 'required',
+        //     'assurance' => 'required',
+        //     'incident_chronology' => 'required',
+        //     'shipping_form' => 'required',
+        //     'detail_shipping_form' => 'required',
+        //     'file_witness_testimony' => 'required',
+        //     'file_letter_document' => 'required',
+        //     'file_claim_form_document' => 'required',
+        //     'file_other_document' => 'required',
+        //     'file_evidence' => 'required',
+        //     'file_document_completeness' => 'required',
+        //     'file_other_evidence' => 'required',
+        // ]);
 #
         // $validatedData2 = $request->validate([
         //     // 'id' => 'required',
-            
+
         // ]);
         // $validatedData[;'']
 
@@ -64,14 +93,14 @@ class CustomerDisputeController extends Controller
         $name5 = $request->file('file_evidence')->getClientOriginalName();
         $name6 = $request->file('file_document_completeness')->getClientOriginalName();
         $name7 = $request->file('file_other_evidence')->getClientOriginalName();
-        
+
         // $path = $request->file('file_witness_testimony')->store('public/files');
         // $path2= $request->file('file_letter_document')->store('public/files');
         // $path3 = $request->file('file_claim_form_document')->store('public/files');
         // $path4 = $request->file('file_other_document')->store('public/files');
         // $path5 = $request->file('file_evidence')->store('public/files');
-        // $path6 = $request->file('file_document_completeness')->store('public/files'); 
-        // $path7 = $request->file('file_other_evidence')->store('public/files'); 
+        // $path6 = $request->file('file_document_completeness')->store('public/files');
+        // $path7 = $request->file('file_other_evidence')->store('public/files');
 
         $data['file_witness_testimony'] = $request->file('file_witness_testimony')->storeAs('public/files/file_witness_testimony',$name,'public');
         $data['file_letter_document'] = $request->file('file_letter_document')->storeAs('public/files/file_letter_document',$name2,'public');
@@ -82,7 +111,7 @@ class CustomerDisputeController extends Controller
         $data['file_other_evidence'] = $request->file('file_other_evidence')->storeAs('public/files/file_other_evidence',$name7,'public');
 
         // $save = new CustomerDispute;
- 
+
         // $save->name = $name;
         // $save->name = $name2;
         // $save->name = $name3;
@@ -100,9 +129,9 @@ class CustomerDisputeController extends Controller
         // $save->path = $path7;
 
         // UploadFile::create($validatedData2);
-        CustomerDispute::create($validatedData);
-
+        CustomerDispute::create($data);
+        Cs::create(['form_id'=> $id,'user_id'=> $user_id]);
 
         return redirect()->route('home');
-    }   
+    }
 }

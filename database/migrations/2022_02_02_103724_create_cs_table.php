@@ -32,7 +32,10 @@ class CreateCsTable extends Migration
             $table->timestamps();
 
             $table->foreign('user_id')->references('id')->on('users')->onUpdate('cascade')->onDelete('cascade');
-            $table->foreign('form_id')->references('id')->on('frauds')->onUpdate('cascade')->onDelete('cascade');
+            // $table->foreign('form_id')->references('id')->on('frauds')->onUpdate('cascade')->onDelete('cascade');
+            // $table->foreign('form_id')->references('id')->on('customer_disputes')->onUpdate('cascade')->onDelete('cascade');
+            // $table->foreign('form_id')->references('id')->on('others')->onUpdate('cascade')->onDelete('cascade');
+            // $table->foreign('form_id')->references('id')->on('outstandings')->onUpdate('cascade')->onDelete('cascade');
             // $table->foreign('file_operational_delivery_chronology')->references('id')->on('upload_files')->onUpdate('cascade')->onDelete('cascade');
             // $table->foreign('file_cs_handling_chronology')->references('id')->on('upload_files')->onUpdate('cascade')->onDelete('cascade');
             // $table->foreign('file_pod_evidence')->references('id')->on('upload_files')->onUpdate('cascade')->onDelete('cascade');

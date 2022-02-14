@@ -3,8 +3,7 @@
 @section('content')
     <div class="flex flex-col gap-4 mx-36 my-4">
         <h1 class="text-4xl mb-4 text-black capitalize font-medium">Outstanding</h1>
-        <form class="mt-4" method="post" enctype="multipart/form-data"
-            action="{{ route('customer-dispute-post') }}">
+        <form class="mt-4" method="post" enctype="multipart/form-data" action="{{ route('outstanding-post') }}">
             @csrf
             <div class="grid grid-cols-2 gap-16 mb-4">
                 <div class="flex flex-col gap-4">
@@ -13,9 +12,9 @@
                             class="flex items-center flex-[3] mb-2 text-md font-medium text-gray-900 dark:text-gray-300">Nomor
                             Kasus</label>
                         <div class="flex-[4]">
-                            <input type="text" id="text"
+                            <input type="text" id="text" name="id" value="{{ $no_kasus }}"
                                 class="bg-gray-50 border border-gray-300 text-gray-900 text-md rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                                placeholder="" required>
+                                placeholder="" readonly>
                         </div>
                     </div>
                     <input type="hidden" name="user_id" value="{{ auth()->user()->id }}">
@@ -23,7 +22,7 @@
                         <label for="text"
                             class="flex items-center flex-[3] mb-2 text-md font-medium text-gray-900 dark:text-gray-300">Tanggal</label>
                         <div class="flex-[4]">
-                            <input type="text" id="text" name="date"
+                            <input type="date" id="text" name="date"
                                 class="bg-gray-50 border border-gray-300 text-gray-900 text-md rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                                 placeholder="" required>
                         </div>

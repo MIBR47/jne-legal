@@ -76,6 +76,7 @@ Route::middleware('auth')->group(function () {
         Route::get('/outstanding', [OutstandingController::class, 'index'])->name('outstanding-index');
         Route::get('/outstanding/check', [OutstandingController::class, 'check'])->name('outstanding-check');
         Route::get('/outstanding/report', [OutstandingController::class, 'report'])->name('outstanding-report');
+        Route::post('/outstanding/post', [OutstandingController::class, 'store'])->name('outstanding-post');
 
         Route::get('/other', [OtherController::class, 'index'])->name('other-index');
         Route::get('/other/check', [OtherController::class, 'check'])->name('other-check');

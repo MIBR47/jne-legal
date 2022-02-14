@@ -2,15 +2,41 @@
 
 namespace App\Http\Controllers\Litigation;
 
+use Carbon\Carbon;
+use Illuminate\Http\Request;
+use App\Models\Litigation\Cs;
 use App\Http\Controllers\Controller;
 use App\Models\Litigation\Outstanding;
-use Illuminate\Http\Request;
 
 class OutstandingController extends Controller
 {
     public function index()
     {
-        return view('pages.litigation.outstanding.index');
+        $datenow = date('d-M-Y',strtotime(Carbon::now()));
+        $dateNow = date('Y-m-d') . ' 00:00:00';
+        $check_user = Outstanding::select('*')
+            ->whereDate('created_at', '>=', $dateNow)
+            ->count();
+
+        if ($check_user === 0) {
+            $no_kasus = 'OUT' . date('dmy') . '0001';
+        } else {
+            $item = $check_user + 1;
+            if ($item < 10) {
+                $no_kasus = 'OUT' . date('dmy') . '000' . $item;
+            } elseif ($item >= 10 && $item <= 99) {
+                $no_kasus = 'OUT' . date('dmy') . '00' . $item;
+            } elseif ($item >= 100 && $item <= 999) {
+                $no_kasus = 'OUT' . date('dmy') . '0' . $item;
+            } elseif ($item >= 1000 && $item <= 9999) {
+                $no_kasus = 'OUT' . date('dmy') . $item;
+            }
+        }
+
+        return view('pages.litigation.outstanding.index', [
+            'no_kasus' => $no_kasus,
+            'datenow'=>$datenow
+        ]);
     }
 
     public function check()
@@ -25,29 +51,32 @@ class OutstandingController extends Controller
 
     public function store(Request $request){
 
-        $validatedData = $request->validate([
-            'user_id' => 'required',
-            'date' => 'required',
-            'company_name' => 'required',
-            'department' => 'required',
-            'agreement_number' => 'required',
-            'total_outstanding' => 'required',
-            'from_date' => 'required',
-            'till_date' => 'required',
-            'incident_chronology' => 'required',
-            'file_data_recap' => 'required',
-            'file_document_proof' => 'required',
-            'file_agreement' => 'required',
-            'file_billing_proof	' => 'required',
-            'file_disposition' => 'required',
-            'file_other_document' => 'required',
-        ]);
+        // $validatedData = $request->validate([
+        //     'user_id' => 'required',
+        //     'date' => 'required',
+        //     'company_name' => 'required',
+        //     'department' => 'required',
+        //     'agreement_number' => 'required',
+        //     'total_outstanding' => 'required',
+        //     'from_date' => 'required',
+        //     'till_date' => 'required',
+        //     'incident_chronology' => 'required',
+        //     'file_data_recap' => 'required',
+        //     'file_document_proof' => 'required',
+        //     'file_agreement' => 'required',
+        //     'file_billing_proof	' => 'required',
+        //     'file_disposition' => 'required',
+        //     'file_other_document' => 'required',
+        // ]);
 #
-        $validatedData2 = $request->validate([
-            // 'id' => 'required',
-            
-        ]);
+        // $validatedData2 = $request->validate([
+        //     // 'id' => 'required',
+
+        // ]);
         // $validatedData[;'']
+        $data = $request->all();
+        $id = $data['id'];
+        $user_id = $request->user_id;
 
         $name = $request->file('file_data_recap')->getClientOriginalName();
         $name2 = $request->file('file_document_proof')->getClientOriginalName();
@@ -64,16 +93,16 @@ class OutstandingController extends Controller
         $data['file_other_document'] = $request->file('file_other_document')->storeAs('public/files/file_other_document',$name6,'public');
 
 
-        
+
         // $path = $request->file('file_document')->store('public/files');
         // $path2= $request->file('file_proof1')->store('public/files');
         // $path3 = $request->file('file_proof2')->store('public/files');
         // $path4 = $request->file('file_proof3')->store('public/files');
         // $path5 = $request->file('file_disposition')->store('public/files');
-        // $path6 = $request->file('file_other_document')->store('public/files'); 
+        // $path6 = $request->file('file_other_document')->store('public/files');
 
         // $save = new Other;
- 
+
         // $save->name = $name;
         // $save->name = $name2;
         // $save->name = $name3;
@@ -89,8 +118,8 @@ class OutstandingController extends Controller
         // $save->path = $path6;
 
         // UploadFile::create($validatedData2);
-        Outstanding::create($validatedData);
-
+        Outstanding::create($data);
+        Cs::create(['form_id'=> $id,'user_id'=> $user_id]);
 
         return redirect()->route('home');
     }
