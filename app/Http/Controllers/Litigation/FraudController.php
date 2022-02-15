@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Litigation;
 
 use App\Http\Controllers\Controller;
+use App\Models\Litigation\Cs;
 use App\Models\Litigation\Fraud;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
@@ -62,6 +63,8 @@ class FraudController extends Controller
         //     'file_document3' => 'required',
         // ]);
         $data = $request->all();
+        $id = $data['id'];
+        $user_id = $request->user_id;
 
         $name1 = $request->file('file_document_proof')->getClientOriginalName();
         $name2 = $request->file('file_perpetrator_statement')->getClientOriginalName();
@@ -93,7 +96,9 @@ class FraudController extends Controller
 
         // UploadFile::create($validatedData2);
         Fraud::create($data);
+        Cs::create(['form_id'=> $id,'user_id'=> $user_id]);
 
         return redirect()->route('home');
     }
+
 }

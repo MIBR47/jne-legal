@@ -78,6 +78,7 @@ Route::middleware('auth')->group(function () {
         Route::get('/outstanding', [OutstandingController::class, 'index'])->name('outstanding-index');
         Route::get('/outstanding/check', [OutstandingController::class, 'check'])->name('outstanding-check');
         Route::get('/outstanding/report', [OutstandingController::class, 'report'])->name('outstanding-report');
+        Route::post('/outstanding/post', [OutstandingController::class, 'store'])->name('outstanding-post');
 
         Route::get('/other', [OtherController::class, 'index'])->name('other-index');
         Route::get('/other/check', [OtherController::class, 'check'])->name('other-check');
@@ -133,5 +134,8 @@ Route::middleware('auth')->group(function () {
 
     Route::prefix('/team-cs')->middleware('IsTeamCs')->group(function () {
         Route::get('/', [TeamCsController::class, 'index'])->name('team-cs-dashboard');
+
+        Route::get('/update/{id}', [TeamCsController::class, 'update'])->name('cs-update');
+        Route::post('/update/{id}', [TeamCsController::class, 'updatePost'])->name('cs-update-post');
     });
 });

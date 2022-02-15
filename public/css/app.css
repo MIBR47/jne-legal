@@ -723,8 +723,13 @@ Ensure the default browser behavior of the `hidden` attribute.
 .grid-rows-1 {
   grid-template-rows: repeat(1, minmax(0, 1fr));
 }
+<<<<<<< HEAD
 .flex-row {
   flex-direction: row;
+=======
+.grid-rows-\[8\] {
+  grid-template-rows: 8;
+>>>>>>> 705c9ce57db1abfd9853cd39b689f0c8f845d111
 }
 .flex-col {
   flex-direction: column;
