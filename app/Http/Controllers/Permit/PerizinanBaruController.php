@@ -14,7 +14,7 @@ class PerizinanBaruController extends Controller
 {
     public function index()
     {
-        $datenow = date('d-M-Y',strtotime(Carbon::now()));
+        $datenow = date('d-M-Y', strtotime(Carbon::now()));
         $dateNow = date('Y-m-d') . ' 00:00:00';
         $check_user = Permit::select('*')
             ->whereDate('created_at', '>=', $dateNow)
@@ -37,7 +37,7 @@ class PerizinanBaruController extends Controller
 
         return view('pages.permit.perizinan_baru.index', [
             'no_kasus' => $no_kasus,
-            'datenow'=>$datenow
+            'datenow' => $datenow
         ]);
     }
 
@@ -57,7 +57,8 @@ class PerizinanBaruController extends Controller
         ]);
     }
 
-    public function store(Request $request){
+    public function store(Request $request)
+    {
 
         // $validatedData = $request->validate([
         //     'user_id' => 'required',
@@ -78,10 +79,10 @@ class PerizinanBaruController extends Controller
         $name3 = $request->file('file_document2')->getClientOriginalName();
         $name4 = $request->file('file_document3')->getClientOriginalName();
 
-        $data['file_disposition'] = $request->file('file_disposition')->storeAs('public/files/file_disposition',$name1,'public');
-        $data['file_document1'] = $request->file('file_document1')->storeAs('public/files/file_document1',$name2,'public');
-        $data['file_document2'] = $request->file('file_document2')->storeAs('public/files/file_document2',$name3,'public');
-        $data['file_document3'] = $request->file('file_document3')->storeAs('public/files/file_document3',$name4,'public');
+        $data['file_disposition'] = $request->file('file_disposition')->storeAs('public/files/file_disposition', $name1, 'public');
+        $data['file_document1'] = $request->file('file_document1')->storeAs('public/files/file_document1', $name2, 'public');
+        $data['file_document2'] = $request->file('file_document2')->storeAs('public/files/file_document2', $name3, 'public');
+        $data['file_document3'] = $request->file('file_document3')->storeAs('public/files/file_document3', $name4, 'public');
 
         // $save = new Permit();
 
@@ -97,8 +98,8 @@ class PerizinanBaruController extends Controller
 
         // UploadFile::create($validatedData2);
         Permit::create($data);
-        StatusPermit::create(['permit_id'=>$id_permit]);
-        ReasonPermit::create(['permit_id'=>$id_permit]);
+        StatusPermit::create(['permit_id' => $id_permit]);
+        ReasonPermit::create(['permit_id' => $id_permit]);
 
         return redirect()->route('home');
     }

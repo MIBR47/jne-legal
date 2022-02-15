@@ -3,6 +3,7 @@
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\DatabaseController;
+use App\Http\Controllers\DownloadController;
 use App\Http\Controllers\Drafting\CustomerController;
 use App\Http\Controllers\Drafting\DraftingController;
 use App\Http\Controllers\Drafting\LeaseController;
@@ -40,8 +41,9 @@ Route::middleware('auth')->group(function () {
     Route::get('/home', function () {
         return redirect('/');
     });
-    Route::get('/database', [DatabaseController::class, 'index'])->name('database');
     Route::get('/', [HomeController::class, 'index'])->name('home');
+    Route::get('/database', [DatabaseController::class, 'index'])->name('database');
+    Route::get('/storage/{public}')->name('download');
     Route::get('/contact-us', [HomeController::class, 'contactUs'])->name('contactUs');
     Route::prefix('/drafting')->group(function () {
         Route::get('/', [DraftingController::class, 'index'])->name('drafting-index');
@@ -92,7 +94,7 @@ Route::middleware('auth')->group(function () {
         Route::post('/perizinan-baru/post', [PerizinanBaruController::class, 'store'])->name('perizinan-baru-post');
     });
 
-    Route::prefix('/legal-permit')->middleware('IsLegalPermit')->group(function () {
+    Route::prefix('/legal-permit')->group(function () {
         Route::get('/', [LegalPermitController::class, 'index'])->name('legal-permit-dashboard');
 
         Route::get('/perizinan-baru/approval/{id}', [PerizinanBaruController::class, 'approval'])->name('perizinan-baru-approval');
