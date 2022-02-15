@@ -7,6 +7,7 @@ use App\Http\Controllers\DownloadController;
 use App\Http\Controllers\Drafting\CustomerController;
 use App\Http\Controllers\Drafting\DraftingController;
 use App\Http\Controllers\Drafting\LeaseController;
+use App\Http\Controllers\Drafting\LegalLease;
 use App\Http\Controllers\Drafting\VendorController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\Litigation\CustomerDisputeController;
@@ -137,5 +138,15 @@ Route::middleware('auth')->group(function () {
 
         Route::get('/update/{id}', [TeamCsController::class, 'update'])->name('cs-update');
         Route::post('/update/{id}', [TeamCsController::class, 'updatePost'])->name('cs-update-post');
+    });
+
+    Route::prefix('/legal-lease')->group(function () {
+        Route::get('/', [LegalLease::class, 'index'])->name('legal-lease-dashboard');
+
+        Route::get('/check/{id}', [LegalLease::class, 'check'])->name('legal-lease-check');
+        Route::post('/check/{id}', [LegalLease::class, 'checkPost'])->name('legal-lease-check-post');
+
+        Route::get('/finish/{id}', [LegalLease::class, 'finish'])->name('legal-lease-finish');
+        Route::post('/finish/{id}', [LegalLease::class, 'finishPost'])->name('legal-lease-finish-post');
     });
 });

@@ -51,6 +51,8 @@ class CreateLeasesTable extends Migration
             $table->string('file_procuration');
             $table->string('file_previous_agreement');
             $table->string('file_director_procuration');
+            $table->string('file_agreement_draft')->nullable();
+            $table->string('note')->nullable();
             $table->string('status')->default('PENDING');
             $table->timestamps();
 

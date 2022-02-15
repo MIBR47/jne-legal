@@ -18,17 +18,17 @@ class LeaseController extends Controller
             ->count();
 
         if ($check_user === 0) {
-            $no_kasus = 'CS' . date('dmy') . '0001';
+            $no_kasus = 'LS' . date('dmy') . '0001';
         } else {
             $item = $check_user + 1;
             if ($item < 10) {
-                $no_kasus = 'CS' . date('dmy') . '000' . $item;
+                $no_kasus = 'LS' . date('dmy') . '000' . $item;
             } elseif ($item >= 10 && $item <= 99) {
-                $no_kasus = 'CS' . date('dmy') . '00' . $item;
+                $no_kasus = 'LS' . date('dmy') . '00' . $item;
             } elseif ($item >= 100 && $item <= 999) {
-                $no_kasus = 'CS' . date('dmy') . '0' . $item;
+                $no_kasus = 'LS' . date('dmy') . '0' . $item;
             } elseif ($item >= 1000 && $item <= 9999) {
-                $no_kasus = 'CS' . date('dmy') . $item;
+                $no_kasus = 'LS' . date('dmy') . $item;
             }
         }
 
@@ -68,7 +68,7 @@ class LeaseController extends Controller
         $name18 = $request->file('file_sppt3')->getClientOriginalName();
         $name19 = $request->file('file_procuration')->getClientOriginalName();
         $name20 = $request->file('file_previous_agreement')->getClientOriginalName();
-        // $name21 = $request->file('file_director_procuration')->getClientOriginalName();
+        $name21 = $request->file('file_director_procuration')->getClientOriginalName();
 
         $data['file_director_disposition'] = $request->file('file_director_disposition')->storeAs('public/files/file_director_disposition',$name1,'public');
         $data['file_internal_memo'] = $request->file('file_internal_memo')->storeAs('public/files/file_internal_memo',$name2,'public');
@@ -90,7 +90,7 @@ class LeaseController extends Controller
         $data['file_sppt3'] = $request->file('file_sppt3')->storeAs('public/files/file_sppt3',$name18,'public');
         $data['file_procuration'] = $request->file('file_procuration')->storeAs('public/files/file_procuration',$name19,'public');
         $data['file_previous_agreement'] = $request->file('file_previous_agreement')->storeAs('public/files/file_previous_agreement',$name20,'public');
-        // $data['file_director_procuration'] = $request->file('file_director_procuration')->storeAs('public/files/file_director_procuration',$name21,'public');
+        $data['file_director_procuration'] = $request->file('file_director_procuration')->storeAs('public/files/file_director_procuration',$name21,'public');
 
         // $save = new Permit();
 
