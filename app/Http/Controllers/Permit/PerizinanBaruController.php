@@ -74,15 +74,23 @@ class PerizinanBaruController extends Controller
         $data = $request->all();
         $id_permit = $data['id'];
 
-        $name1 = $request->file('file_disposition')->getClientOriginalName();
-        $name2 = $request->file('file_document1')->getClientOriginalName();
-        $name3 = $request->file('file_document2')->getClientOriginalName();
-        $name4 = $request->file('file_document3')->getClientOriginalName();
+        $name1 = time() . '-' . $request->file('file_disposition')->getClientOriginalName();
+        $name2 = time() . '-' . $request->file('file_document1')->getClientOriginalName();
+        $name3 = time() . '-' . $request->file('file_document2')->getClientOriginalName();
+        $name4 = time() . '-' . $request->file('file_document3')->getClientOriginalName();
 
-        $data['file_disposition'] = $request->file('file_disposition')->storeAs('public/files/file_disposition', $name1, 'public');
-        $data['file_document1'] = $request->file('file_document1')->storeAs('public/files/file_document1', $name2, 'public');
-        $data['file_document2'] = $request->file('file_document2')->storeAs('public/files/file_document2', $name3, 'public');
-        $data['file_document3'] = $request->file('file_document3')->storeAs('public/files/file_document3', $name4, 'public');
+        // dd(gmdate("Y-m-d\TH:i:s\Z", time()));
+
+        // $file = public_path('storage/public/permit' . $name1);
+
+        // if (!file_exists($file)) {
+        //     return dd($name1);
+        // }
+
+        $data['file_disposition'] = $request->file('file_disposition')->storeAs('public/permit', $name1, 'public');
+        $data['file_document1'] = $request->file('file_document1')->storeAs('public/permit', $name2, 'public');
+        $data['file_document2'] = $request->file('file_document2')->storeAs('public/permit', $name3, 'public');
+        $data['file_document3'] = $request->file('file_document3')->storeAs('public/permit', $name4, 'public');
 
         // $save = new Permit();
 
