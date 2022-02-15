@@ -123,15 +123,18 @@
 
                 {
                     data: 'id',
-                    name: 'id'
+                    name: 'id',
+                    "className": "text-center",
                 },
                 {
                     data: 'permit_type',
-                    name: 'permit_type'
+                    name: 'permit_type',
+                    "className": "text-center",
                 },
                 {
                     data: 'status',
-                    name: 'status'
+                    name: 'status',
+                    "className": "text-center",
                 },
 
                 // { data: 'user.fraud.tanggal', name:'user.fraud.tanggal' },
@@ -140,7 +143,8 @@
                     name: 'action',
                     orderable: false,
                     searcable: false,
-                    width: '15%'
+                    width: '15%',
+                    "className": "text-center",
                 },
             ]
 
