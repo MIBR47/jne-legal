@@ -419,7 +419,7 @@
                             </div>
                         </div>
                     </div>
-                    {{-- <div class="col-span-2">
+                    <div class="col-span-2">
                         <div class="flex">
                             <label for="date"
                                 class="flex items-center flex-[3] mb-2 text-md font-medium text-gray-900 dark:text-gray-300">Surat
@@ -430,7 +430,7 @@
                                     aria-describedby="user_avatar_help" id="user_avatar" type="file">
                             </div>
                         </div>
-                    </div> --}}
+                    </div>
                 </div>
 
                 <div class="grid grid-rows-2 grid-flow-col gap-4 mb-4">
