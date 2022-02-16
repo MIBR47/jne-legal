@@ -116,21 +116,24 @@ Route::middleware('auth')->group(function () {
     });
 
     Route::prefix('/legal-litigation-1')->middleware('IsLegalLiti1')->group(function () {
-        Route::get('/', function () {
-            return view('pages.litigation.legal-litigation-1.index');
-        })->name('legal1');
+        Route::get('/', [LitigationController::class, 'dashboardLiti1'])->name('legal1-dashboard');
+
+        Route::get('/check/{id}', [LitigationController::class, 'check'])->name('legal1-check');
+        Route::post('/check/{id}', [LitigationController::class, 'checkPost'])->name('legal1-check-post');
     });
 
     Route::prefix('/legal-litigation-2')->middleware('IsLegalLiti2')->group(function () {
-        Route::get('/', function () {
-            return view('pages.litigation.legal-litigation-2.index');
-        })->name('legal2');
+        Route::get('/', [LitigationController::class, 'dashboardLiti2'])->name('legal2-dashboard');
+
+        Route::get('/check/{id}', [LitigationController::class, 'checkLiti2'])->name('legal2-check');
+        Route::post('/check/{id}', [LitigationController::class, 'checkLiti2Post'])->name('legal2-check-post');
     });
 
     Route::prefix('/legal-manager')->group(function () {
-        Route::get('/', function () {
-            return view('pages.litigation.legal-manager.index');
-        })->name('legalmanager');
+        Route::get('/', [LitigationController::class, 'dashboardManager'])->name('legal-manager-dashboard');
+
+        Route::get('/check/{id}', [LitigationController::class, 'checkManager'])->name('legal-manager-check');
+        Route::post('/check/{id}', [LitigationController::class, 'checkManagerPost'])->name('legal-manager-check-post');
     });
 
     Route::prefix('/team-cs')->middleware('IsTeamCs')->group(function () {
@@ -138,6 +141,9 @@ Route::middleware('auth')->group(function () {
 
         Route::get('/update/{id}', [TeamCsController::class, 'update'])->name('cs-update');
         Route::post('/update/{id}', [TeamCsController::class, 'updatePost'])->name('cs-update-post');
+
+        Route::get('/finish/{id}', [TeamCsController::class, 'finish'])->name('cs-finish');
+        Route::post('/finish/{id}', [TeamCsController::class, 'finishPost'])->name('cs-finish-post');
     });
 
     Route::prefix('/legal-lease')->group(function () {

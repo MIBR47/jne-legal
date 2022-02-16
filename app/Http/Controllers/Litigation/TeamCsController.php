@@ -14,12 +14,13 @@ class TeamCsController extends Controller
     {
         if (request()->ajax())
         {
-
-            $query = Cs::all();
+            $name = 'LEGAL MANAGER';
+            $query = Cs::query()->where('status', 'LIKE', '%'.$name.'%')->orWhere('status', '=', 'PENDING');
             return DataTables::of($query)
             ->addIndexColumn()
                 ->addColumn('action',function($cs){
-                    return '
+                    if ($cs->status == 'PENDING') {
+                        return '
                         <a href = "'.route('cs-update',$cs->id).'">
                             <button type="button" class="text-white bg-blue-700
                                 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300
@@ -29,6 +30,18 @@ class TeamCsController extends Controller
                             </button>
                         </a>
                     ';
+                    } else {
+                        return '
+                        <a href = "'.route('cs-finish',$cs->id).'">
+                            <button type="button" class="text-white bg-red-700
+                                hover:bg-red-800 focus:ring-4 focus:ring-red-300
+                                font-medium rounded-full text-sm px-5 py-4 text-center mr-2 mb-2
+                                dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-800">
+                                Finish
+                            </button>
+                        </a>
+                    ';
+                    }
                 })
 
             ->rawColumns(['action'])
@@ -38,9 +51,9 @@ class TeamCsController extends Controller
         return view('pages.litigation.team-cs.index');
     }
 
-        public function update($id)
+    public function update($id)
     {
-        $data = Cs::where('id', $id)->firstOrFail();
+        $data = Cs::with(['other','fraud','customerDispute','outstanding'])->where('id', $id)->firstOrFail();
         return view('pages.litigation.team-cs.update', [
             'data' => $data
         ]);
@@ -84,6 +97,37 @@ class TeamCsController extends Controller
             'file_other_supporting_document' => $data['file_other_supporting_document'],
             'nominal_indemnity_offer' => $data['nominal_indemnity_offer'],
             'status' => 'DILENGKAPI OLEH CS']);
+
+        return redirect()->route('team-cs-dashboard');
+    }
+
+    public function finish($id)
+    {
+        $data = Cs::where('id', $id)->firstOrFail();
+        return view('pages.litigation.team-cs.finish', [
+            'data' => $data
+        ]);
+    }
+
+    public function finishPost(Request $request, $id)
+    {
+        $user = auth()->user()->name;
+        $data = $request->all();
+
+        $item = Cs::findOrFail($id);
+
+        // if($request->file('file_response_letter'))
+        // dd($data['file_response_letter']);
+        $name1 = $request->file('file_response_letter')->getClientOriginalName();
+        $data['file_response_letter'] = $request->file('file_response_letter')->storeAs('public/files/file_response_letter',$name1,'public');
+
+        $name2 = $request->file('file_proof_shipment')->getClientOriginalName();
+        $data['file_proof_shipment'] = $request->file('file_proof_shipment')->storeAs('public/files/file_proof_shipment',$name2,'public');
+
+        $item->update([
+            'file_response_letter' => $data['file_response_letter'],
+            'file_proof_shipment' => $data['file_proof_shipment'],
+            'status' => 'FINISHED BY '.$user.' TEAM CS']);
 
         return redirect()->route('team-cs-dashboard');
     }
