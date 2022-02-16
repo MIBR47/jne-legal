@@ -3,6 +3,8 @@
 namespace App\Http;
 
 use App\Http\Middleware\IsAdmin;
+use App\Http\Middleware\IsLegalLiti1;
+use App\Http\Middleware\IsLegalLiti2;
 use App\Http\Middleware\IsLegalPermit;
 use App\Http\Middleware\IsTeamCs;
 use App\Http\Middleware\IsUser;
@@ -71,5 +73,7 @@ class Kernel extends HttpKernel
         'IsUser' => IsUser::class,
         'IsTeamCs' => IsTeamCs::class,
         'IsLegalPermit' => IsLegalPermit::class,
+        'IsLegalLiti1' => IsLegalLiti1::class,
+        'IsLegalLiti2' => IsLegalLiti2::class
     ];
 }

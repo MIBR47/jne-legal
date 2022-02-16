@@ -40,23 +40,28 @@ class LoginController extends Controller
             'password' => 'required',
         ]);
 
-        if(auth()->attempt(array('email' => $input['email'], 'password' => $input['password'])))
-        {
+        if (auth()->attempt(array('email' => $input['email'], 'password' => $input['password']))) {
             $request->session()->regenerate();
             if (auth()->user()->role == 'ADMIN') {
                 return redirect()->route('admin-dashboard');
-            }elseif(auth()->user()->role == 'LEGALPERMIT'){
+            } elseif (auth()->user()->role == 'LEGALPERMIT') {
                 return redirect()->route('legal-permit-dashboard');
-            }elseif(auth()->user()->role == 'LEGALLEASE'){
+            } elseif (auth()->user()->role == 'LEGALLEASE') {
                 return redirect()->route('legal-lease-dashboard');
-            }elseif(auth()->user()->role == 'TEAMCS'){
+            } elseif (auth()->user()->role == 'TEAMCS') {
                 return redirect()->route('team-cs-dashboard');
-            }elseif(auth()->user()->role == 'USER'){
+            } elseif (auth()->user()->role == 'LEGALLITIGASI1') {
+                return redirect()->route('legal1');
+            } elseif (auth()->user()->role == 'LEGALLITIGASI2') {
+                return redirect()->route('legal2');
+            } elseif (auth()->user()->role == 'LEGALMANAGER') {
+                return redirect()->route('legalmanager');
+            } elseif (auth()->user()->role == 'USER') {
                 return redirect()->route('home');
             }
-        }else{
+        } else {
             return redirect()->route('login')
-                ->with('error','Email-Address And Password Are Wrong.');
+                ->with('error', 'Email-Address And Password Are Wrong.');
         }
 
         // if(auth()->attempt(array('email' => $input['email'], 'password' => $input['password'])))
@@ -74,7 +79,8 @@ class LoginController extends Controller
 
     }
 
-    public function logout(Request $request) {
+    public function logout(Request $request)
+    {
         Session::flush();
 
         Auth::logout();

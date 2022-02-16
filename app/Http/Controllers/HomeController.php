@@ -9,16 +9,22 @@ class HomeController extends Controller
 {
     public function index()
     {
-        if (auth()->user()->role == 'ADMIN'){
+        // dd(auth()->user());
+        if (auth()->user()->role == 'ADMIN') {
             return redirect()->route('admin-dashboard');
-        }elseif(auth()->user()->role == 'LEGALPERMIT'){
+        } elseif (auth()->user()->role == 'LEGALPERMIT') {
             return redirect()->route('legal-permit-dashboard');
-        }elseif(auth()->user()->role == 'TEAMCS'){
+        } elseif (auth()->user()->role == 'TEAMCS') {
             return redirect()->route('team-cs-dashboard');
-        }elseif(auth()->user()->role == 'USER'){
+        } elseif (auth()->user()->role == 'LEGALLITIGASI1') {
+            return redirect()->route('legal1');
+        } elseif (auth()->user()->role == 'LEGALLITIGASI2') {
+            return redirect()->route('legal2');
+        } elseif (auth()->user()->role == 'LEGALMANAGER') {
+            return redirect()->route('legalmanager');
+        } elseif (auth()->user()->role == 'USER') {
             return view('welcome');
         }
-
     }
 
     public function contactUs()

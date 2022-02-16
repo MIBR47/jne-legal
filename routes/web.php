@@ -115,22 +115,22 @@ Route::middleware('auth')->group(function () {
         Route::get('/', [DashboardController::class, 'index'])->name('admin-dashboard');
     });
 
-    Route::prefix('/legal-litigation-1')->group(function () {
+    Route::prefix('/legal-litigation-1')->middleware('IsLegalLiti1')->group(function () {
         Route::get('/', function () {
             return view('pages.litigation.legal-litigation-1.index');
-        });
+        })->name('legal1');
     });
 
-    Route::prefix('/legal-litigation-2')->group(function () {
+    Route::prefix('/legal-litigation-2')->middleware('IsLegalLiti2')->group(function () {
         Route::get('/', function () {
             return view('pages.litigation.legal-litigation-2.index');
-        });
+        })->name('legal2');
     });
 
     Route::prefix('/legal-manager')->group(function () {
         Route::get('/', function () {
             return view('pages.litigation.legal-manager.index');
-        });
+        })->name('legalmanager');
     });
 
     Route::prefix('/team-cs')->middleware('IsTeamCs')->group(function () {
