@@ -106,8 +106,6 @@ class PerizinanBaruController extends Controller
 
         // UploadFile::create($validatedData2);
         Permit::create($data);
-        StatusPermit::create(['permit_id' => $id_permit]);
-        ReasonPermit::create(['permit_id' => $id_permit]);
 
         return redirect()->route('home');
     }

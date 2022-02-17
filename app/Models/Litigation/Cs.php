@@ -28,4 +28,20 @@ class Cs extends Model
         return $this->belongsTo(User::class,'user_id','id');
     }
 
+    public function other(){
+        return $this->belongsTo(Other::class,'form_id','id');
+    }
+
+    public function fraud(){
+        return $this->belongsTo(Fraud::class,'form_id','id');
+    }
+
+    public function customerDispute(){
+        return $this->belongsTo(CustomerDispute::class,'form_id','id');
+    }
+
+    public function outstanding(){
+        return $this->belongsTo(Outstanding::class,'form_id','id');
+    }
+
 }
