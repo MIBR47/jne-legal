@@ -8,6 +8,7 @@ module.exports = {
         extend: {
             gridRow: {
                 "span-21": "span 21 / span 21",
+                "span-7": "span 7 / span 7",
                 "span-22": "span 22 / span 22",
                 8: "span 8 / span 8",
             },
