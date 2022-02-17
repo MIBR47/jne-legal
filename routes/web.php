@@ -4,6 +4,7 @@ use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\DatabaseController;
 use App\Http\Controllers\DownloadController;
+use App\Http\Controllers\Drafting\ContractBusinessController;
 use App\Http\Controllers\Drafting\CustomerController;
 use App\Http\Controllers\Drafting\DraftingController;
 use App\Http\Controllers\Drafting\LeaseController;
@@ -46,6 +47,10 @@ Route::middleware('auth')->group(function () {
     Route::get('/database', [DatabaseController::class, 'index'])->name('database');
     Route::get('/storage/{public}', [DownloadController::class, 'downloadFile'])->name('download');
     Route::get('/contact-us', [HomeController::class, 'contactUs'])->name('contactUs');
+
+    Route::get('/update/{id}', [ContractBusinessController::class, 'update'])->name('cd-update');
+    Route::post('/update/{id}', [ContractBusinessController::class, 'updatePost'])->name('cd-update-post');
+
     Route::prefix('/drafting')->group(function () {
         Route::get('/', [DraftingController::class, 'index'])->name('drafting-index');
 
@@ -144,6 +149,16 @@ Route::middleware('auth')->group(function () {
 
         Route::get('/finish/{id}', [TeamCsController::class, 'finish'])->name('cs-finish');
         Route::post('/finish/{id}', [TeamCsController::class, 'finishPost'])->name('cs-finish-post');
+    });
+
+    Route::prefix('/contract-business')->middleware('IsCd')->group(function () {
+        Route::get('/', [ContractBusinessController::class, 'index'])->name('cd-dashboard');
+
+        Route::get('/check/{id}', [ContractBusinessController::class, 'check'])->name('cd-check');
+        Route::post('/check/{id}', [ContractBusinessController::class, 'checkPost'])->name('cd-check-post');
+
+        Route::get('/finish/{id}', [ContractBusinessController::class, 'finish'])->name('cd-finish');
+        Route::post('/finish/{id}', [ContractBusinessController::class, 'finishPost'])->name('cd-finish-post');
     });
 
     Route::prefix('/legal-lease')->group(function () {

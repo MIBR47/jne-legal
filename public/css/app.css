@@ -499,6 +499,9 @@ Ensure the default browser behavior of the `hidden` attribute.
 .row-span-5 {
   grid-row: span 5 / span 5;
 }
+.row-span-7 {
+  grid-row: span 7 / span 7;
+}
 .float-right {
   float: right;
 }
