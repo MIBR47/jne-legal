@@ -44,7 +44,7 @@ Route::middleware('auth')->group(function () {
     });
     Route::get('/', [HomeController::class, 'index'])->name('home');
     Route::get('/database', [DatabaseController::class, 'index'])->name('database');
-    Route::get('/storage/{public}')->name('download');
+    Route::get('/storage/{public}', [DownloadController::class, 'downloadFile'])->name('download');
     Route::get('/contact-us', [HomeController::class, 'contactUs'])->name('contactUs');
     Route::prefix('/drafting')->group(function () {
         Route::get('/', [DraftingController::class, 'index'])->name('drafting-index');

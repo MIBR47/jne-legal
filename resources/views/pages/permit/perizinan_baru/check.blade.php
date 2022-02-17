@@ -99,11 +99,21 @@
                                 {{-- <div class="grid content-center mr-4">
                                     Download File here
                                 </div> --}}
+                                <?php
+                                // $file = Str::substr(, 1);
+                                // $file = substr('$data->file_disposition', 6);
+                                // $file2 = substr('Hello world', 6);
+                                // Str::limit($string, $limit, '...')
+
+                                // dd(Str::limit($data->file_disposition, 10, 'asd'));
+                                ?>
                                 <a class="btn place-content-center" type="submit"
-                                    href="{{ route('download', $data->file_disposition) }}">
+                                    href="{{ route('download', substr($data->file_disposition, 14)) }}">
                                     <i class="fa-solid fa-file-arrow-down fa-3x"></i>
                                     {{-- <i class="fa-solid fa-download fa-2x"></i> --}}
                                 </a>
+
+                                {{-- {{ substr($data->file_disposition, 14) }} --}}
                             </div>
 
 
@@ -128,7 +138,7 @@
                             class="flex items-center flex-[3] mb-2 text-md font-medium text-gray-900 dark:text-gray-300">Dokumen
                             1</label>
                         <div class="flex-[4]">
-                            <input value="{{ URL::asset('/files/' . $data->file_document1) }}"
+                            <input value="{{ substr($data->file_document1, 14) }}"
                                 class="p-2.5 block w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 cursor-pointer dark:text-gray-400 focus:outline-none focus:border-transparent dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400"
                                 readonly type="text">
                         </div>
