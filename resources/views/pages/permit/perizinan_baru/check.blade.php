@@ -96,17 +96,7 @@
                             {{-- <a class="btn" type="submit" href="/storage/{{ $data->file_disposition }}">
                                 Download</a> --}}
                             <div class="flex flex-row">
-                                {{-- <div class="grid content-center mr-4">
-                                    Download File here
-                                </div> --}}
-                                <?php
-                                // $file = Str::substr(, 1);
-                                // $file = substr('$data->file_disposition', 6);
-                                // $file2 = substr('Hello world', 6);
-                                // Str::limit($string, $limit, '...')
 
-                                // dd(Str::limit($data->file_disposition, 10, 'asd'));
-                                ?>
                                 <a class="btn place-content-center" type="submit"
                                     href="{{ route('download', substr($data->file_disposition, 14)) }}">
                                     <i class="fa-solid fa-file-arrow-down fa-3x"></i>
