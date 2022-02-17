@@ -87,6 +87,17 @@
                                     class="p-2.5 block w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 cursor-pointer dark:text-gray-400 focus:outline-none focus:border-transparent dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400"
                                     aria-describedby="user_avatar_help" id="user_avatar" name="file_pod_evidence"
                                     type="text">
+                                <div class="flex flex-row">
+                                    <a href="{{ route('download-litigation', substr($data->file_pod_evidence, 18)) }}"
+                                        style="font-size:24px ">
+                                        <div
+                                            class="bg-[#384094] hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">
+                                            Download
+                                            <i class="fa fa-download"></i>
+                                        </div>
+                                    </a>
+                                    {{-- {{ substr($data->file_disposition, 14) }} --}}
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -100,6 +111,17 @@
                                     class="p-2.5 block w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 cursor-pointer dark:text-gray-400 focus:outline-none focus:border-transparent dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400"
                                     aria-describedby="user_avatar_help" id="user_avatar" name="file_receipt_proof"
                                     type="text">
+                                <div class="flex flex-row">
+                                    <a href="{{ route('download-litigation', substr($data->file_receipt_proof, 18)) }}"
+                                        style="font-size:24px ">
+                                        <div
+                                            class="bg-[#384094] hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">
+                                            Download
+                                            <i class="fa fa-download"></i>
+                                        </div>
+                                    </a>
+                                    {{-- {{ substr($data->file_disposition, 14) }} --}}
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -116,6 +138,17 @@
                                     class="p-2.5 block w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 cursor-pointer dark:text-gray-400 focus:outline-none focus:border-transparent dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400"
                                     aria-describedby="user_avatar_help" id="user_avatar" name="file_proof_of_documentation1"
                                     type="text">
+                                <div class="flex flex-row">
+                                    <a href="{{ route('download-litigation', substr($data->file_proof_of_documentation1, 18)) }}"
+                                        style="font-size:24px ">
+                                        <div
+                                            class="bg-[#384094] hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">
+                                            Download
+                                            <i class="fa fa-download"></i>
+                                        </div>
+                                    </a>
+                                    {{-- {{ substr($data->file_disposition, 14) }} --}}
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -129,6 +162,17 @@
                                     class="p-2.5 block w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 cursor-pointer dark:text-gray-400 focus:outline-none focus:border-transparent dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400"
                                     aria-describedby="user_avatar_help" id="user_avatar" name="file_proof_of_documentation2"
                                     type="text">
+                                <div class="flex flex-row">
+                                    <a href="{{ route('download-litigation', substr($data->file_proof_of_documentation2, 18)) }}"
+                                        style="font-size:24px ">
+                                        <div
+                                            class="bg-[#384094] hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">
+                                            Download
+                                            <i class="fa fa-download"></i>
+                                        </div>
+                                    </a>
+                                    {{-- {{ substr($data->file_disposition, 14) }} --}}
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -142,6 +186,17 @@
                                     class="p-2.5 block w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 cursor-pointer dark:text-gray-400 focus:outline-none focus:border-transparent dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400"
                                     aria-describedby="user_avatar_help" id="user_avatar" name="file_proof_of_documentation3"
                                     type="text">
+                                <div class="flex flex-row">
+                                    <a href="{{ route('download-litigation', substr($data->file_proof_of_documentation3, 18)) }}"
+                                        style="font-size:24px ">
+                                        <div
+                                            class="bg-[#384094] hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">
+                                            Download
+                                            <i class="fa fa-download"></i>
+                                        </div>
+                                    </a>
+                                    {{-- {{ substr($data->file_disposition, 14) }} --}}
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -155,6 +210,17 @@
                                     class="p-2.5 block w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 cursor-pointer dark:text-gray-400 focus:outline-none focus:border-transparent dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400"
                                     aria-describedby="user_avatar_help" id="user_avatar"
                                     name="file_other_supporting_document" type="text">
+                                <div class="flex flex-row">
+                                    <a href="{{ route('download-litigation', substr($data->file_other_supporting_document, 18)) }}"
+                                        style="font-size:24px ">
+                                        <div
+                                            class="bg-[#384094] hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">
+                                            Download
+                                            <i class="fa fa-download"></i>
+                                        </div>
+                                    </a>
+                                    {{-- {{ substr($data->file_disposition, 14) }} --}}
+                                </div>
                             </div>
                         </div>
                     </div>

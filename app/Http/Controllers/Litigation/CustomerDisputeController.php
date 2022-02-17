@@ -12,7 +12,7 @@ class CustomerDisputeController extends Controller
 {
     public function index()
     {
-        $datenow = date('d-M-Y',strtotime(Carbon::now()));
+        $datenow = date('d-M-Y', strtotime(Carbon::now()));
         $dateNow = date('Y-m-d') . ' 00:00:00';
         $check_user = CustomerDispute::select('*')
             ->whereDate('created_at', '>=', $dateNow)
@@ -35,7 +35,7 @@ class CustomerDisputeController extends Controller
 
         return view('pages.litigation.customer_dispute.index', [
             'no_kasus' => $no_kasus,
-            'datenow'=>$datenow
+            'datenow' => $datenow
         ]);
     }
 
@@ -49,7 +49,8 @@ class CustomerDisputeController extends Controller
         return view('pages.litigation.customer_dispute.report');
     }
 
-    public function store(Request $request){
+    public function store(Request $request)
+    {
         $data = $request->all();
         $id = $data['id'];
         $user_id = $request->user_id;
@@ -77,7 +78,7 @@ class CustomerDisputeController extends Controller
         //     'file_document_completeness' => 'required',
         //     'file_other_evidence' => 'required',
         // ]);
-#
+        #
         // $validatedData2 = $request->validate([
         //     // 'id' => 'required',
 
@@ -86,13 +87,13 @@ class CustomerDisputeController extends Controller
 
         // $data = $request->all();
 
-        $name = $request->file('file_witness_testimony')->getClientOriginalName();
-        $name2 = $request->file('file_letter_document')->getClientOriginalName();
-        $name3 = $request->file('file_claim_form_document')->getClientOriginalName();
-        $name4 = $request->file('file_other_document')->getClientOriginalName();
-        $name5 = $request->file('file_evidence')->getClientOriginalName();
-        $name6 = $request->file('file_document_completeness')->getClientOriginalName();
-        $name7 = $request->file('file_other_evidence')->getClientOriginalName();
+        $name = time() . '-' . $request->file('file_witness_testimony')->getClientOriginalName();
+        $name2 = time() . '-' . $request->file('file_letter_document')->getClientOriginalName();
+        $name3 = time() . '-' . $request->file('file_claim_form_document')->getClientOriginalName();
+        $name4 = time() . '-' . $request->file('file_other_document')->getClientOriginalName();
+        $name5 = time() . '-' . $request->file('file_evidence')->getClientOriginalName();
+        $name6 = time() . '-' . $request->file('file_document_completeness')->getClientOriginalName();
+        $name7 = time() . '-' . $request->file('file_other_evidence')->getClientOriginalName();
 
         // $path = $request->file('file_witness_testimony')->store('public/files');
         // $path2= $request->file('file_letter_document')->store('public/files');
@@ -102,13 +103,13 @@ class CustomerDisputeController extends Controller
         // $path6 = $request->file('file_document_completeness')->store('public/files');
         // $path7 = $request->file('file_other_evidence')->store('public/files');
 
-        $data['file_witness_testimony'] = $request->file('file_witness_testimony')->storeAs('public/files/file_witness_testimony',$name,'public');
-        $data['file_letter_document'] = $request->file('file_letter_document')->storeAs('public/files/file_letter_document',$name2,'public');
-        $data['file_claim_form_document'] = $request->file('file_claim_form_document')->storeAs('public/files/file_claim_form_document',$name3,'public');
-        $data['file_other_document'] = $request->file('file_other_document')->storeAs('public/files/file_other_document',$name4,'public');
-        $data['file_evidence'] = $request->file('file_evidence')->storeAs('public/files/file_evidence',$name5,'public');
-        $data['file_document_completeness'] = $request->file('file_document_completeness')->storeAs('public/files/file_document_completeness',$name6,'public');
-        $data['file_other_evidence'] = $request->file('file_other_evidence')->storeAs('public/files/file_other_evidence',$name7,'public');
+        $data['file_witness_testimony'] = $request->file('file_witness_testimony')->storeAs('public/litigation', $name, 'public');
+        $data['file_letter_document'] = $request->file('file_letter_document')->storeAs('public/litigation', $name2, 'public');
+        $data['file_claim_form_document'] = $request->file('file_claim_form_document')->storeAs('public/litigation', $name3, 'public');
+        $data['file_other_document'] = $request->file('file_other_document')->storeAs('public/litigation', $name4, 'public');
+        $data['file_evidence'] = $request->file('file_evidence')->storeAs('public/litigation', $name5, 'public');
+        $data['file_document_completeness'] = $request->file('file_document_completeness')->storeAs('publiclitigation', $name6, 'public');
+        $data['file_other_evidence'] = $request->file('file_other_evidence')->storeAs('public/litigation', $name7, 'public');
 
         // $save = new CustomerDispute;
 
@@ -130,7 +131,7 @@ class CustomerDisputeController extends Controller
 
         // UploadFile::create($validatedData2);
         CustomerDispute::create($data);
-        Cs::create(['form_id'=> $id,'user_id'=> $user_id]);
+        Cs::create(['form_id' => $id, 'user_id' => $user_id]);
 
         return redirect()->route('home');
     }

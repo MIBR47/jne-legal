@@ -877,6 +877,10 @@ Ensure the default browser behavior of the `hidden` attribute.
   --tw-bg-opacity: 1;
   background-color: rgb(61 129 22 / var(--tw-bg-opacity));
 }
+.bg-\[\#384094\] {
+  --tw-bg-opacity: 1;
+  background-color: rgb(56 64 148 / var(--tw-bg-opacity));
+}
 .fill-current {
   fill: currentColor;
 }

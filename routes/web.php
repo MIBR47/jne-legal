@@ -45,7 +45,8 @@ Route::middleware('auth')->group(function () {
     });
     Route::get('/', [HomeController::class, 'index'])->name('home');
     Route::get('/database', [DatabaseController::class, 'index'])->name('database');
-    Route::get('/storage/{public}', [DownloadController::class, 'downloadFile'])->name('download');
+    Route::get('/downloadPermit/{public}', [DownloadController::class, 'downloadPermit'])->name('download');
+    Route::get('/downloadLitigation/{download}', [DownloadController::class, 'downloadLitigation'])->name('download-litigation');
     Route::get('/contact-us', [HomeController::class, 'contactUs'])->name('contactUs');
 
     Route::get('/update/{id}', [ContractBusinessController::class, 'update'])->name('cd-update');
