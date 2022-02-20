@@ -40,7 +40,7 @@
                         <div class="flex-[4]">
                             <select id="countries" name="case_type"
                                 class=" @error('case_type') is-invalid @enderror bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
-                                <option selected disabled>-- Pilih --</option>
+                                <option style="display: none">-- Pilih --</option>
                                 <option>Terlambat</option>
                                 <option>Hilang</option>
                                 <option>Rusak</option>
@@ -57,9 +57,9 @@
                             class="flex items-center flex-[3] mb-2 text-md font-medium text-gray-900 dark:text-gray-300">Faktor
                             Penyebab</label>
                         <div class="flex-[4]">
-                            <select id="countries" name="causative_factor"
+                            <select onchange="yesnoCheck(this);" id="countries" name="causative_factor"
                                 class=" @error('causative_factor') is-invalid @enderror bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
-                                <option selected disabled>-- Pilih --</option>
+                                <option style="display: none">-- Pilih --</option>
                                 <option>Alamat Tidak Jelas</option>
                                 <option>Penerima Tidak Tepat</option>
                                 <option>Kendala Pihak Ketiga</option>
@@ -75,18 +75,20 @@
                             @enderror
                         </div>
                     </div>
-                    <div class="flex">
-                        <label for="text"
-                            class="flex items-center flex-[3] mb-2 text-md font-medium text-gray-900 dark:text-gray-300"></label>
-                        <div class="flex-[4]">
-                            <textarea id="message" name="causative_factor_others" rows="4"
-                                class=" @error('causative_factor_others') is-invalid @enderror block p-2 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                                placeholder=""></textarea>
-                            @error('causative_factor_others')
-                                <div class="text-red-500">
-                                    {{ $message }}
-                                </div>
-                            @enderror
+                    <div id="ifYes" style="display: none;">
+                        <div class="flex">
+                            <label for="text"
+                                class="flex items-center flex-[3] mb-2 text-md font-medium text-gray-900 dark:text-gray-300"></label>
+                            <div class="flex-[4]">
+                                <textarea id="message" name="causative_factor_others" rows="4"
+                                    class=" @error('causative_factor_others') is-invalid @enderror block p-2 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                                    placeholder=""></textarea>
+                                @error('causative_factor_others')
+                                    <div class="text-red-500">
+                                        {{ $message }}
+                                    </div>
+                                @enderror
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -134,7 +136,7 @@
                         <div class="flex-[4]">
                             <select id="countries" name="connote"
                                 class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
-                                <option selected disabled>-- Pilih --</option>
+                                <option style="display: none">-- Pilih --</option>
                                 <option>Internal</option>
                                 <option>Eksternal</option>
                             </select>
@@ -177,7 +179,7 @@
                         <div class="flex-[4]">
                             <select id="countries" name="shipping_type"
                                 class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
-                                <option selected disabled>-- Pilih --</option>
+                                <option style="display: none">-- Pilih --</option>
                                 <option>High Value Service</option>
                                 <option>Non HVS</option>
                                 <option>Makanan</option>
@@ -191,7 +193,7 @@
                         <div class="flex-[4]">
                             <select id="countries" name="assurance"
                                 class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
-                                <option selected disabled>-- Pilih --</option>
+                                <option style="display: none">-- Pilih --</option>
                                 <option value="1">Ya</option>
                                 <option value="2">Tidak</option>
                             </select>
@@ -220,9 +222,9 @@
                         class="flex items-center flex-[3] mb-2 text-md font-medium text-gray-900 dark:text-gray-300">Bentuk
                         Kiriman</label>
                     <div class="flex-[4]">
-                        <select id="countries" name="shipping_form"
+                        <select onchange="yesnoCheck2(this);" id="countries" name="shipping_form"
                             class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
-                            <option>-- Pilih --</option>
+                            <option style="display: none">-- Pilih --</option>
                             <option>Dokumen</option>
                             <option>KTP</option>
                             <option>Paspor</option>
@@ -236,19 +238,21 @@
                         </select>
                     </div>
                 </div>
-                <div class="flex mb-4">
-                    <label for="text"
-                        class="flex items-center flex-[3] mb-2 text-md font-medium text-gray-900 dark:text-gray-300"></label>
-                    <div class="flex-[4]">
-                        <textarea id="message" rows="4" name="detail_shipping_form"
-                            class="@error('detail_shipping_form') is-invalid @enderror block p-2 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                            placeholder=""></textarea>
-                        @error('detail_shipping_form')
-                            <div class="text-red-500">
-                                {{ $message }}
-                            </div>
-                        @enderror
+                <div id="ifYes2" style="display: none;">
+                    <div class="flex mb-4">
+                        <label for="text"
+                            class="flex items-center flex-[3] mb-2 text-md font-medium text-gray-900 dark:text-gray-300"></label>
+                        <div class="flex-[4]">
+                            <textarea id="message" rows="4" name="detail_shipping_form"
+                                class="@error('detail_shipping_form') is-invalid @enderror block p-2 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                                placeholder=""></textarea>
+                            @error('detail_shipping_form')
+                                <div class="text-red-500">
+                                    {{ $message }}
+                                </div>
+                            @enderror
 
+                        </div>
                     </div>
                 </div>
 
@@ -387,4 +391,23 @@
             </div>
         </form>
     </div>
+    <script>
+        function yesnoCheck(that) {
+            if (that.value == "Lain - Lain") {
+                // alert("check");
+                document.getElementById("ifYes").style.display = "block";
+            } else {
+                document.getElementById("ifYes").style.display = "none";
+            }
+        }
+
+        function yesnoCheck2(that) {
+            if (that.value == "Lain - Lain") {
+                // alert("check");
+                document.getElementById("ifYes2").style.display = "block";
+            } else {
+                document.getElementById("ifYes2").style.display = "none";
+            }
+        }
+    </script>
 @endsection
