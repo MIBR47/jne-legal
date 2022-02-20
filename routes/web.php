@@ -150,6 +150,9 @@ Route::middleware('auth')->group(function () {
 
         Route::get('/finish/{id}', [TeamCsController::class, 'finish'])->name('cs-finish');
         Route::post('/finish/{id}', [TeamCsController::class, 'finishPost'])->name('cs-finish-post');
+
+        Route::get('/close/{id}', [TeamCsController::class, 'close'])->name('cs-close');
+        Route::post('/close/{id}', [TeamCsController::class, 'closePost'])->name('cs-close-post');
     });
 
     Route::prefix('/contract-business')->middleware('IsCd')->group(function () {

@@ -4,7 +4,7 @@
     <div class="flex flex-col gap-4 mx-36 my-4">
         <h1 class="text-4xl mb-4 text-black capitalize font-medium">Litigasi Team CS</h1>
         <form class="mt-4" method="post" enctype="multipart/form-data"
-            action="{{ route('cs-finish-post', $data->id) }}">
+            action="{{ route('cs-close-post', $data->id) }}">
             @csrf
 
             <div class="grid grid-cols-2 gap-16 mb-4">
@@ -192,9 +192,9 @@
                             class="flex items-center flex-[3] mb-2 text-md font-medium text-gray-900 dark:text-gray-300">Scan
                             Surat Tanggapan</label>
                         <div class="flex-[4]">
-                            <input name="file_response_letter"
+                            <input name="file_response_letter" value="{{ $data->file_response_letter }}"
                                 class="p-2.5 block w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 cursor-pointer dark:text-gray-400 focus:outline-none focus:border-transparent dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400"
-                                aria-describedby="user_avatar_help" id="user_avatar" type="file">
+                                aria-describedby="user_avatar_help" id="user_avatar" type="text">
                         </div>
                     </div>
                 </div>
@@ -204,9 +204,9 @@
                             class="flex items-center flex-[3] mb-2 text-md font-medium text-gray-900 dark:text-gray-300">Bukti
                             Pengiriman</label>
                         <div class="flex-[4]">
-                            <input name="file_proof_shipment"
+                            <input name="file_proof_shipment" value="{{ $data->file_proof_shipment }}"
                                 class="p-2.5 block w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 cursor-pointer dark:text-gray-400 focus:outline-none focus:border-transparent dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400"
-                                aria-describedby="user_avatar_help" id="user_avatar" type="file">
+                                aria-describedby="user_avatar_help" id="user_avatar" type="text">
                         </div>
                     </div>
                 </div>
@@ -223,8 +223,59 @@
                         </div>
                     </div>
                 </div>
+                <div class="flex flex-col gap-4">
+                    <div class="flex">
+                        <label for="date"
+                            class="flex items-center flex-[3] mb-2 text-md font-medium text-gray-900 dark:text-gray-300">Status
+                            Kasus</label>
+                        <div class="flex-[4]">
+                            <select name="status"
+                                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                                id="">
+                                <option value="Kasus selesai penggantian">Kasus selesai penggantian</option>
+                                <option value="Perdamaian">Perdamaian</option>
+                                <option value="Lewat >3 Bulan">Lewat >3 Bulan</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="flex flex-col gap-4">
+                    <div class="flex">
+                        <label for="date"
+                            class="flex items-center flex-[3] mb-2 text-md font-medium text-gray-900 dark:text-gray-300">Surat
+                            Tanggapan Penerimaan</label>
+                        <div class="flex-[4]">
+                            <input name="file_acceptance_letter"
+                                class="p-2.5 block w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 cursor-pointer dark:text-gray-400 focus:outline-none focus:border-transparent dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400"
+                                aria-describedby="user_avatar_help" id="user_avatar" type="file">
+                        </div>
+                    </div>
+                </div>
+                <div class="flex flex-col gap-4">
+                    <div class="flex">
+                        <label for="date"
+                            class="flex items-center flex-[3] mb-2 text-md font-medium text-gray-900 dark:text-gray-300">Laporan
+                            Penyelesaian Kasus</label>
+                        <div class="flex-[4]">
+                            <input name="file_case_report"
+                                class="p-2.5 block w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 cursor-pointer dark:text-gray-400 focus:outline-none focus:border-transparent dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400"
+                                aria-describedby="user_avatar_help" id="user_avatar" type="file">
+                        </div>
+                    </div>
+                </div>
+                <div class="flex flex-col gap-4 mb-4">
+                    <div class="flex">
+                        <label for="date"
+                            class="flex items-center flex-[3] mb-2 text-md font-medium text-gray-900 dark:text-gray-300">Bukti
+                            Pembayaran</label>
+                        <div class="flex-[4]">
+                            <input name="file_invoice"
+                                class="p-2.5 block w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 cursor-pointer dark:text-gray-400 focus:outline-none focus:border-transparent dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400"
+                                aria-describedby="user_avatar_help" id="user_avatar" type="file">
+                        </div>
+                    </div>
+                </div>
             </div>
-
 
             <div class="flex justify-end items-center">
                 <button type="submit"
