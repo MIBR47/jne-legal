@@ -11,7 +11,7 @@ class VendorController extends Controller
 {
     public function index()
     {
-        $datenow = date('d-M-Y',strtotime(Carbon::now()));
+        $datenow = date('d-M-Y', strtotime(Carbon::now()));
         $dateNow = date('Y-m-d') . ' 00:00:00';
         $check_user = VendorSupplier::select('*')
             ->whereDate('created_at', '>=', $dateNow)
@@ -34,7 +34,7 @@ class VendorController extends Controller
 
         return view('pages.drafting.vendor_supplier.index', [
             'no_kasus' => $no_kasus,
-            'datenow'=>$datenow
+            'datenow' => $datenow
         ]);
     }
 
@@ -43,7 +43,8 @@ class VendorController extends Controller
         return view('pages.drafting.vendor_supplier.check');
     }
 
-    public function store(Request $request){
+    public function store(Request $request)
+    {
 
         $data = $request->all();
 
@@ -51,25 +52,25 @@ class VendorController extends Controller
         $name2 = $request->file('file_mom')->getClientOriginalName();
         $name3 = $request->file('file_dispotition')->getClientOriginalName();
         $name4 = $request->file('file_agreement_draft')->getClientOriginalName();
-        $name2 = $request->file('file_customer_entity')->getClientOriginalName();
-        $name3 = $request->file('file_sk_menkumham')->getClientOriginalName();
-        $name4 = $request->file('file_nib')->getClientOriginalName();
-        $name3 = $request->file('file_npwp')->getClientOriginalName();
-        $name4 = $request->file('file_business_permit')->getClientOriginalName();
-        $name3 = $request->file('file_director_id_card')->getClientOriginalName();
-        $name4 = $request->file('file_other')->getClientOriginalName();
+        $name5 = $request->file('file_customer_entity')->getClientOriginalName();
+        $name6 = $request->file('file_sk_menkumham')->getClientOriginalName();
+        $name7 = $request->file('file_nib')->getClientOriginalName();
+        $name8 = $request->file('file_npwp')->getClientOriginalName();
+        $name9 = $request->file('file_business_permit')->getClientOriginalName();
+        $name10 = $request->file('file_director_id_card')->getClientOriginalName();
+        $name11 = $request->file('file_other')->getClientOriginalName();
 
-        $data['file_vendor_offer'] = $request->file('file_vendor_offer')->storeAs('public/files/file_vendor_offer',$name1,'public');
-        $data['file_mom'] = $request->file('file_mom')->storeAs('public/files/file_mom',$name2,'public');
-        $data['file_dispotition'] = $request->file('file_dispotition')->storeAs('public/files/file_dispotition',$name3,'public');
-        $data['file_agreement_draft'] = $request->file('file_agreement_draft')->storeAs('public/files/file_agreement_draft',$name4,'public');
-        $data['file_customer_entity'] = $request->file('file_customer_entity')->storeAs('public/files/file_customer_entity',$name2,'public');
-        $data['file_sk_menkumham'] = $request->file('file_sk_menkumham')->storeAs('public/files/file_sk_menkumham',$name3,'public');
-        $data['file_nib'] = $request->file('file_nib')->storeAs('public/files/file_nib',$name4,'public');
-        $data['file_npwp'] = $request->file('file_npwp')->storeAs('public/files/file_npwp',$name3,'public');
-        $data['file_business_permit'] = $request->file('file_business_permit')->storeAs('public/files/file_business_permit',$name4,'public');
-        $data['file_director_id_card'] = $request->file('file_director_id_card')->storeAs('public/files/file_director_id_card',$name3,'public');
-        $data['file_other'] = $request->file('file_other')->storeAs('public/files/file_other',$name4,'public');
+        $data['file_vendor_offer'] = $request->file('file_vendor_offer')->storeAs('public/Drafting', $name1, 'public');
+        $data['file_mom'] = $request->file('file_mom')->storeAs('public/Drafting', $name2, 'public');
+        $data['file_dispotition'] = $request->file('file_dispotition')->storeAs('public/Drafting', $name3, 'public');
+        $data['file_agreement_draft'] = $request->file('file_agreement_draft')->storeAs('public/Drafting', $name4, 'public');
+        $data['file_customer_entity'] = $request->file('file_customer_entity')->storeAs('public/Drafting', $name5, 'public');
+        $data['file_sk_menkumham'] = $request->file('file_sk_menkumham')->storeAs('public/Drafting', $name6, 'public');
+        $data['file_nib'] = $request->file('file_nib')->storeAs('public/Drafting', $name7, 'public');
+        $data['file_npwp'] = $request->file('file_npwp')->storeAs('public/Drafting', $name8, 'public');
+        $data['file_business_permit'] = $request->file('file_business_permit')->storeAs('public/Drafting', $name9, 'public');
+        $data['file_director_id_card'] = $request->file('file_director_id_card')->storeAs('public/Drafting', $name10, 'public');
+        $data['file_other'] = $request->file('file_other')->storeAs('public/Drafting', $name11, 'public');
         // $save = new Permit();
 
         // $save->name = $name1;

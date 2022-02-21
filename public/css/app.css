@@ -457,24 +457,8 @@ Ensure the default browser behavior of the `hidden` attribute.
     max-width: 1536px;
   }
 }
-.pointer-events-none {
-  pointer-events: none;
-}
 .static {
   position: static;
-}
-.absolute {
-  position: absolute;
-}
-.relative {
-  position: relative;
-}
-.inset-y-0 {
-  top: 0px;
-  bottom: 0px;
-}
-.left-0 {
-  left: 0px;
 }
 .z-10 {
   z-index: 10;
@@ -537,6 +521,10 @@ Ensure the default browser behavior of the `hidden` attribute.
   margin-left: -1.5rem;
   margin-right: -1.5rem;
 }
+.mx-2 {
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
+}
 .my-2 {
   margin-top: 0.5rem;
   margin-bottom: 0.5rem;
@@ -556,10 +544,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 .my-5 {
   margin-top: 1.25rem;
   margin-bottom: 1.25rem;
-}
-.mx-2 {
-  margin-left: 0.5rem;
-  margin-right: 0.5rem;
 }
 .mb-4 {
   margin-bottom: 1rem;
@@ -651,9 +635,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 .h-full {
   height: 100%;
 }
-.h-5 {
-  height: 1.25rem;
-}
 .min-h-screen {
   min-height: 100vh;
 }
@@ -674,9 +655,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 .w-5\/6 {
   width: 83.333333%;
-}
-.w-5 {
-  width: 1.25rem;
 }
 .min-w-0 {
   min-width: 0px;
@@ -976,12 +954,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 .pb-10 {
   padding-bottom: 2.5rem;
-}
-.pl-10 {
-  padding-left: 2.5rem;
-}
-.pl-3 {
-  padding-left: 0.75rem;
 }
 .text-center {
   text-align: center;
@@ -1357,13 +1329,6 @@ Ensure the default browser behavior of the `hidden` attribute.
   .dark\:focus\:ring-green-900:focus {
     --tw-ring-opacity: 1;
     --tw-ring-color: rgb(20 83 45 / var(--tw-ring-opacity));
-  }
-}
-@media (min-width: 640px) {
-
-  .sm\:text-sm {
-    font-size: 0.875rem;
-    line-height: 1.25rem;
   }
 }
 @media (min-width: 768px) {

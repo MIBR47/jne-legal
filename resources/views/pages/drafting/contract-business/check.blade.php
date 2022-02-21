@@ -319,6 +319,20 @@
                                 <input name="file_mom" value="{{ $data->file_mom }}"
                                     class="p-2.5 block w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 cursor-pointer dark:text-gray-400 focus:outline-none focus:border-transparent dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400"
                                     aria-describedby="user_avatar_help" id="user_avatar" type="text">
+                                <div class="flex flex-row">
+
+                                    <a href="{{ route('download-Drafting', substr($data->file_mom, 16)) }}"
+                                        style="font-size:24px ">
+                                        <div
+                                            class="bg-[#384094] hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">
+                                            Download
+                                            <i class="fa fa-download"></i>
+
+                                        </div>
+                                    </a>
+
+                                    {{-- {{ substr($data->file_disposition, 14) }} --}}
+                                </div>
                             </div>
                             <div class="grid grid-cols-3 ml-4 gap-2">
                                 {{-- <form action="" class="">
@@ -353,6 +367,20 @@
                                 <input name="file_agreement_draft" value="{{ $data->file_agreement_draft }}"
                                     class="p-2.5 block w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 cursor-pointer dark:text-gray-400 focus:outline-none focus:border-transparent dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400"
                                     aria-describedby="user_avatar_help" id="user_avatar" type="text">
+                                <div class="flex flex-row">
+
+                                    <a href="{{ route('download-Drafting', substr($data->file_agreement_draft, 16)) }}"
+                                        style="font-size:24px ">
+                                        <div
+                                            class="bg-[#384094] hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">
+                                            Download
+                                            <i class="fa fa-download"></i>
+
+                                        </div>
+                                    </a>
+
+                                    {{-- {{ substr($data->file_disposition, 14) }} --}}
+                                </div>
                             </div>
                             <div class="grid grid-cols-3 ml-4 gap-2">
                                 {{-- <form action="" class="">

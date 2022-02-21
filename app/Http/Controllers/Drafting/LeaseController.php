@@ -11,7 +11,7 @@ class LeaseController extends Controller
 {
     public function index()
     {
-        $datenow = date('d-M-Y',strtotime(Carbon::now()));
+        $datenow = date('d-M-Y', strtotime(Carbon::now()));
         $dateNow = date('Y-m-d') . ' 00:00:00';
         $check_user = Lease::select('*')
             ->whereDate('created_at', '>=', $dateNow)
@@ -34,7 +34,7 @@ class LeaseController extends Controller
 
         return view('pages.drafting.lease.index', [
             'no_kasus' => $no_kasus,
-            'datenow'=> $datenow
+            'datenow' => $datenow
         ]);
     }
 
@@ -70,27 +70,27 @@ class LeaseController extends Controller
         $name20 = $request->file('file_previous_agreement')->getClientOriginalName();
         $name21 = $request->file('file_director_procuration')->getClientOriginalName();
 
-        $data['file_director_disposition'] = $request->file('file_director_disposition')->storeAs('public/files/file_director_disposition',$name1,'public');
-        $data['file_internal_memo'] = $request->file('file_internal_memo')->storeAs('public/files/file_internal_memo',$name2,'public');
-        $data['file_id_card'] = $request->file('file_id_card')->storeAs('public/files/file_id_card',$name3,'public');
-        $data['file_npwp'] = $request->file('file_npwp')->storeAs('public/files/file_npwp',$name4,'public');
-        $data['file_kk'] = $request->file('file_kk')->storeAs('public/files/file_kk',$name5,'public');
-        $data['file_mariagge_book'] = $request->file('file_mariagge_book')->storeAs('public/files/file_mariagge_book',$name6,'public');
-        $data['file_director_id_card'] = $request->file('file_director_id_card')->storeAs('public/files/file_director_id_card',$name7,'public');
-        $data['file_deed'] = $request->file('file_deed')->storeAs('public/files/file_deed',$name8,'public');
-        $data['file_sk_menkumham'] = $request->file('file_sk_menkumham')->storeAs('public/files/file_sk_menkumham',$name9,'public');
-        $data['file_business_permit'] = $request->file('file_business_permit')->storeAs('public/files/file_business_permit',$name10,'public');
-        $data['file_nib'] = $request->file('file_nib')->storeAs('public/files/file_nib',$name11,'public');
-        $data['file_npwp_company'] = $request->file('file_npwp_company')->storeAs('public/files/file_npwp_company',$name12,'public');
-        $data['file_location_permit'] = $request->file('file_location_permit')->storeAs('public/files/file_location_permit',$name13,'public');
-        $data['file_setificate'] = $request->file('file_setificate')->storeAs('public/files/file_setificate',$name14,'public');
-        $data['file_imb'] = $request->file('file_imb')->storeAs('public/files/file_imb',$name15,'public');
-        $data['file_sppt1'] = $request->file('file_sppt1')->storeAs('public/files/file_sppt1',$name16,'public');
-        $data['file_sppt2'] = $request->file('file_sppt2')->storeAs('public/files/file_sppt2',$name17,'public');
-        $data['file_sppt3'] = $request->file('file_sppt3')->storeAs('public/files/file_sppt3',$name18,'public');
-        $data['file_procuration'] = $request->file('file_procuration')->storeAs('public/files/file_procuration',$name19,'public');
-        $data['file_previous_agreement'] = $request->file('file_previous_agreement')->storeAs('public/files/file_previous_agreement',$name20,'public');
-        $data['file_director_procuration'] = $request->file('file_director_procuration')->storeAs('public/files/file_director_procuration',$name21,'public');
+        $data['file_director_disposition'] = $request->file('file_director_disposition')->storeAs('public/Drafting', $name1, 'public');
+        $data['file_internal_memo'] = $request->file('file_internal_memo')->storeAs('public/Drafting', $name2, 'public');
+        $data['file_id_card'] = $request->file('file_id_card')->storeAs('public/Drafting', $name3, 'public');
+        $data['file_npwp'] = $request->file('file_npwp')->storeAs('public/Drafting', $name4, 'public');
+        $data['file_kk'] = $request->file('file_kk')->storeAs('public/Drafting', $name5, 'public');
+        $data['file_mariagge_book'] = $request->file('file_mariagge_book')->storeAs('public/Drafting', $name6, 'public');
+        $data['file_director_id_card'] = $request->file('file_director_id_card')->storeAs('public/Drafting', $name7, 'public');
+        $data['file_deed'] = $request->file('file_deed')->storeAs('public/Drafting', $name8, 'public');
+        $data['file_sk_menkumham'] = $request->file('file_sk_menkumham')->storeAs('public/Drafting', $name9, 'public');
+        $data['file_business_permit'] = $request->file('file_business_permit')->storeAs('public/Drafting', $name10, 'public');
+        $data['file_nib'] = $request->file('file_nib')->storeAs('public/Drafting', $name11, 'public');
+        $data['file_npwp_company'] = $request->file('file_npwp_company')->storeAs('public/Drafting', $name12, 'public');
+        $data['file_location_permit'] = $request->file('file_location_permit')->storeAs('public/Drafting', $name13, 'public');
+        $data['file_setificate'] = $request->file('file_setificate')->storeAs('public/Drafting', $name14, 'public');
+        $data['file_imb'] = $request->file('file_imb')->storeAs('public/Drafting', $name15, 'public');
+        $data['file_sppt1'] = $request->file('file_sppt1')->storeAs('public/Drafting', $name16, 'public');
+        $data['file_sppt2'] = $request->file('file_sppt2')->storeAs('public/Drafting', $name17, 'public');
+        $data['file_sppt3'] = $request->file('file_sppt3')->storeAs('public/Drafting', $name18, 'public');
+        $data['file_procuration'] = $request->file('file_procuration')->storeAs('public/Drafting', $name19, 'public');
+        $data['file_previous_agreement'] = $request->file('file_previous_agreement')->storeAs('public/Drafting', $name20, 'public');
+        $data['file_director_procuration'] = $request->file('file_director_procuration')->storeAs('public/Drafting', $name21, 'public');
 
         // $save = new Permit();
 

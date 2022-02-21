@@ -20,4 +20,9 @@ class DownloadController extends Controller
         $pathToFile = public_path('storage/public/litigation/' . $id);
         return response()->download($pathToFile);
     }
+    function downloadDrafting($id)
+    {
+        $pathToFile = public_path('storage/public/Drafting/' . $id);
+        return response()->download($pathToFile);
+    }
 }
