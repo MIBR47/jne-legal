@@ -166,136 +166,102 @@
                 <label for="text" class="flex items-center flex-[3] mb-2 text-md font-medium text-gray-900 dark:text-gray-300"></label>
                 <div class="flex-[4]">
                     <textarea id="message" rows="4" class="block p-2 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder=""></textarea>
-                </div>
-            </div> --}}
+                </div> --}}
+            </div>
 
-                <div class="grid grid-rows-3 grid-flow-col gap-4 mb-4">
-                    <div class="row-span-4 font-medium">Alat Bukti :</div>
-                    <div class="col-span-2">
-                        <div class="flex">
-                            <label for="date"
-                                class="flex items-center flex-[3] mb-2 text-md font-medium text-gray-900 dark:text-gray-300">Saksi
-                                1</label>
-                            <div class="flex-[4]">
-                                <input type="text" id="text" name="witness1"
-                                    class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                                    required>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-span-2">
-                        <div class="flex">
-                            <label for="date"
-                                class="flex items-center flex-[3] mb-2 text-md font-medium text-gray-900 dark:text-gray-300">Departemen/Unit</label>
-                            <div class="flex-[4]">
-                                <input type="text" id="text" name="witness1_department"
-                                    class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                                    required>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-span-2">
-                        <div class="flex">
-                            <label for="date"
-                                class="flex items-center flex-[3] mb-2 text-md font-medium text-gray-900 dark:text-gray-300">Saksi
-                                2</label>
-                            <div class="flex-[4]">
-                                <input type="text" id="text" name="witness2"
-                                    class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                                    required>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-span-2">
-                        <div class="flex">
-                            <label for="date"
-                                class="flex items-center flex-[3] mb-2 text-md font-medium text-gray-900 dark:text-gray-300">Departemen/Unit</label>
-                            <div class="flex-[4]">
-                                <input type="text" id="text" name="witness2_department"
-                                    class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                                    required>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="grid grid-rows-4 grid-flow-col gap-4 mb-4">
-                    <div class="row-span-4 font-medium"></div>
-                    <div class="col-span-2">
-                        <div class="flex">
-                            <label for="date"
-                                class="flex items-center flex-[3] mb-2 text-md font-medium text-gray-900 dark:text-gray-300">Bukti
-                                Dokumen Surat</label>
-                            <div class="flex-[4]">
-                                <input name="file_document_proof"
-                                    class="p-2.5 block w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 cursor-pointer dark:text-gray-400 focus:outline-none focus:border-transparent dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400"
-                                    aria-describedby="user_avatar_help" id="user_avatar" type="file" required>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-span-2">
-                        <div class="flex">
-                            <label for="date"
-                                class="flex items-center flex-[3] mb-2 text-md font-medium text-gray-900 dark:text-gray-300">Keterangan
-                                Pelaku</label>
-                            <div class="flex-[4]">
-                                <input name="file_perpetrator_statement"
-                                    class="p-2.5 block w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 cursor-pointer dark:text-gray-400 focus:outline-none focus:border-transparent dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400"
-                                    aria-describedby="user_avatar_help" id="user_avatar" type="file" required>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-span-2">
-                        <div class="flex">
-                            <label for="date"
-                                class="flex items-center flex-[3] mb-2 text-md font-medium text-gray-900 dark:text-gray-300">Keterangan
-                                Saksi</label>
-                            <div class="flex-[4]">
-                                <input name="file_witness_statement"
-                                    class="p-2.5 block w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 cursor-pointer dark:text-gray-400 focus:outline-none focus:border-transparent dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400"
-                                    aria-describedby="user_avatar_help" id="user_avatar" type="file" required>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-span-2">
-                        <div class="flex">
-                            <label for="date"
-                                class="flex items-center flex-[3] mb-2 text-md font-medium text-gray-900 dark:text-gray-300">Lain-lain</label>
-                            <div class="flex-[4]">
-                                <input name="file_other"
-                                    class="p-2.5 block w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 cursor-pointer dark:text-gray-400 focus:outline-none focus:border-transparent dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400"
-                                    aria-describedby="user_avatar_help" id="user_avatar" type="file" required>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="flex flex-col gap-4 mb-4">
+            <div class="grid grid-rows-3 grid-flow-col gap-4 mb-4">
+                <div class="row-span-4 font-medium">Alat Bukti :</div>
+                <div class="col-span-2">
                     <div class="flex">
                         <label for="date"
-                            class="flex items-center flex-[3] mb-2 text-md font-medium text-gray-900 dark:text-gray-300">Dokumentasi
-                            Barang Bukti</label>
+                            class="flex items-center flex-[3] mb-2 text-md font-medium text-gray-900 dark:text-gray-300">Saksi
+                            1</label>
                         <div class="flex-[4]">
-                            <input name="file_evidence_documentation"
-                                class="p-2.5 block w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 cursor-pointer dark:text-gray-400 focus:outline-none focus:border-transparent dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400"
-                                aria-describedby="user_avatar_help" id="user_avatar" type="file" required>
+                            <input type="text" id="text" name="witness1"
+                                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                                required>
                         </div>
                     </div>
+                </div>
+                <div class="col-span-2">
                     <div class="flex">
                         <label for="date"
-                            class="flex items-center flex-[3] mb-2 text-md font-medium text-gray-900 dark:text-gray-300">Dokumen
-                            Investigasi</label>
+                            class="flex items-center flex-[3] mb-2 text-md font-medium text-gray-900 dark:text-gray-300">Departemen/Unit</label>
                         <div class="flex-[4]">
-                            <input name="file_investigation_document"
-                                class="p-2.5 block w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 cursor-pointer dark:text-gray-400 focus:outline-none focus:border-transparent dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400"
-                                aria-describedby="user_avatar_help" id="user_avatar" type="file" required>
+                            <input type="text" id="text" name="witness1_department"
+                                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                                required>
                         </div>
                     </div>
+                </div>
+                <div class="col-span-2">
+                    <div class="flex">
+                        <label for="date"
+                            class="flex items-center flex-[3] mb-2 text-md font-medium text-gray-900 dark:text-gray-300">Saksi
+                            2</label>
+                        <div class="flex-[4]">
+                            <input type="text" id="text" name="witness2"
+                                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                                required>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-span-2">
+                    <div class="flex">
+                        <label for="date"
+                            class="flex items-center flex-[3] mb-2 text-md font-medium text-gray-900 dark:text-gray-300">Departemen/Unit</label>
+                        <div class="flex-[4]">
+                            <input type="text" id="text" name="witness2_department"
+                                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                                required>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="grid grid-rows-4 grid-flow-col gap-4 mb-4">
+                <div class="row-span-4 font-medium"></div>
+                <div class="col-span-2">
                     <div class="flex">
                         <label for="date"
                             class="flex items-center flex-[3] mb-2 text-md font-medium text-gray-900 dark:text-gray-300">Bukti
-                            Lainnya</label>
+                            Dokumen Surat</label>
                         <div class="flex-[4]">
-                            <input name="file_other_evidence"
+                            <input name="file_document_proof"
+                                class="p-2.5 block w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 cursor-pointer dark:text-gray-400 focus:outline-none focus:border-transparent dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400"
+                                aria-describedby="user_avatar_help" id="user_avatar" type="file" required>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-span-2">
+                    <div class="flex">
+                        <label for="date"
+                            class="flex items-center flex-[3] mb-2 text-md font-medium text-gray-900 dark:text-gray-300">Keterangan
+                            Pelaku</label>
+                        <div class="flex-[4]">
+                            <input name="file_perpetrator_statement"
+                                class="p-2.5 block w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 cursor-pointer dark:text-gray-400 focus:outline-none focus:border-transparent dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400"
+                                aria-describedby="user_avatar_help" id="user_avatar" type="file" required>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-span-2">
+                    <div class="flex">
+                        <label for="date"
+                            class="flex items-center flex-[3] mb-2 text-md font-medium text-gray-900 dark:text-gray-300">Keterangan
+                            Saksi</label>
+                        <div class="flex-[4]">
+                            <input name="file_witness_statement"
+                                class="p-2.5 block w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 cursor-pointer dark:text-gray-400 focus:outline-none focus:border-transparent dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400"
+                                aria-describedby="user_avatar_help" id="user_avatar" type="file" required>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-span-2">
+                    <div class="flex">
+                        <label for="date"
+                            class="flex items-center flex-[3] mb-2 text-md font-medium text-gray-900 dark:text-gray-300">Lain-lain</label>
+                        <div class="flex-[4]">
+                            <input name="file_other"
                                 class="p-2.5 block w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 cursor-pointer dark:text-gray-400 focus:outline-none focus:border-transparent dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400"
                                 aria-describedby="user_avatar_help" id="user_avatar" type="file" required>
                         </div>
@@ -303,10 +269,45 @@
                 </div>
             </div>
 
-            <div class="flex justify-end items-center">
-                <button type="submit"
-                    class="text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-xl px-20 py-4 text-center mr-2 mb-2 dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-900">Submit</button>
+            <div class="flex flex-col gap-4 mb-4">
+                <div class="flex">
+                    <label for="date"
+                        class="flex items-center flex-[3] mb-2 text-md font-medium text-gray-900 dark:text-gray-300">Dokumentasi
+                        Barang Bukti</label>
+                    <div class="flex-[4]">
+                        <input name="file_evidence_documentation"
+                            class="p-2.5 block w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 cursor-pointer dark:text-gray-400 focus:outline-none focus:border-transparent dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400"
+                            aria-describedby="user_avatar_help" id="user_avatar" type="file" required>
+                    </div>
+                </div>
+                <div class="flex">
+                    <label for="date"
+                        class="flex items-center flex-[3] mb-2 text-md font-medium text-gray-900 dark:text-gray-300">Dokumen
+                        Investigasi</label>
+                    <div class="flex-[4]">
+                        <input name="file_investigation_document"
+                            class="p-2.5 block w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 cursor-pointer dark:text-gray-400 focus:outline-none focus:border-transparent dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400"
+                            aria-describedby="user_avatar_help" id="user_avatar" type="file" required>
+                    </div>
+                </div>
+                <div class="flex">
+                    <label for="date"
+                        class="flex items-center flex-[3] mb-2 text-md font-medium text-gray-900 dark:text-gray-300">Bukti
+                        Lainnya</label>
+                    <div class="flex-[4]">
+                        <input name="file_other_evidence"
+                            class="p-2.5 block w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 cursor-pointer dark:text-gray-400 focus:outline-none focus:border-transparent dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400"
+                            aria-describedby="user_avatar_help" id="user_avatar" type="file" required>
+                    </div>
+                </div>
             </div>
-        </form>
+
+    </div>
+
+    <div class="flex justify-end items-center">
+        <button type="submit"
+            class="text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-xl px-20 py-4 text-center mr-2 mb-2 dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-900">Submit</button>
+    </div>
+    </form>
     </div>
 @endsection

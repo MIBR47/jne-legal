@@ -149,8 +149,17 @@ Route::middleware('auth')->group(function () {
         Route::get('/table_outstanding', [TeamCsController::class, 'table_outstanding'])->name('team-cs-table-outstanding');
         Route::get('/table_other', [TeamCsController::class, 'table_other'])->name('team-cs-table-other');
 
-        Route::get('/update/{id}', [TeamCsController::class, 'update'])->name('cs-update');
-        Route::post('/update/{id}', [TeamCsController::class, 'updatePost'])->name('cs-update-post');
+        Route::get('/update_customer_dispute/{id}', [TeamCsController::class, 'updateCustomer'])->name('cs-update-customer-dispute');
+        Route::post('/update_customer_dispute/{id}', [TeamCsController::class, 'updateCustomerPost'])->name('cs-update-customer-dispute-post');
+
+        Route::get('/update_fraud/{id}', [TeamCsController::class, 'updateFraud'])->name('cs-update-fraud');
+        Route::post('/update_fraud/{id}', [TeamCsController::class, 'updateFraudPost'])->name('cs-update-fraud-post');
+
+        Route::get('/update_outstanding/{id}', [TeamCsController::class, 'updateOutstanding'])->name('cs-update-outstanding');
+        Route::post('/update_outstanding/{id}', [TeamCsController::class, 'updateOutstandingPost'])->name('cs-update-outstanding-post');
+
+        Route::get('/update_other/{id}', [TeamCsController::class, 'updateOther'])->name('cs-update-other');
+        Route::post('/update_other/{id}', [TeamCsController::class, 'updateOtherPost'])->name('cs-update-other-post');
 
         Route::get('/finish/{id}', [TeamCsController::class, 'finish'])->name('cs-finish');
         Route::post('/finish/{id}', [TeamCsController::class, 'finishPost'])->name('cs-finish-post');
