@@ -56,7 +56,7 @@ class ContractBusinessController extends Controller
                 ->addIndexColumn()
                 ->addColumn('action', function ($cd) {
                     return '
-                        <a href = "' . route('cd-check', $cd->id) . '">
+                        <a href = "' . route('cd-check-vendor', $cd->id) . '">
                             <button type="button" class="text-white bg-blue-700
                                 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300
                                 font-medium rounded-full text-sm px-5 py-4 text-center mr-2 mb-2
@@ -106,6 +106,39 @@ class ContractBusinessController extends Controller
                 $data = $request->all();
 
                 $item = Customer::findOrFail($id);
+
+                $item->update([$data, 'note' => $request->note, 'status' => 'APPROVED BY CONTRACT BUSINESS']);
+
+                return redirect()->route('cd-dashboard');
+                break;
+        }
+    }
+
+    public function checkVendor($id)
+    {
+        $data = VendorSupplier::where('id', $id)->firstOrFail();
+        return view('pages.drafting.contract-business.checkVendor', [
+            'data' => $data
+        ]);
+    }
+
+    public function checkVendorPost(Request $request, $id)
+    {
+        switch ($request->input('action')) {
+            case 'return':
+                $data = $request->all();
+
+                $item = VendorSupplier::findOrFail($id);
+
+                $item->update([$data, 'note' => $request->note, 'status' => 'RETURNED BY CONTRACT BUSINESS']);
+
+                return redirect()->route('cd-dashboard');
+                break;
+
+            case 'approve':
+                $data = $request->all();
+
+                $item = VendorSupplier::findOrFail($id);
 
                 $item->update([$data, 'note' => $request->note, 'status' => 'APPROVED BY CONTRACT BUSINESS']);
 

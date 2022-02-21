@@ -164,6 +164,9 @@ Route::middleware('auth')->group(function () {
         Route::get('/check/{id}', [ContractBusinessController::class, 'check'])->name('cd-check');
         Route::post('/check/{id}', [ContractBusinessController::class, 'checkPost'])->name('cd-check-post');
 
+        Route::get('/checkVendor/{id}', [ContractBusinessController::class, 'checkVendor'])->name('cd-check-vendor');
+        Route::post('/checkVendor/{id}', [ContractBusinessController::class, 'checkVendorPost'])->name('cd-check-vendor-post');
+
         Route::get('/finish/{id}', [ContractBusinessController::class, 'finish'])->name('cd-finish');
         Route::post('/finish/{id}', [ContractBusinessController::class, 'finishPost'])->name('cd-finish-post');
     });
