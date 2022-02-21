@@ -69,6 +69,16 @@
                             <input value="{{ URL::asset('/files/' . $data->file_disposition) }}"
                                 class="p-2.5 block w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 cursor-pointer dark:text-gray-400 focus:outline-none focus:border-transparent dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400"
                                 readonly type="text">
+                            <div class="flex flex-row">
+                                <a href="{{ route('download', substr($data->file_disposition, 14)) }}"
+                                    style="font-size:24px ">
+                                    <div class="bg-[#384094] hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">
+                                        Download
+                                        <i class="fa fa-download"></i>
+                                    </div>
+                                </a>
+                                {{-- {{ substr($data->file_disposition, 14) }} --}}
+                            </div>
                         </div>
                     </div>
                     <div class="flex">
@@ -79,6 +89,16 @@
                             <input value="{{ URL::asset('/files/' . $data->file_document1) }}"
                                 class="p-2.5 block w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 cursor-pointer dark:text-gray-400 focus:outline-none focus:border-transparent dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400"
                                 readonly type="text">
+                            <div class="flex flex-row">
+                                <a href="{{ route('download', substr($data->file_document1, 14)) }}"
+                                    style="font-size:24px ">
+                                    <div class="bg-[#384094] hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">
+                                        Download
+                                        <i class="fa fa-download"></i>
+                                    </div>
+                                </a>
+                                {{-- {{ substr($data->file_disposition, 14) }} --}}
+                            </div>
                         </div>
                     </div>
                     <div class="flex">
@@ -89,6 +109,16 @@
                             <input value="{{ URL::asset('/files/' . $data->file_document2) }}"
                                 class="p-2.5 block w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 cursor-pointer dark:text-gray-400 focus:outline-none focus:border-transparent dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400"
                                 readonly type="text">
+                            <div class="flex flex-row">
+                                <a href="{{ route('download', substr($data->file_document2, 14)) }}"
+                                    style="font-size:24px ">
+                                    <div class="bg-[#384094] hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">
+                                        Download
+                                        <i class="fa fa-download"></i>
+                                    </div>
+                                </a>
+                                {{-- {{ substr($data->file_disposition, 14) }} --}}
+                            </div>
                         </div>
                     </div>
                     <div class="flex">
@@ -99,6 +129,16 @@
                             <input value="{{ URL::asset('/files/' . $data->file_document3) }}"
                                 class="p-2.5 block w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 cursor-pointer dark:text-gray-400 focus:outline-none focus:border-transparent dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400"
                                 readonly type="text">
+                            <div class="flex flex-row">
+                                <a href="{{ route('download', substr($data->file_document3, 14)) }}"
+                                    style="font-size:24px ">
+                                    <div class="bg-[#384094] hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">
+                                        Download
+                                        <i class="fa fa-download"></i>
+                                    </div>
+                                </a>
+                                {{-- {{ substr($data->file_disposition, 14) }} --}}
+                            </div>
                         </div>
                     </div>
                 </div>

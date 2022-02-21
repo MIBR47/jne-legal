@@ -15,9 +15,9 @@
                             class="flex items-center flex-[3] mb-2 text-md font-medium text-gray-900 dark:text-gray-300">Tipe
                             Perizinan</label>
                         <div class="flex-[7]">
-                            <select id="countries" name="permit_type"
+                            <select required id="countries" name="permit_type"
                                 class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
-                                <option selected disabled>-- Pilih --</option>
+                                <option value='' style="display: none" selected disabled>-- Pilih --</option>
                                 <option value="Perizinan Reklame">Perizinan Reklame</option>
                                 <option value="Perizinan IMB">Perizinan IMB</option>
                                 <option value="Perizinan SLF">Perizinan SLF</option>
@@ -53,7 +53,7 @@
                         <div class="flex-[7]">
                             <textarea id="message" rows="4" name="application_reason"
                                 class="block p-2 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                                placeholder=""></textarea>
+                                placeholder="" required></textarea>
                         </div>
                     </div>
                     <div class="flex">
@@ -76,7 +76,7 @@
                         <div class="flex-[4]">
                             <input name="file_disposition"
                                 class="p-2.5 block w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 cursor-pointer dark:text-gray-400 focus:outline-none focus:border-transparent dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400"
-                                aria-describedby="user_avatar_help" id="user_avatar" type="file">
+                                aria-describedby="user_avatar_help" id="user_avatar" type="file" required>
                         </div>
                     </div>
                     <div class="flex">
@@ -86,7 +86,7 @@
                         <div class="flex-[4]">
                             <input name="file_document1"
                                 class="p-2.5 block w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 cursor-pointer dark:text-gray-400 focus:outline-none focus:border-transparent dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400"
-                                aria-describedby="user_avatar_help" id="user_avatar" type="file">
+                                aria-describedby="user_avatar_help" id="user_avatar" type="file" required>
                         </div>
                     </div>
                     <div class="flex">
@@ -96,7 +96,7 @@
                         <div class="flex-[4]">
                             <input name="file_document2"
                                 class="p-2.5 block w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 cursor-pointer dark:text-gray-400 focus:outline-none focus:border-transparent dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400"
-                                aria-describedby="user_avatar_help" id="user_avatar" type="file">
+                                aria-describedby="user_avatar_help" id="user_avatar" type="file" required>
                         </div>
                     </div>
                     <div class="flex">
@@ -106,7 +106,7 @@
                         <div class="flex-[4]">
                             <input name="file_document3"
                                 class="p-2.5 block w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 cursor-pointer dark:text-gray-400 focus:outline-none focus:border-transparent dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400"
-                                aria-describedby="user_avatar_help" id="user_avatar" type="file">
+                                aria-describedby="user_avatar_help" id="user_avatar" type="file" required>
                         </div>
                     </div>
                 </div>

@@ -54,6 +54,7 @@ class OtherController extends Controller
     {
 
         $validatedData = $request->validate([
+            'id' => 'required',
             'user_id' => 'required',
             'date' => 'required',
             'party_name' => 'required',
