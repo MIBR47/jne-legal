@@ -419,6 +419,21 @@ class TeamCsController extends Controller
     {
         $data = $request->all();
 
+        // $validatedData = $request->validate([
+        //     'file_consumer_dispute_case_form' => 'required',
+        //     'file_operational_delivery_chronology' => 'required',
+        //     'file_cs_handling_chronology' => 'required',
+        //     'file_pod_evidence' => 'required',
+        //     'file_receipt_proof' => 'required',
+        //     'file_proof_of_documentation1' => 'required',
+        //     'file_proof_of_documentation2' => 'required',
+        //     'file_proof_of_documentation3' => 'required',
+        //     'file_other_supporting_document' => 'required',
+        //     'nominal_indemnity_offer' => 'required',
+        //     // 'status' => 'DILENGKAPI OLEH CS'
+
+        // ]);
+
         $item = Cs::findOrFail($id);
 
         $name1 = time() . '-' . $request->file('file_consumer_dispute_case_form')->getClientOriginalName();
