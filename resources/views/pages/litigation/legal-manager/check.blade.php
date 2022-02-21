@@ -44,10 +44,10 @@
                                 class="flex items-center flex-[3] mb-2 text-md font-medium text-gray-900 dark:text-gray-300">Form
                                 Kasus Sengketa Konsumen</label>
                             <div class="flex-[4]">
-                                <input value="{{ $data->file_consumer_dispute_case_form }}"
+                                {{-- <input value="{{ $data->file_consumer_dispute_case_form }}"
                                     class="p-2.5 block w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 cursor-pointer dark:text-gray-400 focus:outline-none focus:border-transparent dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400"
                                     aria-describedby="user_avatar_help" id="user_avatar"
-                                    name="file_consumer_dispute_case_form" type="text">
+                                    name="file_consumer_dispute_case_form" type="text"> --}}
                                 <div class="flex flex-row">
                                     <a href="{{ route('download-litigation', substr($data->file_consumer_dispute_case_form, 18)) }}"
                                         style="font-size:24px ">
@@ -68,10 +68,10 @@
                                 class="flex items-center flex-[3] mb-2 text-md font-medium text-gray-900 dark:text-gray-300">Kronologis
                                 Pengiriman Operasional</label>
                             <div class="flex-[4]">
-                                <input value="{{ $data->file_operational_delivery_chronology }}"
+                                {{-- <input value="{{ $data->file_operational_delivery_chronology }}"
                                     class="p-2.5 block w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 cursor-pointer dark:text-gray-400 focus:outline-none focus:border-transparent dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400"
                                     aria-describedby="user_avatar_help" id="user_avatar"
-                                    name="file_operational_delivery_chronology" type="text">
+                                    name="file_operational_delivery_chronology" type="text"> --}}
                                 <div class="flex flex-row">
                                     <a href="{{ route('download-litigation', substr($data->file_operational_delivery_chronology, 18)) }}"
                                         style="font-size:24px ">
@@ -92,10 +92,10 @@
                                 class="flex items-center flex-[3] mb-2 text-md font-medium text-gray-900 dark:text-gray-300">Kronologis
                                 Penanganan CS</label>
                             <div class="flex-[4]">
-                                <input value="{{ $data->file_cs_handling_chronology }}"
+                                {{-- <input value="{{ $data->file_cs_handling_chronology }}"
                                     class="p-2.5 block w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 cursor-pointer dark:text-gray-400 focus:outline-none focus:border-transparent dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400"
                                     aria-describedby="user_avatar_help" id="user_avatar" name="file_cs_handling_chronology"
-                                    type="text">
+                                    type="text"> --}}
                                 <div class="flex flex-row">
                                     <a href="{{ route('download-litigation', substr($data->file_cs_handling_chronology, 18)) }}"
                                         style="font-size:24px ">

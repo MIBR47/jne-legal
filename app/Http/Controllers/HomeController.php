@@ -17,11 +17,11 @@ class HomeController extends Controller
         } elseif (auth()->user()->role == 'TEAMCS') {
             return redirect()->route('team-cs-dashboard');
         } elseif (auth()->user()->role == 'LEGALLITIGASI1') {
-            return redirect()->route('legal1');
+            return redirect()->route('legal1-dashboard');
         } elseif (auth()->user()->role == 'LEGALLITIGASI2') {
-            return redirect()->route('legal2');
+            return redirect()->route('legal2-dashboard');
         } elseif (auth()->user()->role == 'LEGALMANAGER') {
-            return redirect()->route('legalmanager');
+            return redirect()->route('legal-manager-dashboard');
         } elseif (auth()->user()->role == 'USER') {
             return view('welcome');
         }
