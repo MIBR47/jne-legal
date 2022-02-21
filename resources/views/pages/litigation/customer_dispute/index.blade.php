@@ -24,13 +24,8 @@
                             class="flex items-center flex-[3] mb-2 text-md font-medium text-gray-900 dark:text-gray-300">Tanggal</label>
                         <div class="flex-[4]">
                             <input type="date" id="text"
-                                class="@error('date') is-invalid @enderror bg-gray-50 border border-gray-300 text-gray-900 text-md rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                                class="bg-gray-50 border border-gray-300 text-gray-900 text-md rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                                 placeholder="" name="date" required>
-                            @error('date')
-                                <div class="text-red-500">
-                                    {{ $message }}
-                                </div>
-                            @enderror
                         </div>
                     </div>
                     <div class="flex">
@@ -38,18 +33,14 @@
                             class="flex items-center flex-[3] mb-2 text-md font-medium text-gray-900 dark:text-gray-300">Jenis
                             Kasus</label>
                         <div class="flex-[4]">
-                            <select id="countries" name="case_type"
-                                class=" @error('case_type') is-invalid @enderror bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
-                                <option style="display: none">-- Pilih --</option>
+                            <select required id="countries" name="case_type"
+                                class="\bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                                <option value="" style="display: none">-- Pilih --</option>
                                 <option>Terlambat</option>
                                 <option>Hilang</option>
                                 <option>Rusak</option>
                             </select>
-                            @error('case_type')
-                                <div class="text-red-500">
-                                    {{ $message }}
-                                </div>
-                            @enderror
+
                         </div>
                     </div>
                     <div class="flex">
@@ -57,9 +48,9 @@
                             class="flex items-center flex-[3] mb-2 text-md font-medium text-gray-900 dark:text-gray-300">Faktor
                             Penyebab</label>
                         <div class="flex-[4]">
-                            <select onchange="yesnoCheck(this);" id="countries" name="causative_factor"
-                                class=" @error('causative_factor') is-invalid @enderror bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
-                                <option style="display: none">-- Pilih --</option>
+                            <select required onchange="yesnoCheck(this);" id="countries" name="causative_factor"
+                                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                                <option value="" style="display: none">-- Pilih --</option>
                                 <option>Alamat Tidak Jelas</option>
                                 <option>Penerima Tidak Tepat</option>
                                 <option>Kendala Pihak Ketiga</option>
@@ -68,11 +59,7 @@
                                 <option>Force Majeur</option>
                                 <option>Lain - Lain</option>
                             </select>
-                            @error('causative_factor')
-                                <div class="text-red-500">
-                                    {{ $message }}
-                                </div>
-                            @enderror
+
                         </div>
                     </div>
                     <div id="ifYes" style="display: none;">
@@ -81,13 +68,9 @@
                                 class="flex items-center flex-[3] mb-2 text-md font-medium text-gray-900 dark:text-gray-300"></label>
                             <div class="flex-[4]">
                                 <textarea id="message" name="causative_factor_others" rows="4"
-                                    class=" @error('causative_factor_others') is-invalid @enderror block p-2 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                                    class="  block p-2 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                                     placeholder=""></textarea>
-                                @error('causative_factor_others')
-                                    <div class="text-red-500">
-                                        {{ $message }}
-                                    </div>
-                                @enderror
+
                             </div>
                         </div>
                     </div>
@@ -104,7 +87,7 @@
                                 Rp
                             </span>
                             <input type="text" id="website-admin" name="total_loss"
-                                class="@error('total_loss') is-invalid @enderror rounded-none rounded-r-lg bg-gray-50 border text-gray-900 focus:ring-blue-500 focus:border-blue-500 block flex-1 min-w-0 w-full text-sm border-gray-300 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                                class=" rounded-none rounded-r-lg bg-gray-50 border text-gray-900 focus:ring-blue-500 focus:border-blue-500 block flex-1 min-w-0 w-full text-sm border-gray-300 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                                 placeholder="" required>
 
 
@@ -113,7 +96,7 @@
 
 
                     </div>
-                    <div class="flex flex-col gap-4">
+                    {{-- <div class="flex flex-col gap-4">
 
                         <div class="flex">
                             <label for="text"
@@ -127,16 +110,16 @@
                             </div>
                         </div>
 
-                    </div>
+                    </div> --}}
 
 
                     <div class="flex">
                         <label for="text"
                             class="flex items-center flex-[3] mb-2 text-md font-medium text-gray-900 dark:text-gray-300">Connete/Perjanjian</label>
                         <div class="flex-[4]">
-                            <select id="countries" name="connote"
+                            <select required id="countries" name="connote"
                                 class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
-                                <option style="display: none">-- Pilih --</option>
+                                <option value="" style="display: none">-- Pilih --</option>
                                 <option>Internal</option>
                                 <option>Eksternal</option>
                             </select>
@@ -148,13 +131,9 @@
                             Kejadian</label>
                         <div class="flex-[4]">
                             <input type="date" id="date" name="incident_date"
-                                class="@error('incident_date') is-invalid @enderror bg-gray-50 border border-gray-300 text-gray-900 text-md rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                                class="bg-gray-50 border border-gray-300 text-gray-900 text-md rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                                 placeholder="" required>
-                            @error('incident_date')
-                                <div class="text-red-500">
-                                    {{ $message }}
-                                </div>
-                            @enderror
+
                         </div>
                     </div>
                     <div class="flex">
@@ -162,13 +141,9 @@
                             class="flex items-center flex-[3] mb-2 text-md font-medium text-gray-900 dark:text-gray-300">Customer</label>
                         <div class="flex-[4]">
                             <input type="text" id="text" name="customer"
-                                class="@error('customer') is-invalid @enderror bg-gray-50 border border-gray-300 text-gray-900 text-md rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                                class=" bg-gray-50 border border-gray-300 text-gray-900 text-md rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                                 placeholder="" required>
-                            @error('customer')
-                                <div class="text-red-500">
-                                    {{ $message }}
-                                </div>
-                            @enderror
+
 
                         </div>
                     </div>
@@ -177,9 +152,9 @@
                             class="flex items-center flex-[3] mb-2 text-md font-medium text-gray-900 dark:text-gray-300">Jenis
                             Kiriman</label>
                         <div class="flex-[4]">
-                            <select id="countries" name="shipping_type"
+                            <select required id="countries" name="shipping_type"
                                 class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
-                                <option style="display: none">-- Pilih --</option>
+                                <option value="" style="display: none">-- Pilih --</option>
                                 <option>High Value Service</option>
                                 <option>Non HVS</option>
                                 <option>Makanan</option>
@@ -191,9 +166,9 @@
                         <label for="text"
                             class="flex items-center flex-[3] mb-2 text-md font-medium text-gray-900 dark:text-gray-300">Asuransi</label>
                         <div class="flex-[4]">
-                            <select id="countries" name="assurance"
+                            <select required id="countries" name="assurance"
                                 class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
-                                <option style="display: none">-- Pilih --</option>
+                                <option value="" style="display: none">-- Pilih --</option>
                                 <option value="1">Ya</option>
                                 <option value="2">Tidak</option>
                             </select>
@@ -207,13 +182,9 @@
                     Singkat
                     Kejadian:</label>
                 <textarea id="message" rows="4" name="incident_chronology"
-                    class="@error('incident_chronology') is-invalid @enderror block p-2 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                    placeholder=""></textarea>
-                @error('incident_chronology')
-                    <div class="text-red-500">
-                        {{ $message }}
-                    </div>
-                @enderror
+                    class=" block p-2 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                    placeholder="" required></textarea>
+
             </div>
 
             <div class="flex flex-col gap-4 mb-4">
@@ -222,9 +193,9 @@
                         class="flex items-center flex-[3] mb-2 text-md font-medium text-gray-900 dark:text-gray-300">Bentuk
                         Kiriman</label>
                     <div class="flex-[4]">
-                        <select onchange="yesnoCheck2(this);" id="countries" name="shipping_form"
+                        <select required onchange="yesnoCheck2(this);" id="countries" name="shipping_form"
                             class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
-                            <option style="display: none">-- Pilih --</option>
+                            <option value="" style="display: none">-- Pilih --</option>
                             <option>Dokumen</option>
                             <option>KTP</option>
                             <option>Paspor</option>
@@ -238,23 +209,19 @@
                         </select>
                     </div>
                 </div>
-                <div id="ifYes2" style="display: none;">
-                    <div class="flex mb-4">
-                        <label for="text"
-                            class="flex items-center flex-[3] mb-2 text-md font-medium text-gray-900 dark:text-gray-300"></label>
-                        <div class="flex-[4]">
-                            <textarea id="message" rows="4" name="detail_shipping_form"
-                                class="@error('detail_shipping_form') is-invalid @enderror block p-2 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                                placeholder=""></textarea>
-                            @error('detail_shipping_form')
-                                <div class="text-red-500">
-                                    {{ $message }}
-                                </div>
-                            @enderror
+                {{-- <div id="ifYes2" style="display: none;"> --}}
+                <div class="flex mb-4">
+                    <label for="text"
+                        class="flex items-center flex-[3] mb-2 text-md font-medium text-gray-900 dark:text-gray-300"></label>
+                    <div class="flex-[4]">
+                        <textarea id="message" rows="4" name="detail_shipping_form"
+                            class="block p-2 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                            placeholder="" required></textarea>
 
-                        </div>
+
                     </div>
                 </div>
+                {{-- </div> --}}
 
                 <div class="grid grid-rows-3 grid-flow-col gap-4 mb-4">
                     <div class="row-span-4 font-medium">Alat Bukti :</div>
@@ -265,14 +232,10 @@
                                 Saksi</label>
                             <div class="flex-[4]">
                                 <input
-                                    class="@error('file_witness_testimony') is-invalid @enderror p-2.5 block w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 cursor-pointer dark:text-gray-400 focus:outline-none focus:border-transparent dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400"
+                                    class=" p-2.5 block w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 cursor-pointer dark:text-gray-400 focus:outline-none focus:border-transparent dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400"
                                     aria-describedby="user_avatar_help" id="user_avatar" name="file_witness_testimony"
-                                    type="file">
-                                @error('file_witness_testimony')
-                                    <div class="text-red-500">
-                                        {{ $message }}
-                                    </div>
-                                @enderror
+                                    type="file" required>
+
                             </div>
                         </div>
                     </div>
@@ -283,14 +246,10 @@
                                 Surat</label>
                             <div class="flex-[4]">
                                 <input
-                                    class="@error('file_letter_document') is-invalid @enderror p-2.5 block w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 cursor-pointer dark:text-gray-400 focus:outline-none focus:border-transparent dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400"
+                                    class=" p-2.5 block w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 cursor-pointer dark:text-gray-400 focus:outline-none focus:border-transparent dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400"
                                     aria-describedby="user_avatar_help" id="user_avatar" name="file_letter_document"
-                                    type="file">
-                                @error('file_letter_document')
-                                    <div class="text-red-500">
-                                        {{ $message }}
-                                    </div>
-                                @enderror
+                                    type="file" required>
+
                             </div>
                         </div>
                     </div>
@@ -301,14 +260,10 @@
                                 Form Klaim</label>
                             <div class="flex-[4]">
                                 <input
-                                    class="@error('file_claim_form_document') is-invalid @enderror p-2.5 block w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 cursor-pointer dark:text-gray-400 focus:outline-none focus:border-transparent dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400"
+                                    class=" p-2.5 block w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 cursor-pointer dark:text-gray-400 focus:outline-none focus:border-transparent dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400"
                                     aria-describedby="user_avatar_help" id="user_avatar" name="file_claim_form_document"
-                                    type="file">
-                                @error('file_claim_form_document')
-                                    <div class="text-red-500">
-                                        {{ $message }}
-                                    </div>
-                                @enderror
+                                    type="file" required>
+
                             </div>
                         </div>
                     </div>
@@ -319,14 +274,10 @@
                                 - Lain</label>
                             <div class="flex-[4]">
                                 <input
-                                    class="@error('file_other_document') is-invalid @enderror p-2.5 block w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 cursor-pointer dark:text-gray-400 focus:outline-none focus:border-transparent dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400"
+                                    class="p-2.5 block w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 cursor-pointer dark:text-gray-400 focus:outline-none focus:border-transparent dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400"
                                     aria-describedby="user_avatar_help" id="user_avatar" name="file_other_document"
-                                    type="file">
-                                @error('file_other_document')
-                                    <div class="text-red-500">
-                                        {{ $message }}
-                                    </div>
-                                @enderror
+                                    type="file" required>
+
                             </div>
                         </div>
                     </div>
@@ -339,13 +290,10 @@
                             Bukti</label>
                         <div class="flex-[4]">
                             <input
-                                class="@error('file_evidence') is-invalid @enderror p-2.5 block w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 cursor-pointer dark:text-gray-400 focus:outline-none focus:border-transparent dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400"
-                                aria-describedby="user_avatar_help" id="user_avatar" name="file_evidence" type="file">
-                            @error('file_evidence')
-                                <div class="text-red-500">
-                                    {{ $message }}
-                                </div>
-                            @enderror
+                                class="p-2.5 block w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 cursor-pointer dark:text-gray-400 focus:outline-none focus:border-transparent dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400"
+                                aria-describedby="user_avatar_help" id="user_avatar" name="file_evidence" type="file"
+                                required>
+
                         </div>
                     </div>
                     <div class="flex">
@@ -353,14 +301,9 @@
                             class="flex items-center flex-[3] mb-2 text-md font-medium text-gray-900 dark:text-gray-300">Kelengkapan</label>
                         <div class="flex-[4]">
                             <input
-                                class="@error('file_document_completeness') is-invalid @enderror p-2.5 block w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 cursor-pointer dark:text-gray-400 focus:outline-none focus:border-transparent dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400"
+                                class="p-2.5 block w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 cursor-pointer dark:text-gray-400 focus:outline-none focus:border-transparent dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400"
                                 aria-describedby="user_avatar_help" id="user_avatar" name="file_document_completeness"
-                                type="file">
-                            @error('file_document_completeness')
-                                <div class="text-red-500">
-                                    {{ $message }}
-                                </div>
-                            @enderror
+                                type="file" required>
                         </div>
                     </div>
                     <div class="flex">
@@ -369,29 +312,35 @@
                             Lainnya</label>
                         <div class="flex-[4]">
                             <input
-                                class="@error('file_other_evidence') is-invalid @enderror p-2.5 block w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 cursor-pointer dark:text-gray-400 focus:outline-none focus:border-transparent dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400"
-                                aria-describedby="user_avatar_help" id="user_avatar" name="file_other_evidence" type="file">
-                            @error('file_other_evidence')
-                                <div class="text-red-500">
-                                    {{ $message }}
-                                </div>
-                            @enderror
+                                class="p-2.5 block w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 cursor-pointer dark:text-gray-400 focus:outline-none focus:border-transparent dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400"
+                                aria-describedby="user_avatar_help" id="user_avatar" name="file_other_evidence" type="file"
+                                required>
+
                         </div>
                     </div>
                 </div>
             </div>
 
             <div class="flex justify-end items-center">
-                <input type="submit"
+                {{-- <input type="submit"
                     class="text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-xl px-20 py-4 text-center mr-2 mb-2 dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-900"
                     name="btnADD" id="btnADD" value="Submit"
-                    onclick="this.disabled=true;this.value='Sending, please wait...';this.form.submit();" />
+                    onclick="this.disabled=true;this.value='Sending, please wait...';this.form.submit();" /> --}}
+                <button type="submit" onclick="checkbutton();"
+                    class="text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-xl px-20 py-4 text-center mr-2 mb-2 dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-900">Submit</button>
                 {{-- <button type="button"
                     class="">Submit</button> --}}
             </div>
         </form>
     </div>
     <script>
+        function checkbutton() {
+            $('input[type=submit]').one('submit', function() {
+                $(this).attr('disabled', 'disabled');
+            });
+        }
+
+
         function yesnoCheck(that) {
             if (that.value == "Lain - Lain") {
                 // alert("check");
@@ -401,13 +350,13 @@
             }
         }
 
-        function yesnoCheck2(that) {
-            if (that.value == "Lain - Lain") {
-                // alert("check");
-                document.getElementById("ifYes2").style.display = "block";
-            } else {
-                document.getElementById("ifYes2").style.display = "none";
-            }
-        }
+        // function yesnoCheck2(that) {
+        //     if (that.value == "Lain - Lain") {
+        //         // alert("check");
+        //         document.getElementById("ifYes2").style.display = "block";
+        //     } else {
+        //         document.getElementById("ifYes2").style.display = "none";
+        //     }
+        // }
     </script>
 @endsection

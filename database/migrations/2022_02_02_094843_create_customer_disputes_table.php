@@ -19,7 +19,7 @@ class CreateCustomerDisputesTable extends Migration
             $table->date('date');
             $table->string('case_type');
             $table->string('causative_factor');
-            $table->string('causative_factor_others');
+            $table->string('causative_factor_others')->nullable();
             $table->string('total_loss');
             $table->string('connote');
             $table->date('incident_date');
