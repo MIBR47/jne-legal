@@ -124,7 +124,7 @@
                         <div class="flex-[4]">
                             <select id="countries" name="guarantee"
                                 class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
-                                <option selected disabled>-- Pilih --</option>
+                                <option style="display: none">-- Pilih --</option>
                                 <option value="Ada">Ada</option>
                                 <option value="Tidak Ada">Tidak Ada</option>
                             </select>
@@ -147,7 +147,7 @@
                         <div class="flex-[4]">
                             <select id="countries" name="relation_period"
                                 class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
-                                <option selected disabled>-- Pilih --</option>
+                                <option style="display: none">-- Pilih --</option>
                                 <option value="Ada">Ada</option>
                                 <option value="Tidak Ada">Tidak Ada</option>
                             </select>

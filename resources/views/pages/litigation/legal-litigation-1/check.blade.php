@@ -16,6 +16,7 @@
                             <input type="text" id="text" value="{{ $data->id }}" name="id"
                                 class="bg-gray-50 border border-gray-300 text-gray-900 text-md rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                                 placeholder="" readonly>
+
                         </div>
                     </div>
                     <input type="hidden" name="user_id" value="{{ auth()->user()->id }}">
@@ -48,6 +49,21 @@
                                     class="p-2.5 block w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 cursor-pointer dark:text-gray-400 focus:outline-none focus:border-transparent dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400"
                                     aria-describedby="user_avatar_help" id="user_avatar"
                                     name="file_consumer_dispute_case_form" type="text">
+                                <div class="flex flex-row">
+
+
+                                    <a href="{{ route('download-litigation', substr($data->file_consumer_dispute_case_form, 18)) }}"
+                                        style="font-size:24px ">
+                                        <div
+                                            class="bg-[#384094] hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">
+                                            Download
+                                            <i class="fa fa-download"></i>
+
+                                        </div>
+                                    </a>
+
+                                    {{-- {{ substr($data->file_disposition, 14) }} --}}
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -61,6 +77,21 @@
                                     class="p-2.5 block w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 cursor-pointer dark:text-gray-400 focus:outline-none focus:border-transparent dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400"
                                     aria-describedby="user_avatar_help" id="user_avatar"
                                     name="file_operational_delivery_chronology" type="text">
+                                <div class="flex flex-row">
+
+
+                                    <a href="{{ route('download-litigation', substr($data->file_operational_delivery_chronology, 18)) }}"
+                                        style="font-size:24px ">
+                                        <div
+                                            class="bg-[#384094] hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">
+                                            Download
+                                            <i class="fa fa-download"></i>
+
+                                        </div>
+                                    </a>
+
+                                    {{-- {{ substr($data->file_disposition, 14) }} --}}
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -74,6 +105,21 @@
                                     class="p-2.5 block w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 cursor-pointer dark:text-gray-400 focus:outline-none focus:border-transparent dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400"
                                     aria-describedby="user_avatar_help" id="user_avatar" name="file_cs_handling_chronology"
                                     type="text">
+                                <div class="flex flex-row">
+
+
+                                    <a href="{{ route('download-litigation', substr($data->file_cs_handling_chronology, 18)) }}"
+                                        style="font-size:24px ">
+                                        <div
+                                            class="bg-[#384094] hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">
+                                            Download
+                                            <i class="fa fa-download"></i>
+
+                                        </div>
+                                    </a>
+
+                                    {{-- {{ substr($data->file_disposition, 14) }} --}}
+                                </div>
                             </div>
                         </div>
                     </div>
