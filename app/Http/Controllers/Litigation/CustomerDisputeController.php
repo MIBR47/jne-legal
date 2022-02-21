@@ -51,34 +51,36 @@ class CustomerDisputeController extends Controller
 
     public function store(Request $request)
     {
-        $data = $request->all();
-        $id = $data['id'];
+        // $data = $request->all();
+        // $id = $data['id'];
         $user_id = $request->user_id;
 
-        // $validatedData = $request->validate([
-        //     'user_id' => 'required',
-        //     'date' => 'required',
-        //     'case_type' => 'required',
-        //     'causative_factor' => 'required',
-        //     'causative_factor_others' => 'required',
-        //     'total_loss' => 'required',
-        //     'connote' => 'required',
-        //     'incident_date' => 'required',
-        //     'customer' => 'required',
-        //     'shipping_type' => 'required',
-        //     'assurance' => 'required',
-        //     'incident_chronology' => 'required',
-        //     'shipping_form' => 'required',
-        //     'detail_shipping_form' => 'required',
-        //     'file_witness_testimony' => 'required',
-        //     'file_letter_document' => 'required',
-        //     'file_claim_form_document' => 'required',
-        //     'file_other_document' => 'required',
-        //     'file_evidence' => 'required',
-        //     'file_document_completeness' => 'required',
-        //     'file_other_evidence' => 'required',
-        // ]);
+        $validatedData = $request->validate([
+            'id' => 'required',
+            'user_id' => 'required',
+            'date' => 'required',
+            'case_type' => 'required',
+            'causative_factor' => 'required',
+            'causative_factor_others',
+            'total_loss' => 'required',
+            'connote' => 'required',
+            'incident_date' => 'required',
+            'customer' => 'required',
+            'shipping_type' => 'required',
+            'assurance' => 'required',
+            'incident_chronology' => 'required',
+            'shipping_form' => 'required',
+            'detail_shipping_form' => 'required',
+            'file_witness_testimony' => 'required',
+            'file_letter_document' => 'required',
+            'file_claim_form_document' => 'required',
+            'file_other_document' => 'required',
+            'file_evidence' => 'required',
+            'file_document_completeness' => 'required',
+            'file_other_evidence' => 'required',
+        ]);
         #
+        $id = $validatedData['id'];
         // $validatedData2 = $request->validate([
         //     // 'id' => 'required',
 
@@ -103,13 +105,13 @@ class CustomerDisputeController extends Controller
         // $path6 = $request->file('file_document_completeness')->store('public/files');
         // $path7 = $request->file('file_other_evidence')->store('public/files');
 
-        $data['file_witness_testimony'] = $request->file('file_witness_testimony')->storeAs('public/litigation', $name, 'public');
-        $data['file_letter_document'] = $request->file('file_letter_document')->storeAs('public/litigation', $name2, 'public');
-        $data['file_claim_form_document'] = $request->file('file_claim_form_document')->storeAs('public/litigation', $name3, 'public');
-        $data['file_other_document'] = $request->file('file_other_document')->storeAs('public/litigation', $name4, 'public');
-        $data['file_evidence'] = $request->file('file_evidence')->storeAs('public/litigation', $name5, 'public');
-        $data['file_document_completeness'] = $request->file('file_document_completeness')->storeAs('publiclitigation', $name6, 'public');
-        $data['file_other_evidence'] = $request->file('file_other_evidence')->storeAs('public/litigation', $name7, 'public');
+        $validatedData['file_witness_testimony'] = $request->file('file_witness_testimony')->storeAs('public/litigation', $name, 'public');
+        $validatedData['file_letter_document'] = $request->file('file_letter_document')->storeAs('public/litigation', $name2, 'public');
+        $validatedData['file_claim_form_document'] = $request->file('file_claim_form_document')->storeAs('public/litigation', $name3, 'public');
+        $validatedData['file_other_document'] = $request->file('file_other_document')->storeAs('public/litigation', $name4, 'public');
+        $validatedData['file_evidence'] = $request->file('file_evidence')->storeAs('public/litigation', $name5, 'public');
+        $validatedData['file_document_completeness'] = $request->file('file_document_completeness')->storeAs('publiclitigation', $name6, 'public');
+        $validatedData['file_other_evidence'] = $request->file('file_other_evidence')->storeAs('public/litigation', $name7, 'public');
 
         // $save = new CustomerDispute;
 
@@ -130,7 +132,7 @@ class CustomerDisputeController extends Controller
         // $save->path = $path7;
 
         // UploadFile::create($validatedData2);
-        CustomerDispute::create($data);
+        CustomerDispute::create($validatedData);
         Cs::create(['form_id' => $id, 'user_id' => $user_id]);
 
         return redirect()->route('home');

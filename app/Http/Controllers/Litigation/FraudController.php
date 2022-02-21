@@ -12,7 +12,7 @@ class FraudController extends Controller
 {
     public function index()
     {
-        $datenow = date('d-M-Y',strtotime(Carbon::now()));
+        $datenow = date('d-M-Y', strtotime(Carbon::now()));
         $dateNow = date('Y-m-d') . ' 00:00:00';
         $check_user = Fraud::select('*')
             ->whereDate('created_at', '>=', $dateNow)
@@ -35,7 +35,7 @@ class FraudController extends Controller
 
         return view('pages.litigation.fraud.index', [
             'no_kasus' => $no_kasus,
-            'datenow'=>$datenow
+            'datenow' => $datenow
         ]);
     }
 
@@ -49,21 +49,36 @@ class FraudController extends Controller
         return view('pages.litigation.fraud.report');
     }
 
-    public function store(Request $request){
+    public function store(Request $request)
+    {
 
-        // $validatedData = $request->validate([
-        //     'user_id' => 'required',
-        //     'permit_type' => 'required',
-        //     'location' => 'required',
-        //     'specification' => 'required',
-        //     'application_reason' => 'required',
-        //     'file_disposition' => 'required',
-        //     'file_document1' => 'required',
-        //     'file_document2' => 'required',
-        //     'file_document3' => 'required',
-        // ]);
-        $data = $request->all();
-        $id = $data['id'];
+        $validatedData = $request->validate([
+            'id' => 'required',
+            'user_id' => 'required',
+            'date' => 'required',
+            'case_type' => 'required',
+            'causative_factor' => 'required',
+            'perpetrator' => 'required',
+            'unit' => 'required',
+            'total_loss' => 'required',
+            'incident_date' => 'required',
+            'incident_scane' => 'required',
+            'incident_chronology' => 'required',
+            'fraud_classification' => 'required',
+            'witness1' => 'required',
+            'witness1_department' => 'required',
+            'witness2' => 'required',
+            'witness2_department' => 'required',
+            'file_document_proof' => 'required',
+            'file_perpetrator_statement' => 'required',
+            'file_witness_statement' => 'required',
+            'file_other' => 'required',
+            'file_evidence_documentation' => 'required',
+            'file_investigation_document' => 'required',
+            'file_other_evidence' => 'required',
+        ]);
+        // $data = $request->all();
+        $id = $validatedData['id'];
         $user_id = $request->user_id;
 
         $name1 = $request->file('file_document_proof')->getClientOriginalName();
@@ -74,13 +89,13 @@ class FraudController extends Controller
         $name3 = $request->file('file_investigation_document')->getClientOriginalName();
         $name4 = $request->file('file_other_evidence')->getClientOriginalName();
 
-        $data['file_document_proof'] = $request->file('file_document_proof')->storeAs('public/files/file_document_proof',$name1,'public');
-        $data['file_perpetrator_statement'] = $request->file('file_perpetrator_statement')->storeAs('public/files/file_perpetrator_statement',$name2,'public');
-        $data['file_witness_statement'] = $request->file('file_witness_statement')->storeAs('public/files/file_witness_statement',$name3,'public');
-        $data['file_other'] = $request->file('file_other')->storeAs('public/files/file_other',$name4,'public');
-        $data['file_evidence_documentation'] = $request->file('file_evidence_documentation')->storeAs('public/files/file_evidence_documentation',$name2,'public');
-        $data['file_investigation_document'] = $request->file('file_investigation_document')->storeAs('public/files/file_investigation_document',$name3,'public');
-        $data['file_other_evidence'] = $request->file('file_other_evidence')->storeAs('public/files/file_other_evidence',$name4,'public');
+        $validatedData['file_document_proof'] = $request->file('file_document_proof')->storeAs('public/files/file_document_proof', $name1, 'public');
+        $validatedData['file_perpetrator_statement'] = $request->file('file_perpetrator_statement')->storeAs('public/files/file_perpetrator_statement', $name2, 'public');
+        $validatedData['file_witness_statement'] = $request->file('file_witness_statement')->storeAs('public/files/file_witness_statement', $name3, 'public');
+        $validatedData['file_other'] = $request->file('file_other')->storeAs('public/files/file_other', $name4, 'public');
+        $validatedData['file_evidence_documentation'] = $request->file('file_evidence_documentation')->storeAs('public/files/file_evidence_documentation', $name2, 'public');
+        $validatedData['file_investigation_document'] = $request->file('file_investigation_document')->storeAs('public/files/file_investigation_document', $name3, 'public');
+        $validatedData['file_other_evidence'] = $request->file('file_other_evidence')->storeAs('public/files/file_other_evidence', $name4, 'public');
 
         // $save = new Permit();
 
@@ -95,10 +110,9 @@ class FraudController extends Controller
         // $save->path = $path4;
 
         // UploadFile::create($validatedData2);
-        Fraud::create($data);
-        Cs::create(['form_id'=> $id,'user_id'=> $user_id]);
+        Fraud::create($validatedData);
+        Cs::create(['form_id' => $id, 'user_id' => $user_id]);
 
         return redirect()->route('home');
     }
-
 }
