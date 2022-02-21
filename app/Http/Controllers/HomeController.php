@@ -22,6 +22,8 @@ class HomeController extends Controller
             return redirect()->route('legal2-dashboard');
         } elseif (auth()->user()->role == 'LEGALMANAGER') {
             return redirect()->route('legal-manager-dashboard');
+        } elseif (auth()->user()->role == 'CONTRACTBUSINESS') {
+            return redirect()->route('cd-dashboard');
         } elseif (auth()->user()->role == 'USER') {
             return view('welcome');
         }

@@ -76,7 +76,7 @@
                                     <input
                                         class="p-2.5 block w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 cursor-pointer dark:text-gray-400 focus:outline-none focus:border-transparent dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400"
                                         aria-describedby="user_avatar_help" id="user_avatar"
-                                        name="file_consumer_dispute_case_form" type="file">
+                                        name="file_consumer_dispute_case_form" type="file" required>
                                 </div>
                             </div>
                         </div>
@@ -89,7 +89,7 @@
                                     <input
                                         class="p-2.5 block w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 cursor-pointer dark:text-gray-400 focus:outline-none focus:border-transparent dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400"
                                         aria-describedby="user_avatar_help" id="user_avatar"
-                                        name="file_operational_delivery_chronology" type="file">
+                                        name="file_operational_delivery_chronology" type="file" required>
                                 </div>
                             </div>
                         </div>
@@ -102,7 +102,7 @@
                                     <input
                                         class="p-2.5 block w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 cursor-pointer dark:text-gray-400 focus:outline-none focus:border-transparent dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400"
                                         aria-describedby="user_avatar_help" id="user_avatar"
-                                        name="file_cs_handling_chronology" type="file">
+                                        name="file_cs_handling_chronology" type="file" required>
                                 </div>
                             </div>
                         </div>
@@ -115,7 +115,7 @@
                                     <input
                                         class="p-2.5 block w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 cursor-pointer dark:text-gray-400 focus:outline-none focus:border-transparent dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400"
                                         aria-describedby="user_avatar_help" id="user_avatar" name="file_pod_evidence"
-                                        type="file">
+                                        type="file" required>
                                 </div>
                             </div>
                         </div>
@@ -128,7 +128,7 @@
                                     <input
                                         class="p-2.5 block w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 cursor-pointer dark:text-gray-400 focus:outline-none focus:border-transparent dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400"
                                         aria-describedby="user_avatar_help" id="user_avatar" name="file_receipt_proof"
-                                        type="file">
+                                        type="file" required>
                                 </div>
                             </div>
                         </div>
@@ -144,7 +144,7 @@
                                     <input
                                         class="p-2.5 block w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 cursor-pointer dark:text-gray-400 focus:outline-none focus:border-transparent dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400"
                                         aria-describedby="user_avatar_help" id="user_avatar"
-                                        name="file_proof_of_documentation1" type="file">
+                                        name="file_proof_of_documentation1" type="file" required>
                                 </div>
                             </div>
                         </div>
@@ -157,7 +157,7 @@
                                     <input
                                         class="p-2.5 block w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 cursor-pointer dark:text-gray-400 focus:outline-none focus:border-transparent dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400"
                                         aria-describedby="user_avatar_help" id="user_avatar"
-                                        name="file_proof_of_documentation2" type="file">
+                                        name="file_proof_of_documentation2" type="file" required>
                                 </div>
                             </div>
                         </div>
@@ -170,7 +170,7 @@
                                     <input
                                         class="p-2.5 block w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 cursor-pointer dark:text-gray-400 focus:outline-none focus:border-transparent dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400"
                                         aria-describedby="user_avatar_help" id="user_avatar"
-                                        name="file_proof_of_documentation3" type="file">
+                                        name="file_proof_of_documentation3" type="file" required>
                                 </div>
                             </div>
                         </div>
@@ -183,7 +183,7 @@
                                     <input
                                         class="p-2.5 block w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 cursor-pointer dark:text-gray-400 focus:outline-none focus:border-transparent dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400"
                                         aria-describedby="user_avatar_help" id="user_avatar"
-                                        name="file_other_supporting_document" type="file">
+                                        name="file_other_supporting_document" type="file" required>
                                 </div>
                             </div>
                         </div>
@@ -196,7 +196,7 @@
                                     <input
                                         class="p-2.5 block w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 cursor-pointer dark:text-gray-400 focus:outline-none focus:border-transparent dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400"
                                         aria-describedby="user_avatar_help" id="user_avatar" name="nominal_indemnity_offer"
-                                        type="number">
+                                        type="number" required>
                                 </div>
                             </div>
                         </div>
