@@ -17,7 +17,7 @@ class HomeController extends Controller
         } elseif (auth()->user()->role == 'TEAMCS') {
             return redirect()->route('team-cs-dashboard');
         } elseif (auth()->user()->role == 'LEGALLITIGASI1') {
-            return redirect()->route('legal1-check-post');
+            return redirect()->route('legal1-dashboard');
         } elseif (auth()->user()->role == 'LEGALLITIGASI2') {
             return redirect()->route('legal2-dashboard');
         } elseif (auth()->user()->role == 'LEGALMANAGER') {
