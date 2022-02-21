@@ -84,7 +84,7 @@
                             </span>
                             <input type="text" id="website-admin" name="agreement_nominal"
                                 class="rounded-none rounded-r-lg bg-gray-50 border text-gray-900 focus:ring-blue-500 focus:border-blue-500 block flex-1 min-w-0 w-full text-sm border-gray-300 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                                placeholder="">
+                                placeholder="" required>
                         </div>
                     </div>
                     <div class="flex">
@@ -122,9 +122,9 @@
                             class="flex items-center flex-[3] mb-2 text-md font-medium text-gray-900 dark:text-gray-300">Jaminan/Bank
                             Garansi</label>
                         <div class="flex-[4]">
-                            <select id="countries" name="guarantee"
+                            <select required id="countries" name="guarantee"
                                 class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
-                                <option style="display: none">-- Pilih --</option>
+                                <option value="" style="display: none">-- Pilih --</option>
                                 <option value="Ada">Ada</option>
                                 <option value="Tidak Ada">Tidak Ada</option>
                             </select>
@@ -145,9 +145,9 @@
                             class="flex items-center flex-[3] mb-2 text-md font-medium text-gray-900 dark:text-gray-300">Masa
                             Retensi</label>
                         <div class="flex-[4]">
-                            <select id="countries" name="relation_period"
+                            <select required id="countries" name="relation_period"
                                 class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
-                                <option style="display: none">-- Pilih --</option>
+                                <option value="" style="display: none">-- Pilih --</option>
                                 <option value="Ada">Ada</option>
                                 <option value="Tidak Ada">Tidak Ada</option>
                             </select>
@@ -171,7 +171,7 @@
                     Khusus Lainnya Yang Dicantumkan Dalam Perjanjian Sesuai Kesapakatan Para Pihak:</label>
                 <textarea id="message" rows="4" name="other_point"
                     class="block p-2 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                    placeholder=""></textarea>
+                    placeholder="" required></textarea>
             </div>
 
             <div class="flex flex-col gap-4 mb-4">
@@ -185,7 +185,7 @@
                             <div class="flex-[4]">
                                 <input name="file_vendor_offer"
                                     class="p-2.5 block w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 cursor-pointer dark:text-gray-400 focus:outline-none focus:border-transparent dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400"
-                                    aria-describedby="user_avatar_help" id="user_avatar" type="file">
+                                    aria-describedby="user_avatar_help" id="user_avatar" type="file" required>
                             </div>
                         </div>
                     </div>
@@ -197,7 +197,7 @@
                             <div class="flex-[4]">
                                 <input name="file_mom"
                                     class="p-2.5 block w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 cursor-pointer dark:text-gray-400 focus:outline-none focus:border-transparent dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400"
-                                    aria-describedby="user_avatar_help" id="user_avatar" type="file">
+                                    aria-describedby="user_avatar_help" id="user_avatar" type="file" required>
                             </div>
                         </div>
                     </div>
@@ -208,7 +208,7 @@
                             <div class="flex-[4]">
                                 <input name="file_dispotition"
                                     class="p-2.5 block w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 cursor-pointer dark:text-gray-400 focus:outline-none focus:border-transparent dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400"
-                                    aria-describedby="user_avatar_help" id="user_avatar" type="file">
+                                    aria-describedby="user_avatar_help" id="user_avatar" type="file" required>
                             </div>
                         </div>
                     </div>
@@ -220,7 +220,7 @@
                             <div class="flex-[4]">
                                 <input name="file_agreement_draft"
                                     class="p-2.5 block w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 cursor-pointer dark:text-gray-400 focus:outline-none focus:border-transparent dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400"
-                                    aria-describedby="user_avatar_help" id="user_avatar" type="file">
+                                    aria-describedby="user_avatar_help" id="user_avatar" type="file" required>
                             </div>
                         </div>
                     </div>
@@ -237,7 +237,7 @@
                             <div class="flex-[4]">
                                 <input name="file_customer_entity"
                                     class="p-2.5 block w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 cursor-pointer dark:text-gray-400 focus:outline-none focus:border-transparent dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400"
-                                    aria-describedby="user_avatar_help" id="user_avatar" type="file">
+                                    aria-describedby="user_avatar_help" id="user_avatar" type="file" required>
                             </div>
                         </div>
                     </div>
@@ -249,7 +249,7 @@
                             <div class="flex-[4]">
                                 <input name="file_sk_menkumham"
                                     class="p-2.5 block w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 cursor-pointer dark:text-gray-400 focus:outline-none focus:border-transparent dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400"
-                                    aria-describedby="user_avatar_help" id="user_avatar" type="file">
+                                    aria-describedby="user_avatar_help" id="user_avatar" type="file" required>
                             </div>
                         </div>
                     </div>
@@ -261,7 +261,7 @@
                             <div class="flex-[4]">
                                 <input name="file_nib"
                                     class="p-2.5 block w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 cursor-pointer dark:text-gray-400 focus:outline-none focus:border-transparent dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400"
-                                    aria-describedby="user_avatar_help" id="user_avatar" type="file">
+                                    aria-describedby="user_avatar_help" id="user_avatar" type="file" required>
                             </div>
                         </div>
                     </div>
@@ -273,7 +273,7 @@
                             <div class="flex-[4]">
                                 <input name="file_npwp"
                                     class="p-2.5 block w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 cursor-pointer dark:text-gray-400 focus:outline-none focus:border-transparent dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400"
-                                    aria-describedby="user_avatar_help" id="user_avatar" type="file">
+                                    aria-describedby="user_avatar_help" id="user_avatar" type="file" required>
                             </div>
                         </div>
                     </div>
@@ -290,7 +290,7 @@
                             <div class="flex-[4]">
                                 <input name="file_business_permit"
                                     class="p-2.5 block w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 cursor-pointer dark:text-gray-400 focus:outline-none focus:border-transparent dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400"
-                                    aria-describedby="user_avatar_help" id="user_avatar" type="file">
+                                    aria-describedby="user_avatar_help" id="user_avatar" type="file" required>
                             </div>
                         </div>
                     </div>
@@ -302,7 +302,7 @@
                             <div class="flex-[4]">
                                 <input name="file_director_id_card"
                                     class="p-2.5 block w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 cursor-pointer dark:text-gray-400 focus:outline-none focus:border-transparent dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400"
-                                    aria-describedby="user_avatar_help" id="user_avatar" type="file">
+                                    aria-describedby="user_avatar_help" id="user_avatar" type="file" required>
                             </div>
                         </div>
                     </div>
@@ -313,7 +313,7 @@
                             <div class="flex-[4]">
                                 <input name="file_other"
                                     class="p-2.5 block w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 cursor-pointer dark:text-gray-400 focus:outline-none focus:border-transparent dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400"
-                                    aria-describedby="user_avatar_help" id="user_avatar" type="file">
+                                    aria-describedby="user_avatar_help" id="user_avatar" type="file" required>
                             </div>
                         </div>
                     </div>

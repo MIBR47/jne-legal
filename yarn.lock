@@ -1851,17 +1851,17 @@
     "inherits" "^2.0.1"
     "safe-buffer" "^5.0.1"
 
-"clean-css@^4.2.3 || ^5.1.2":
-  "integrity" "sha512-/eR8ru5zyxKzpBLv9YZvMXgTSSQn7AdkMItMYynsFgGwTveCRVam9IUPFloE85B4vAIj05IuKmmEoV7/AQjT0w=="
-  "resolved" "https://registry.npmjs.org/clean-css/-/clean-css-5.2.2.tgz"
-  "version" "5.2.2"
-  dependencies:
-    "source-map" "~0.6.0"
-
 "clean-css@^4.2.3":
   "integrity" "sha512-EJUDT7nDVFDvaQgAo2G/PJvxmp1o/c6iXLbswsBbUFXi1Nr+AjA2cKmfbKDMjMvzEe75g3P6JkaDDAKk96A85A=="
   "resolved" "https://registry.npmjs.org/clean-css/-/clean-css-4.2.4.tgz"
   "version" "4.2.4"
+  dependencies:
+    "source-map" "~0.6.0"
+
+"clean-css@^5.2.4":
+  "integrity" "sha512-nKseG8wCzEuji/4yrgM/5cthL9oTDc5UOQyFMvW/Q53oP6gLH690o1NbuTh6Y18nujr7BxlsFuS7gXLnLzKJGg=="
+  "resolved" "https://registry.npmjs.org/clean-css/-/clean-css-5.2.4.tgz"
+  "version" "5.2.4"
   dependencies:
     "source-map" "~0.6.0"
 
@@ -3364,10 +3364,10 @@
   "resolved" "https://registry.npmjs.org/klona/-/klona-2.0.5.tgz"
   "version" "2.0.5"
 
-"laravel-mix@^6.0.41":
-  "integrity" "sha512-LA6ep2kUritCzvePgza98Ge2wmlntYSmd1mJx0BwRqyP6x8vMbh9VnMesTm5ezZql83mXI+hFumRCEBxzAnZaQ=="
-  "resolved" "https://registry.npmjs.org/laravel-mix/-/laravel-mix-6.0.41.tgz"
-  "version" "6.0.41"
+"laravel-mix@^6.0.43":
+  "integrity" "sha512-SOO+C1aOpVSAUs30DYc6k/e0QJxfyD42aav4IKJtE5UZKw9ROWcVzkVoek2J475jNeNnl7GkoLAC27gejZsQ8g=="
+  "resolved" "https://registry.npmjs.org/laravel-mix/-/laravel-mix-6.0.43.tgz"
+  "version" "6.0.43"
   dependencies:
     "@babel/core" "^7.15.8"
     "@babel/plugin-proposal-object-rest-spread" "^7.15.6"
@@ -3385,7 +3385,7 @@
     "babel-loader" "^8.2.3"
     "chalk" "^4.1.2"
     "chokidar" "^3.5.2"
-    "clean-css" "^4.2.3 || ^5.1.2"
+    "clean-css" "^5.2.4"
     "cli-table3" "^0.6.0"
     "collect.js" "^4.28.5"
     "commander" "^7.2.0"
