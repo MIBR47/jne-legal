@@ -158,6 +158,8 @@ Route::middleware('auth')->group(function () {
     Route::prefix('/contract-business')->middleware('IsCd')->group(function () {
         Route::get('/', [ContractBusinessController::class, 'index'])->name('cd-dashboard');
 
+        Route::get('/table-vendor', [ContractBusinessController::class, 'table_vendor'])->name('table-vendor');
+
         Route::get('/check/{id}', [ContractBusinessController::class, 'check'])->name('cd-check');
         Route::post('/check/{id}', [ContractBusinessController::class, 'checkPost'])->name('cd-check-post');
 

@@ -12,16 +12,15 @@ class ContractBusinessController extends Controller
 {
     public function index()
     {
-        if (request()->ajax())
-        {
+        if (request()->ajax()) {
 
             $query = Customer::all();
             // $query['vendor'] = VendorSupplier::all();
             return DataTables::of($query)
-            ->addIndexColumn()
-                ->addColumn('action',function($cd){
+                ->addIndexColumn()
+                ->addColumn('action', function ($cd) {
                     return '
-                        <a href = "'.route('cd-check',$cd->id).'">
+                        <a href = "' . route('cd-check', $cd->id) . '">
                             <button type="button" class="text-white bg-blue-700
                                 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300
                                 font-medium rounded-full text-sm px-5 py-4 text-center mr-2 mb-2
@@ -29,7 +28,7 @@ class ContractBusinessController extends Controller
                                 Check
                             </button>
                         </a>
-                        <a href = "'.route('cd-finish',$cd->id).'">
+                        <a href = "' . route('cd-finish', $cd->id) . '">
                             <button type="button" class="text-white bg-blue-700
                                 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300
                                 font-medium rounded-full text-sm px-5 py-4 text-center mr-2 mb-2
@@ -40,11 +39,46 @@ class ContractBusinessController extends Controller
                     ';
                 })
 
-            ->rawColumns(['action'])
-            ->make();
+                ->rawColumns(['action'])
+                ->make();
         }
-
         return view('pages.legal-drafting.index');
+    }
+
+    public function table_vendor()
+    {
+
+        if (request()->ajax()) {
+
+            // $query = Customer::all();
+            $query = VendorSupplier::all();
+            return DataTables::of($query)
+                ->addIndexColumn()
+                ->addColumn('action', function ($cd) {
+                    return '
+                        <a href = "' . route('cd-check', $cd->id) . '">
+                            <button type="button" class="text-white bg-blue-700
+                                hover:bg-blue-800 focus:ring-4 focus:ring-blue-300
+                                font-medium rounded-full text-sm px-5 py-4 text-center mr-2 mb-2
+                                dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+                                Check
+                            </button>
+                        </a>
+                        <a href = "' . route('cd-finish', $cd->id) . '">
+                            <button type="button" class="text-white bg-blue-700
+                                hover:bg-blue-800 focus:ring-4 focus:ring-blue-300
+                                font-medium rounded-full text-sm px-5 py-4 text-center mr-2 mb-2
+                                dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+                                Finish
+                            </button>
+                        </a>
+                    ';
+                })
+
+                ->rawColumns(['action'])
+                ->make();
+        }
+        // return view('pages.legal-drafting.index');
     }
 
     public function check($id)
@@ -63,7 +97,7 @@ class ContractBusinessController extends Controller
 
                 $item = Customer::findOrFail($id);
 
-                $item->update([$data, 'note' => $request->note ,'status' => 'RETURNED BY CONTRACT BUSINESS']);
+                $item->update([$data, 'note' => $request->note, 'status' => 'RETURNED BY CONTRACT BUSINESS']);
 
                 return redirect()->route('cd-dashboard');
                 break;
@@ -73,7 +107,7 @@ class ContractBusinessController extends Controller
 
                 $item = Customer::findOrFail($id);
 
-                $item->update([$data, 'note' => $request->note , 'status' => 'APPROVED BY CONTRACT BUSINESS']);
+                $item->update([$data, 'note' => $request->note, 'status' => 'APPROVED BY CONTRACT BUSINESS']);
 
                 return redirect()->route('cd-dashboard');
                 break;
@@ -96,11 +130,11 @@ class ContractBusinessController extends Controller
 
                 $item = Customer::findOrFail($id);
 
-                if($request->file('file_internal_memo'))
-                $name1 = $request->file('file_internal_memo')->getClientOriginalName();
-                $data['file_internal_memo'] = $request->file('file_internal_memo')->storeAs('public/files/file_internal_memo',$name1,'public');
+                if ($request->file('file_internal_memo'))
+                    $name1 = $request->file('file_internal_memo')->getClientOriginalName();
+                $data['file_internal_memo'] = $request->file('file_internal_memo')->storeAs('public/files/file_internal_memo', $name1, 'public');
 
-                $item->update([$data, 'file_internal_memo' => $data['file_internal_memo'],'note' => $request->note ,'status' => 'UPDATED BY USER']);
+                $item->update([$data, 'file_internal_memo' => $data['file_internal_memo'], 'note' => $request->note, 'status' => 'UPDATED BY USER']);
 
                 return redirect()->route('home');
                 break;
@@ -110,7 +144,7 @@ class ContractBusinessController extends Controller
 
                 $item = Customer::findOrFail($id);
 
-                $item->update([$data, 'note' => $request->note , 'status' => 'UPDATED BY USER']);
+                $item->update([$data, 'note' => $request->note, 'status' => 'UPDATED BY USER']);
 
                 return redirect()->route('home');
                 break;
