@@ -105,16 +105,6 @@
 
                                 {{-- {{ substr($data->file_disposition, 14) }} --}}
                             </div>
-
-
-                            {{-- <form class="mt-4" method="get" enctype="multipart/form-data"
-                                action="{{ route('download', $data->file_disposition) }}">
-                                @method('get')
-                                @csrf
-                                <button type="submit"
-                                    class="text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-xl px-20 py-4 text-center mr-2 mb-2 dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-900">
-                                    <i class=" fa fa-download"></i>Input</button>
-                            </form> --}}
                         </div>
                         {{-- <div class="grid grid-cols-2 ml-4 gap-2">
                             <select name="status_file_disposition" id="">
@@ -128,9 +118,19 @@
                             class="flex items-center flex-[3] mb-2 text-md font-medium text-gray-900 dark:text-gray-300">Dokumen
                             1</label>
                         <div class="flex-[4]">
-                            <input value="{{ substr($data->file_document1, 14) }}"
+                            {{-- <input value="{{ substr($data->file_document1, 14) }}"
                                 class="p-2.5 block w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 cursor-pointer dark:text-gray-400 focus:outline-none focus:border-transparent dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400"
-                                readonly type="text">
+                                readonly type="text"> --}}
+                            <div class="flex flex-row">
+
+                                <a class="btn place-content-center" type="submit"
+                                    href="{{ route('download', substr($data->file_document1, 14)) }}">
+                                    <i class="fa-solid fa-file-arrow-down fa-3x"></i>
+                                    {{-- <i class="fa-solid fa-download fa-2x"></i> --}}
+                                </a>
+
+                                {{-- {{ substr($data->file_disposition, 14) }} --}}
+                            </div>
                         </div>
                         {{-- <div class="grid grid-cols-2 ml-4 gap-2">
                             <select name="status_file_document1" id="">
@@ -144,9 +144,19 @@
                             class="flex items-center flex-[3] mb-2 text-md font-medium text-gray-900 dark:text-gray-300">Dokumen
                             2</label>
                         <div class="flex-[4]">
-                            <input value="{{ URL::asset('/files/' . $data->file_document2) }}"
+                            {{-- <input value="{{ URL::asset('/files/' . $data->file_document2) }}"
                                 class="p-2.5 block w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 cursor-pointer dark:text-gray-400 focus:outline-none focus:border-transparent dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400"
-                                readonly type="text">
+                                readonly type="text"> --}}
+                            <div class="flex flex-row">
+
+                                <a class="btn place-content-center" type="submit"
+                                    href="{{ route('download', substr($data->file_document2, 14)) }}">
+                                    <i class="fa-solid fa-file-arrow-down fa-3x"></i>
+                                    {{-- <i class="fa-solid fa-download fa-2x"></i> --}}
+                                </a>
+
+                                {{-- {{ substr($data->file_disposition, 14) }} --}}
+                            </div>
                         </div>
                         {{-- <div class="grid grid-cols-2 ml-4 gap-2">
                             <select name="status_file_document2" id="">
@@ -160,9 +170,19 @@
                             class="flex items-center flex-[3] mb-2 text-md font-medium text-gray-900 dark:text-gray-300">Dokumen
                             3</label>
                         <div class="flex-[4]">
-                            <input value="{{ URL::asset('/files/' . $data->file_document3) }}"
+                            {{-- <input value="{{ URL::asset('/files/' . $data->file_document3) }}"
                                 class="p-2.5 block w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 cursor-pointer dark:text-gray-400 focus:outline-none focus:border-transparent dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400"
-                                readonly type="text">
+                                readonly type="text"> --}}
+                            <div class="flex flex-row">
+
+                                <a class="btn place-content-center" type="submit"
+                                    href="{{ route('download', substr($data->file_document3, 14)) }}">
+                                    <i class="fa-solid fa-file-arrow-down fa-3x"></i>
+                                    {{-- <i class="fa-solid fa-download fa-2x"></i> --}}
+                                </a>
+
+                                {{-- {{ substr($data->file_disposition, 14) }} --}}
+                            </div>
                         </div>
                         {{-- <div class="grid grid-cols-2 ml-4 gap-2">
                             <select name="status_file_document3" id="">
