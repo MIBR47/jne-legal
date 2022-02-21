@@ -36,7 +36,7 @@ class Cs extends Model
         return $this->belongsTo(Fraud::class,'form_id','id');
     }
 
-    public function customerDispute(){
+    public function customer_dispute(){
         return $this->belongsTo(CustomerDispute::class,'form_id','id');
     }
 

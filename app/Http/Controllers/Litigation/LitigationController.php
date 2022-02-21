@@ -73,7 +73,7 @@ class LitigationController extends Controller
 
                 $name1 = $request->file('file_subpoena_response')->getClientOriginalName();
 
-                $data['file_subpoena_response'] = $request->file('file_subpoena_response')->storeAs('public/files/file_subpoena_response',$name1,'public');
+                $data['file_subpoena_response'] = $request->file('file_subpoena_response')->storeAs('public/litigation', $name1, 'public');
 
                 $item->update([
                     'file_subpoena_response' => $data['file_subpoena_response'],

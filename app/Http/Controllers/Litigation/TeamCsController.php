@@ -15,7 +15,191 @@ class TeamCsController extends Controller
         if (request()->ajax()) {
             $cs = 'CS';
             $name = 'LEGAL MANAGER';
-            $query = Cs::query()->where('status', 'LIKE', '%' . $name . '%')->orWhere('status', '=', 'PENDING')->orWhere('status', 'LIKE', '%' . $cs . '%')->orWhere('status', '=', 'Kasus selesai penggantian')->orWhere('status', '=', 'Perdamaian')->orWhere('status', '=', 'Lewat >3 Bulan');
+            $form = 'CD';
+            $query = Cs::query()->with('customer_dispute')->where('form_id', 'LIKE', '%' . $form . '%');
+            return DataTables::of($query)
+                ->addIndexColumn()
+                ->addColumn('action', function ($cs) {
+                    if ($cs->status == 'PENDING') {
+                        return '
+                        <a href = "' . route('cs-update', $cs->id) . '">
+                            <button type="button" class="text-white bg-blue-700
+                                hover:bg-blue-800 focus:ring-4 focus:ring-blue-300
+                                font-medium rounded-full text-sm px-5 py-4 text-center mr-2 mb-2
+                                dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+                                Update
+                            </button>
+                        </a>
+                    ';
+                    } elseif ($cs->status == 'Lewat >3 Bulan') {
+                        return '
+                        <a href = "' . route('cs-update', $cs->id) . '">
+                            <button type="button" class="text-white bg-blue-700
+                                hover:bg-blue-800 focus:ring-4 focus:ring-blue-300
+                                font-medium rounded-full text-sm px-5 py-4 text-center mr-2 mb-2
+                                dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+                                Open
+                            </button>
+                        </a>
+                    ';
+                    } else {
+                        return '
+                        <a href = "' . route('cs-finish', $cs->id) . '">
+                            <button type="button" class="text-white bg-red-700
+                                hover:bg-red-800 focus:ring-4 focus:ring-red-300
+                                font-medium rounded-full text-sm px-5 py-4 text-center mr-2 mb-2
+                                dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-800">
+                                Finish
+                            </button>
+                        </a>
+                        <a href = "' . route('cs-close', $cs->id) . '">
+                            <button type="button" class="text-white bg-red-700
+                                hover:bg-red-800 focus:ring-4 focus:ring-red-300
+                                font-medium rounded-full text-sm px-5 py-4 text-center mr-2 mb-2
+                                dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-800">
+                                Close
+                            </button>
+                        </a>
+                    ';
+                    }
+                })
+
+                ->rawColumns(['action'])
+                ->make();
+        }
+
+        return view('pages.litigation.team-cs.index');
+    }
+
+    public function table_fraud()
+    {
+        if (request()->ajax()) {
+            $cs = 'CS';
+            $name = 'LEGAL MANAGER';
+            $form = 'FR';
+            $query = Cs::query()->with('fraud')->where('form_id', 'LIKE', '%' . $form . '%');
+            return DataTables::of($query)
+                ->addIndexColumn()
+                ->addColumn('action', function ($cs) {
+                    if ($cs->status == 'PENDING') {
+                        return '
+                        <a href = "' . route('cs-update', $cs->id) . '">
+                            <button type="button" class="text-white bg-blue-700
+                                hover:bg-blue-800 focus:ring-4 focus:ring-blue-300
+                                font-medium rounded-full text-sm px-5 py-4 text-center mr-2 mb-2
+                                dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+                                Update
+                            </button>
+                        </a>
+                    ';
+                    } elseif ($cs->status == 'Lewat >3 Bulan') {
+                        return '
+                        <a href = "' . route('cs-update', $cs->id) . '">
+                            <button type="button" class="text-white bg-blue-700
+                                hover:bg-blue-800 focus:ring-4 focus:ring-blue-300
+                                font-medium rounded-full text-sm px-5 py-4 text-center mr-2 mb-2
+                                dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+                                Open
+                            </button>
+                        </a>
+                    ';
+                    } else {
+                        return '
+                        <a href = "' . route('cs-finish', $cs->id) . '">
+                            <button type="button" class="text-white bg-red-700
+                                hover:bg-red-800 focus:ring-4 focus:ring-red-300
+                                font-medium rounded-full text-sm px-5 py-4 text-center mr-2 mb-2
+                                dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-800">
+                                Finish
+                            </button>
+                        </a>
+                        <a href = "' . route('cs-close', $cs->id) . '">
+                            <button type="button" class="text-white bg-red-700
+                                hover:bg-red-800 focus:ring-4 focus:ring-red-300
+                                font-medium rounded-full text-sm px-5 py-4 text-center mr-2 mb-2
+                                dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-800">
+                                Close
+                            </button>
+                        </a>
+                    ';
+                    }
+                })
+
+                ->rawColumns(['action'])
+                ->make();
+        }
+
+        return view('pages.litigation.team-cs.index');
+    }
+
+    public function table_outstanding()
+    {
+        if (request()->ajax()) {
+            $cs = 'CS';
+            $name = 'LEGAL MANAGER';
+            $form = 'OUT';
+            $query = Cs::query()->with('outstanding')->where('form_id', 'LIKE', '%' . $form . '%');
+            return DataTables::of($query)
+                ->addIndexColumn()
+                ->addColumn('action', function ($cs) {
+                    if ($cs->status == 'PENDING') {
+                        return '
+                        <a href = "' . route('cs-update', $cs->id) . '">
+                            <button type="button" class="text-white bg-blue-700
+                                hover:bg-blue-800 focus:ring-4 focus:ring-blue-300
+                                font-medium rounded-full text-sm px-5 py-4 text-center mr-2 mb-2
+                                dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+                                Update
+                            </button>
+                        </a>
+                    ';
+                    } elseif ($cs->status == 'Lewat >3 Bulan') {
+                        return '
+                        <a href = "' . route('cs-update', $cs->id) . '">
+                            <button type="button" class="text-white bg-blue-700
+                                hover:bg-blue-800 focus:ring-4 focus:ring-blue-300
+                                font-medium rounded-full text-sm px-5 py-4 text-center mr-2 mb-2
+                                dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+                                Open
+                            </button>
+                        </a>
+                    ';
+                    } else {
+                        return '
+                        <a href = "' . route('cs-finish', $cs->id) . '">
+                            <button type="button" class="text-white bg-red-700
+                                hover:bg-red-800 focus:ring-4 focus:ring-red-300
+                                font-medium rounded-full text-sm px-5 py-4 text-center mr-2 mb-2
+                                dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-800">
+                                Finish
+                            </button>
+                        </a>
+                        <a href = "' . route('cs-close', $cs->id) . '">
+                            <button type="button" class="text-white bg-red-700
+                                hover:bg-red-800 focus:ring-4 focus:ring-red-300
+                                font-medium rounded-full text-sm px-5 py-4 text-center mr-2 mb-2
+                                dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-800">
+                                Close
+                            </button>
+                        </a>
+                    ';
+                    }
+                })
+
+                ->rawColumns(['action'])
+                ->make();
+        }
+
+        return view('pages.litigation.team-cs.index');
+    }
+
+    public function table_other()
+    {
+        if (request()->ajax()) {
+            $cs = 'CS';
+            $name = 'LEGAL MANAGER';
+            $form = 'OTH';
+            $query = Cs::query()->with('other')->where('form_id', 'LIKE', '%' . $form . '%');
             return DataTables::of($query)
                 ->addIndexColumn()
                 ->addColumn('action', function ($cs) {
@@ -72,7 +256,7 @@ class TeamCsController extends Controller
 
     public function update($id)
     {
-        $data = Cs::with(['other', 'fraud', 'customerDispute', 'outstanding'])->where('id', $id)->firstOrFail();
+        $data = Cs::with(['other', 'fraud', 'customer_dispute', 'outstanding'])->where('id', $id)->firstOrFail();
         return view('pages.litigation.team-cs.update', [
             'data' => $data
         ]);

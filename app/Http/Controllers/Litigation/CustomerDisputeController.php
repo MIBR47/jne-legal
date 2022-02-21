@@ -61,7 +61,7 @@ class CustomerDisputeController extends Controller
             'date' => 'required',
             'case_type' => 'required',
             'causative_factor' => 'required',
-            'causative_factor_others',
+            'causative_factor_others' => '',
             'total_loss' => 'required',
             'connote' => 'required',
             'incident_date' => 'required',
