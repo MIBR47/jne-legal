@@ -145,6 +145,9 @@ Route::middleware('auth')->group(function () {
 
     Route::prefix('/team-cs')->middleware('IsTeamCs')->group(function () {
         Route::get('/', [TeamCsController::class, 'index'])->name('team-cs-dashboard');
+        Route::get('/table_fraud', [TeamCsController::class, 'table_fraud'])->name('team-cs-table-fraud');
+        Route::get('/table_outstanding', [TeamCsController::class, 'table_outstanding'])->name('team-cs-table-outstanding');
+        Route::get('/table_other', [TeamCsController::class, 'table_other'])->name('team-cs-table-other');
 
         Route::get('/update/{id}', [TeamCsController::class, 'update'])->name('cs-update');
         Route::post('/update/{id}', [TeamCsController::class, 'updatePost'])->name('cs-update-post');

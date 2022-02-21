@@ -92,10 +92,10 @@
                                 class="flex items-center flex-[3] mb-2 text-md font-medium text-gray-900 dark:text-gray-300">Kronologis
                                 Penanganan CS</label>
                             <div class="flex-[4]">
-                                <input value="{{ $data->file_cs_handling_chronology }}"
+                                {{-- <input value="{{ $data->file_cs_handling_chronology }}"
                                     class="p-2.5 block w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 cursor-pointer dark:text-gray-400 focus:outline-none focus:border-transparent dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400"
                                     aria-describedby="user_avatar_help" id="user_avatar" name="file_cs_handling_chronology"
-                                    type="text">
+                                    type="text"> --}}
                                 <div class="flex flex-row">
                                     <a href="{{ route('download-litigation', substr($data->file_cs_handling_chronology, 18)) }}"
                                         style="font-size:24px ">
@@ -261,7 +261,7 @@
                                 <input value="{{ $data->nominal_indemnity_offer }}"
                                     class="p-2.5 block w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 cursor-pointer dark:text-gray-400 focus:outline-none focus:border-transparent dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400"
                                     aria-describedby="user_avatar_help" id="user_avatar" name="nominal_indemnity_offer"
-                                    type="number">
+                                    type="number" readonly>
                             </div>
                         </div>
                     </div>
@@ -272,10 +272,20 @@
                             class="flex items-center flex-[3] mb-2 text-md font-medium text-gray-900 dark:text-gray-300">Draft
                             Tanggapan Somasi</label>
                         <div class="flex-[4]">
-                            <input value="{{ $data->file_subpoena_response }}"
+                            {{-- <input value="{{ $data->file_subpoena_response }}"
                                 class="p-2.5 block w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 cursor-pointer dark:text-gray-400 focus:outline-none focus:border-transparent dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400"
                                 aria-describedby="user_avatar_help" id="user_avatar" name="file_subpoena_response"
-                                type="text">
+                                type="text"> --}}
+                            <div class="flex flex-row">
+                                <a href="{{ route('download-litigation', substr($data->file_subpoena_response, 18)) }}"
+                                    style="font-size:24px ">
+                                    <div class="bg-[#384094] hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">
+                                        Download
+                                        <i class="fa fa-download"></i>
+                                    </div>
+                                </a>
+                                {{-- {{ substr($data->file_disposition, 14) }} --}}
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -286,7 +296,7 @@
                             Kasus
                             :</label>
                         <div class="flex-[4]">
-                            <textarea id="message" rows="4" name="case_analysis"
+                            <textarea id="message" rows="4" name="case_analysis" readonly
                                 class="block p-2 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                                 placeholder="">{{ $data->case_analysis }}</textarea>
                         </div>

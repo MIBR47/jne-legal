@@ -181,9 +181,7 @@
             processing: true,
             serverSide: true,
             ordering: true,
-            ajax: {
-                url: '{!! url()->current() !!}',
-            },
+            ajax: "{{ route('team-cs-dashboard') }}",
             columns: [
                 // // { data: 'id', name:'id' }
 
@@ -220,9 +218,7 @@
             processing: true,
             serverSide: true,
             ordering: true,
-            ajax: {
-                url: '{!! url()->current() !!}',
-            },
+            ajax: "{{ route('team-cs-table-fraud') }}",
             columns: [
                 // // { data: 'id', name:'id' }
 
@@ -259,9 +255,7 @@
             processing: true,
             serverSide: true,
             ordering: true,
-            ajax: {
-                url: '{!! url()->current() !!}',
-            },
+            ajax: "{{ route('team-cs-table-outstanding') }}",
             columns: [
                 // // { data: 'id', name:'id' }
 
@@ -298,9 +292,7 @@
             processing: true,
             serverSide: true,
             ordering: true,
-            ajax: {
-                url: '{!! url()->current() !!}',
-            },
+            ajax: "{{ route('team-cs-table-other') }}",
             columns: [
                 // // { data: 'id', name:'id' }
 
