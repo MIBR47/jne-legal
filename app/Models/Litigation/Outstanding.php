@@ -23,4 +23,8 @@ class Outstanding extends Model
     //         $model->id = IdGenerator::generate(['table' => 'outstandings', 'length' => 6, 'prefix' => 'OTH', 'reset_on_prefix_change'=>true]);
     //     });
     // }
+
+    public function cs(){
+        return $this->hasOne(Cs::class,'form_id','id');
+    }
 }

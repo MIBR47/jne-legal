@@ -644,9 +644,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 .w-36 {
   width: 9rem;
 }
-.w-\[5\.8rem\] {
-  width: 5.8rem;
-}
 .w-8\/12 {
   width: 66.666667%;
 }
@@ -884,6 +881,18 @@ Ensure the default browser behavior of the `hidden` attribute.
 .bg-\[\#384094\] {
   --tw-bg-opacity: 1;
   background-color: rgb(56 64 148 / var(--tw-bg-opacity));
+}
+.bg-\[\#7b7c7a\] {
+  --tw-bg-opacity: 1;
+  background-color: rgb(123 124 122 / var(--tw-bg-opacity));
+}
+.bg-\[\#5e5e5f\] {
+  --tw-bg-opacity: 1;
+  background-color: rgb(94 94 95 / var(--tw-bg-opacity));
+}
+.bg-\[\#c91313\] {
+  --tw-bg-opacity: 1;
+  background-color: rgb(201 19 19 / var(--tw-bg-opacity));
 }
 .fill-current {
   fill: currentColor;

@@ -99,7 +99,10 @@
 
                                 <a class="btn place-content-center" type="submit"
                                     href="{{ route('download', substr($data->file_disposition, 14)) }}">
-                                    <i class="fa-solid fa-file-arrow-down fa-3x"></i>
+                                    <div class="bg-[#384094] hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">
+                                        Download
+                                        <i class="fa fa-download"></i>
+                                    </div>
                                     {{-- <i class="fa-solid fa-download fa-2x"></i> --}}
                                 </a>
 
@@ -125,7 +128,10 @@
 
                                 <a class="btn place-content-center" type="submit"
                                     href="{{ route('download', substr($data->file_document1, 14)) }}">
-                                    <i class="fa-solid fa-file-arrow-down fa-3x"></i>
+                                    <div class="bg-[#384094] hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">
+                                        Download
+                                        <i class="fa fa-download"></i>
+                                    </div>
                                     {{-- <i class="fa-solid fa-download fa-2x"></i> --}}
                                 </a>
 
@@ -151,7 +157,10 @@
 
                                 <a class="btn place-content-center" type="submit"
                                     href="{{ route('download', substr($data->file_document2, 14)) }}">
-                                    <i class="fa-solid fa-file-arrow-down fa-3x"></i>
+                                    <div class="bg-[#384094] hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">
+                                        Download
+                                        <i class="fa fa-download"></i>
+                                    </div>
                                     {{-- <i class="fa-solid fa-download fa-2x"></i> --}}
                                 </a>
 
@@ -177,7 +186,10 @@
 
                                 <a class="btn place-content-center" type="submit"
                                     href="{{ route('download', substr($data->file_document3, 14)) }}">
-                                    <i class="fa-solid fa-file-arrow-down fa-3x"></i>
+                                    <div class="bg-[#384094] hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">
+                                        Download
+                                        <i class="fa fa-download"></i>
+                                    </div>
                                     {{-- <i class="fa-solid fa-download fa-2x"></i> --}}
                                 </a>
 
@@ -195,9 +207,22 @@
                         <label for="date"
                             class="flex items-center flex-[3] mb-2 text-md font-medium text-gray-900 dark:text-gray-300">SKPD</label>
                         <div class="flex-[4]">
-                            <input value="{{ URL::asset('/files/' . $data->latest_skpd) }}"
+                            {{-- <input value="{{ URL::asset('/files/' . $data->latest_skpd) }}"
                                 class="p-2.5 block w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 cursor-pointer dark:text-gray-400 focus:outline-none focus:border-transparent dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400"
-                                readonly type="text">
+                                readonly type="text"> --}}
+                            <div class="flex flex-row">
+
+                                <a class="btn place-content-center" type="submit"
+                                    href="{{ route('download', substr($data->latest_skpd, 14)) }}">
+                                    <div class="bg-[#384094] hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">
+                                        Download
+                                        <i class="fa fa-download"></i>
+                                    </div>
+                                    {{-- <i class="fa-solid fa-download fa-2x"></i> --}}
+                                </a>
+
+                                {{-- {{ substr($data->file_disposition, 14) }} --}}
+                            </div>
                         </div>
                         {{-- <div class="grid grid-cols-2 ml-4 gap-2">
                             <select name="status_file_document3" id="">

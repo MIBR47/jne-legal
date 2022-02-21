@@ -246,9 +246,26 @@
                             class="flex items-center flex-[3] mb-2 text-md font-medium text-gray-900 dark:text-gray-300">Bukti
                             Dokumen Surat</label>
                         <div class="flex-[4]">
-                            <input name="file_document_proof" value="{{ $data->fraud->file_document_proof }}"
+                            {{-- <input name="file_document_proof" value="{{ $data->fraud->file_document_proof }}"
                                 class="p-2.5 block w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 cursor-pointer dark:text-gray-400 focus:outline-none focus:border-transparent dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400"
-                                aria-describedby="user_avatar_help" id="user_avatar" type="text" readonly>
+                                aria-describedby="user_avatar_help" id="user_avatar" type="text" readonly> --}}
+                            <div class="flex-[4]">
+
+                                <div class="flex flex-row">
+
+                                    <a href="{{ route('download-litigation', substr($data->fraud->file_document_proof, 18)) }}"
+                                        style="font-size:24px ">
+                                        <div
+                                            class="bg-[#384094] hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">
+                                            Download
+                                            <i class="fa fa-download"></i>
+
+                                        </div>
+                                    </a>
+                                    {{-- {{ substr($data->file_disposition, 14) }} --}}
+                                </div>
+
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -258,10 +275,22 @@
                             class="flex items-center flex-[3] mb-2 text-md font-medium text-gray-900 dark:text-gray-300">Keterangan
                             Pelaku</label>
                         <div class="flex-[4]">
-                            <input name="file_perpetrator_statement"
+                            {{-- <input name="file_perpetrator_statement"
                                 value="{{ $data->fraud->file_perpetrator_statement }}"
                                 class="p-2.5 block w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 cursor-pointer dark:text-gray-400 focus:outline-none focus:border-transparent dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400"
-                                aria-describedby="user_avatar_help" id="user_avatar" type="text" readonly>
+                                aria-describedby="user_avatar_help" id="user_avatar" type="text" readonly> --}}
+                            <div class="flex flex-row">
+
+                                <a href="{{ route('download-litigation', substr($data->fraud->file_perpetrator_statement, 18)) }}"
+                                    style="font-size:24px ">
+                                    <div class="bg-[#384094] hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">
+                                        Download
+                                        <i class="fa fa-download"></i>
+
+                                    </div>
+                                </a>
+                                {{-- {{ substr($data->file_disposition, 14) }} --}}
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -271,9 +300,21 @@
                             class="flex items-center flex-[3] mb-2 text-md font-medium text-gray-900 dark:text-gray-300">Keterangan
                             Saksi</label>
                         <div class="flex-[4]">
-                            <input name="file_witness_statement" value="{{ $data->fraud->file_witness_statement }}"
+                            {{-- <input name="file_witness_statement" value="{{ $data->fraud->file_witness_statement }}"
                                 class="p-2.5 block w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 cursor-pointer dark:text-gray-400 focus:outline-none focus:border-transparent dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400"
-                                aria-describedby="user_avatar_help" id="user_avatar" type="text" readonly>
+                                aria-describedby="user_avatar_help" id="user_avatar" type="text" readonly> --}}
+                            <div class="flex flex-row">
+
+                                <a href="{{ route('download-litigation', substr($data->fraud->file_witness_statement, 18)) }}"
+                                    style="font-size:24px ">
+                                    <div class="bg-[#384094] hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">
+                                        Download
+                                        <i class="fa fa-download"></i>
+
+                                    </div>
+                                </a>
+                                {{-- {{ substr($data->file_disposition, 14) }} --}}
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -282,9 +323,22 @@
                         <label for="date"
                             class="flex items-center flex-[3] mb-2 text-md font-medium text-gray-900 dark:text-gray-300">Lain-lain</label>
                         <div class="flex-[4]">
-                            <input name="file_other" value="{{ $data->fraud->file_other }}"
+                            {{-- <input name="file_other" value="{{ $data->fraud->file_other }}"
                                 class="p-2.5 block w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 cursor-pointer dark:text-gray-400 focus:outline-none focus:border-transparent dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400"
-                                aria-describedby="user_avatar_help" id="user_avatar" type="text" readonly>
+                                aria-describedby="user_avatar_help" id="user_avatar" type="text" readonly> --}}
+                            <div class="flex flex-row">
+
+                                <a href="{{ route('download-litigation', substr($data->fraud->file_other, 18)) }}"
+                                    style="font-size:24px ">
+                                    <div
+                                        class="bg-[#384094] hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">
+                                        Download
+                                        <i class="fa fa-download"></i>
+
+                                    </div>
+                                </a>
+                                {{-- {{ substr($data->file_disposition, 14) }} --}}
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -296,9 +350,21 @@
                         class="flex items-center flex-[3] mb-2 text-md font-medium text-gray-900 dark:text-gray-300">Dokumentasi
                         Barang Bukti</label>
                     <div class="flex-[4]">
-                        <input name="file_evidence_documentation" value="{{ $data->fraud->file_evidence_documentation }}"
+                        {{-- <input name="file_evidence_documentation" value="{{ $data->fraud->file_evidence_documentation }}"
                             class="p-2.5 block w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 cursor-pointer dark:text-gray-400 focus:outline-none focus:border-transparent dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400"
-                            aria-describedby="user_avatar_help" id="user_avatar" type="text" readonly>
+                            aria-describedby="user_avatar_help" id="user_avatar" type="text" readonly> --}}
+                        <div class="flex flex-row">
+
+                            <a href="{{ route('download-litigation', substr($data->fraud->file_evidence_documentation, 18)) }}"
+                                style="font-size:24px ">
+                                <div class="bg-[#384094] hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">
+                                    Download
+                                    <i class="fa fa-download"></i>
+
+                                </div>
+                            </a>
+                            {{-- {{ substr($data->file_disposition, 14) }} --}}
+                        </div>
                     </div>
                 </div>
                 <div class="flex">
@@ -306,9 +372,21 @@
                         class="flex items-center flex-[3] mb-2 text-md font-medium text-gray-900 dark:text-gray-300">Dokumen
                         Investigasi</label>
                     <div class="flex-[4]">
-                        <input name="file_investigation_document" value="{{ $data->fraud->file_investigation_document }}"
+                        {{-- <input name="file_investigation_document" value="{{ $data->fraud->file_investigation_document }}"
                             class="p-2.5 block w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 cursor-pointer dark:text-gray-400 focus:outline-none focus:border-transparent dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400"
-                            aria-describedby="user_avatar_help" id="user_avatar" type="text" readonly>
+                            aria-describedby="user_avatar_help" id="user_avatar" type="text" readonly> --}}
+                        <div class="flex flex-row">
+
+                            <a href="{{ route('download-litigation', substr($data->fraud->file_investigation_document, 18)) }}"
+                                style="font-size:24px ">
+                                <div class="bg-[#384094] hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">
+                                    Download
+                                    <i class="fa fa-download"></i>
+
+                                </div>
+                            </a>
+                            {{-- {{ substr($data->file_disposition, 14) }} --}}
+                        </div>
                     </div>
                 </div>
                 <div class="flex">
@@ -316,9 +394,21 @@
                         class="flex items-center flex-[3] mb-2 text-md font-medium text-gray-900 dark:text-gray-300">Bukti
                         Lainnya</label>
                     <div class="flex-[4]">
-                        <input name="file_other_evidence" value="{{ $data->fraud->file_other_evidence }}"
+                        {{-- <input name="file_other_evidence" value="{{ $data->fraud->file_other_evidence }}"
                             class="p-2.5 block w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 cursor-pointer dark:text-gray-400 focus:outline-none focus:border-transparent dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400"
-                            aria-describedby="user_avatar_help" id="user_avatar" type="text" readonly>
+                            aria-describedby="user_avatar_help" id="user_avatar" type="text" readonly> --}}
+                        <div class="flex flex-row">
+
+                            <a href="{{ route('download-litigation', substr($data->fraud->file_other_evidence, 18)) }}"
+                                style="font-size:24px ">
+                                <div class="bg-[#384094] hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">
+                                    Download
+                                    <i class="fa fa-download"></i>
+
+                                </div>
+                            </a>
+                            {{-- {{ substr($data->file_disposition, 14) }} --}}
+                        </div>
                     </div>
                 </div>
             </div>

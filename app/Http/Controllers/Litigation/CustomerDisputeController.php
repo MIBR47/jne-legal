@@ -110,7 +110,7 @@ class CustomerDisputeController extends Controller
         $validatedData['file_claim_form_document'] = $request->file('file_claim_form_document')->storeAs('public/litigation', $name3, 'public');
         $validatedData['file_other_document'] = $request->file('file_other_document')->storeAs('public/litigation', $name4, 'public');
         $validatedData['file_evidence'] = $request->file('file_evidence')->storeAs('public/litigation', $name5, 'public');
-        $validatedData['file_document_completeness'] = $request->file('file_document_completeness')->storeAs('publiclitigation', $name6, 'public');
+        $validatedData['file_document_completeness'] = $request->file('file_document_completeness')->storeAs('public/litigation', $name6, 'public');
         $validatedData['file_other_evidence'] = $request->file('file_other_evidence')->storeAs('public/litigation', $name7, 'public');
 
         // $save = new CustomerDispute;

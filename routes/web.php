@@ -45,6 +45,16 @@ Route::middleware('auth')->group(function () {
     });
     Route::get('/', [HomeController::class, 'index'])->name('home');
     Route::get('/database', [DatabaseController::class, 'index'])->name('database');
+
+    Route::get('/database-customer', [DatabaseController::class, 'index'])->name('database-customer');
+    Route::get('/database-vendor', [DatabaseController::class, 'dataVendor'])->name('database-vendor');
+    Route::get('/database-lease', [DatabaseController::class, 'dataLease'])->name('database-lease');
+    Route::get('/database-customer-dispute', [DatabaseController::class, 'dataCustomerDispute'])->name('database-customer-dispute');
+    Route::get('/database-fraud', [DatabaseController::class, 'dataFraud'])->name('database-fraud');
+    Route::get('/database-outstanding', [DatabaseController::class, 'dataOutstanding'])->name('database-outstanding');
+    Route::get('/database-other', [DatabaseController::class, 'dataOther'])->name('database-other');
+    Route::get('/database-perizinan', [DatabaseController::class, 'dataPerizinan'])->name('database-perizinan');
+
     Route::get('/downloadPermit/{public}', [DownloadController::class, 'downloadPermit'])->name('download');
     Route::get('/downloadLitigation/{download}', [DownloadController::class, 'downloadLitigation'])->name('download-litigation');
     Route::get('/downloadDrafting/{download}', [DownloadController::class, 'downloadDrafting'])->name('download-Drafting');

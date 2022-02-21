@@ -42,7 +42,7 @@ class LegalLease extends Controller
             ->make();
         }
 
-        return view('pages.legal-drafting.index');
+        return view('pages.legal-lease.index');
     }
 
     public function check($id)
@@ -71,7 +71,7 @@ class LegalLease extends Controller
 
                 $item = Lease::findOrFail($id);
 
-                $item->update([$data, 'note' => $request->note , 'status' => 'INPG']);
+                $item->update([$data, 'note' => $request->note , 'status' => 'IN PROGRESS']);
 
                 return redirect()->route('legal-lease-dashboard');
                 break;
@@ -94,7 +94,7 @@ class LegalLease extends Controller
 
         if($request->file('file_agreement_draft'))
         $name1 = $request->file('file_agreement_draft')->getClientOriginalName();
-        $data['file_agreement_draft'] = $request->file('file_agreement_draft')->storeAs('public/files/file_agreement_draft',$name1,'public');
+        $data['file_agreement_draft'] = $request->file('file_agreement_draft')->storeAs('public/Drafting',$name1,'public');
 
         $item->update([
             'file_agreement_draft' => $data['file_agreement_draft'],

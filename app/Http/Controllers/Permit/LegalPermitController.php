@@ -71,7 +71,7 @@ class LegalPermitController extends Controller
 
                 $item = Permit::findOrFail($id);
 
-                $item->update([$data, 'status' => 'INPG']);
+                $item->update([$data, 'status' => 'IN PROGRESS']);
 
                 return redirect()->route('legal-permit-dashboard');
                 break;
@@ -119,7 +119,7 @@ class LegalPermitController extends Controller
 
         if($request->file('latest_skpd'))
         $name1 = $request->file('latest_skpd')->getClientOriginalName();
-        $data['latest_skpd'] = $request->file('latest_skpd')->storeAs('public/files/latest_skpd',$name1,'public');
+        $data['latest_skpd'] = $request->file('latest_skpd')->storeAs('public/permit',$name1,'public');
 
         $item->update([
             'latest_skpd' => $data['latest_skpd'],
@@ -145,11 +145,11 @@ class LegalPermitController extends Controller
 
         if($request->file('latest_skpd'))
         $name1 = $request->file('latest_skpd')->getClientOriginalName();
-        $data['latest_skpd'] = $request->file('latest_skpd')->storeAs('public/files/latest_skpd',$name1,'public');
+        $data['latest_skpd'] = $request->file('latest_skpd')->storeAs('public/permit',$name1,'public');
 
         if($request->file('proof_of_payment'))
         $name2 = $request->file('proof_of_payment')->getClientOriginalName();
-        $data['proof_of_payment'] = $request->file('proof_of_payment')->storeAs('public/files/proof_of_payment',$name2,'public');
+        $data['proof_of_payment'] = $request->file('proof_of_payment')->storeAs('public/permit',$name2,'public');
 
         $item->update([
             'latest_skpd' => $data['latest_skpd'],

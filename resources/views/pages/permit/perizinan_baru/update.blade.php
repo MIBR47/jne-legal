@@ -66,9 +66,9 @@
                         <label for="date"
                             class="flex items-center flex-[3] mb-2 text-md font-medium text-gray-900 dark:text-gray-300">Disposisi</label>
                         <div class="flex-[4]">
-                            <input value="{{ URL::asset('/files/' . $data->file_disposition) }}"
+                            {{-- <input value="{{ URL::asset('/files/' . $data->file_disposition) }}"
                                 class="p-2.5 block w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 cursor-pointer dark:text-gray-400 focus:outline-none focus:border-transparent dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400"
-                                readonly type="text">
+                                readonly type="text"> --}}
                             <div class="flex flex-row">
                                 <a href="{{ route('download', substr($data->file_disposition, 14)) }}"
                                     style="font-size:24px ">
@@ -86,9 +86,9 @@
                             class="flex items-center flex-[3] mb-2 text-md font-medium text-gray-900 dark:text-gray-300">Dokumen
                             1</label>
                         <div class="flex-[4]">
-                            <input value="{{ URL::asset('/files/' . $data->file_document1) }}"
+                            {{-- <input value="{{ URL::asset('/files/' . $data->file_document1) }}"
                                 class="p-2.5 block w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 cursor-pointer dark:text-gray-400 focus:outline-none focus:border-transparent dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400"
-                                readonly type="text">
+                                readonly type="text"> --}}
                             <div class="flex flex-row">
                                 <a href="{{ route('download', substr($data->file_document1, 14)) }}"
                                     style="font-size:24px ">
@@ -106,9 +106,9 @@
                             class="flex items-center flex-[3] mb-2 text-md font-medium text-gray-900 dark:text-gray-300">Dokumen
                             2</label>
                         <div class="flex-[4]">
-                            <input value="{{ URL::asset('/files/' . $data->file_document2) }}"
+                            {{-- <input value="{{ URL::asset('/files/' . $data->file_document2) }}"
                                 class="p-2.5 block w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 cursor-pointer dark:text-gray-400 focus:outline-none focus:border-transparent dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400"
-                                readonly type="text">
+                                readonly type="text"> --}}
                             <div class="flex flex-row">
                                 <a href="{{ route('download', substr($data->file_document2, 14)) }}"
                                     style="font-size:24px ">
@@ -126,9 +126,9 @@
                             class="flex items-center flex-[3] mb-2 text-md font-medium text-gray-900 dark:text-gray-300">Dokumen
                             3</label>
                         <div class="flex-[4]">
-                            <input value="{{ URL::asset('/files/' . $data->file_document3) }}"
+                            {{-- <input value="{{ URL::asset('/files/' . $data->file_document3) }}"
                                 class="p-2.5 block w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 cursor-pointer dark:text-gray-400 focus:outline-none focus:border-transparent dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400"
-                                readonly type="text">
+                                readonly type="text"> --}}
                             <div class="flex flex-row">
                                 <a href="{{ route('download', substr($data->file_document3, 14)) }}"
                                     style="font-size:24px ">
@@ -146,7 +146,7 @@
                             class="flex items-center flex-[3] mb-2 text-md font-medium text-gray-900 dark:text-gray-300">SKPD
                             Terupdate</label>
                         <div class="flex-[4]">
-                            <input name="latest_skpd"
+                            <input name="latest_skpd" required
                                 class="p-2.5 block w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 cursor-pointer dark:text-gray-400 focus:outline-none focus:border-transparent dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400"
                                 aria-describedby="user_avatar_help" id="user_avatar" type="file">
                         </div>

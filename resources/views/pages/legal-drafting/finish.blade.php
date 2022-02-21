@@ -356,9 +356,23 @@
                                 class="flex items-center flex-[3] mb-2 text-md font-medium text-gray-900 dark:text-gray-300">Disposisi
                                 Persetujuan Direksi</label>
                             <div class="flex-[4]">
-                                <input name="file_director_disposition" value="{{ $data->file_director_disposition }}"
+                                {{-- <input name="file_director_disposition" value="{{ $data->file_director_disposition }}"
                                     class="p-2.5 block w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 cursor-pointer dark:text-gray-400 focus:outline-none focus:border-transparent dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400"
-                                    aria-describedby="user_avatar_help" id="user_avatar" type="text">
+                                    aria-describedby="user_avatar_help" id="user_avatar" type="text"> --}}
+                                <div class="flex flex-row">
+
+                                    <a href="{{ route('download-Drafting', substr($data->file_director_disposition, 16)) }}"
+                                        style="font-size:24px ">
+                                        <div
+                                            class="bg-[#384094] hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">
+                                            Download
+                                            <i class="fa fa-download"></i>
+
+                                        </div>
+                                    </a>
+
+                                    {{-- {{ substr($data->file_disposition, 14) }} --}}
+                                </div>
                             </div>
                             <div class="grid grid-cols-3 ml-4 gap-2">
                                 {{-- <form action="" class="">
@@ -390,9 +404,23 @@
                                 class="flex items-center flex-[3] mb-2 text-md font-medium text-gray-900 dark:text-gray-300">Internal
                                 Memo</label>
                             <div class="flex-[4]">
-                                <input name="file_internal_memo" value="{{ $data->file_internal_memo }}"
+                                {{-- <input name="file_internal_memo" value="{{ $data->file_internal_memo }}"
                                     class="p-2.5 block w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 cursor-pointer dark:text-gray-400 focus:outline-none focus:border-transparent dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400"
-                                    aria-describedby="user_avatar_help" id="user_avatar" type="text">
+                                    aria-describedby="user_avatar_help" id="user_avatar" type="text"> --}}
+                                <div class="flex flex-row">
+
+                                    <a href="{{ route('download-Drafting', substr($data->file_internal_memo, 16)) }}"
+                                        style="font-size:24px ">
+                                        <div
+                                            class="bg-[#384094] hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">
+                                            Download
+                                            <i class="fa fa-download"></i>
+
+                                        </div>
+                                    </a>
+
+                                    {{-- {{ substr($data->file_disposition, 14) }} --}}
+                                </div>
                             </div>
 
                             <div class="grid grid-cols-3 ml-4 gap-2">
@@ -425,9 +453,23 @@
                                 class="flex items-center flex-[3] mb-2 text-md font-medium text-gray-900 dark:text-gray-300">Kartu
                                 Identitas Pemilik Hak *</label>
                             <div class="flex-[4]">
-                                <input name="file_id_card" value="{{ $data->file_id_card }}"
+                                {{-- <input name="file_id_card" value="{{ $data->file_id_card }}"
                                     class="p-2.5 block w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 cursor-pointer dark:text-gray-400 focus:outline-none focus:border-transparent dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400"
-                                    aria-describedby="user_avatar_help" id="user_avatar" type="text">
+                                    aria-describedby="user_avatar_help" id="user_avatar" type="text"> --}}
+                                <div class="flex flex-row">
+
+                                    <a href="{{ route('download-Drafting', substr($data->file_id_card, 16)) }}"
+                                        style="font-size:24px ">
+                                        <div
+                                            class="bg-[#384094] hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">
+                                            Download
+                                            <i class="fa fa-download"></i>
+
+                                        </div>
+                                    </a>
+
+                                    {{-- {{ substr($data->file_disposition, 14) }} --}}
+                                </div>
                             </div>
 
                             <div class="grid grid-cols-3 ml-4 gap-2">
@@ -460,9 +502,23 @@
                                 class="flex items-center flex-[3] mb-2 text-md font-medium text-gray-900 dark:text-gray-300">Nomor
                                 Pokok Wajib Pajak Pemilik *</label>
                             <div class="flex-[4]">
-                                <input name="file_npwp" value="{{ $data->file_npwp }}"
+                                {{-- <input name="file_npwp" value="{{ $data->file_npwp }}"
                                     class="p-2.5 block w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 cursor-pointer dark:text-gray-400 focus:outline-none focus:border-transparent dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400"
-                                    aria-describedby="user_avatar_help" id="user_avatar" type="text">
+                                    aria-describedby="user_avatar_help" id="user_avatar" type="text"> --}}
+                                <div class="flex flex-row">
+
+                                    <a href="{{ route('download-Drafting', substr($data->file_npwp, 16)) }}"
+                                        style="font-size:24px ">
+                                        <div
+                                            class="bg-[#384094] hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">
+                                            Download
+                                            <i class="fa fa-download"></i>
+
+                                        </div>
+                                    </a>
+
+                                    {{-- {{ substr($data->file_disposition, 14) }} --}}
+                                </div>
                             </div>
 
                             <div class="grid grid-cols-3 ml-4 gap-2">
@@ -495,9 +551,23 @@
                                 class="flex items-center flex-[3] mb-2 text-md font-medium text-gray-900 dark:text-gray-300">Kartu
                                 Keluarga *</label>
                             <div class="flex-[4]">
-                                <input name="file_kk" value="{{ $data->file_kk }}"
+                                {{-- <input name="file_kk" value="{{ $data->file_kk }}"
                                     class="p-2.5 block w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 cursor-pointer dark:text-gray-400 focus:outline-none focus:border-transparent dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400"
-                                    aria-describedby="user_avatar_help" id="user_avatar" type="text">
+                                    aria-describedby="user_avatar_help" id="user_avatar" type="text"> --}}
+                                <div class="flex flex-row">
+
+                                    <a href="{{ route('download-Drafting', substr($data->file_kk, 16)) }}"
+                                        style="font-size:24px ">
+                                        <div
+                                            class="bg-[#384094] hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">
+                                            Download
+                                            <i class="fa fa-download"></i>
+
+                                        </div>
+                                    </a>
+
+                                    {{-- {{ substr($data->file_disposition, 14) }} --}}
+                                </div>
                             </div>
                             <div class="grid grid-cols-3 ml-4 gap-2">
                                 {{-- <form action="" class="">
@@ -529,9 +599,23 @@
                                 class="flex items-center flex-[3] mb-2 text-md font-medium text-gray-900 dark:text-gray-300">Buku
                                 Nikah / Akta Nikah *</label>
                             <div class="flex-[4]">
-                                <input name="file_mariagge_book" value="{{ $data->file_mariagge_book }}"
+                                {{-- <input name="file_mariagge_book" value="{{ $data->file_mariagge_book }}"
                                     class="p-2.5 block w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 cursor-pointer dark:text-gray-400 focus:outline-none focus:border-transparent dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400"
-                                    aria-describedby="user_avatar_help" id="user_avatar" type="text">
+                                    aria-describedby="user_avatar_help" id="user_avatar" type="text"> --}}
+                                <div class="flex flex-row">
+
+                                    <a href="{{ route('download-Drafting', substr($data->file_mariagge_book, 16)) }}"
+                                        style="font-size:24px ">
+                                        <div
+                                            class="bg-[#384094] hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">
+                                            Download
+                                            <i class="fa fa-download"></i>
+
+                                        </div>
+                                    </a>
+
+                                    {{-- {{ substr($data->file_disposition, 14) }} --}}
+                                </div>
                             </div>
                             <div class="grid grid-cols-3 ml-4 gap-2">
                                 {{-- <form action="" class="">
@@ -563,9 +647,23 @@
                                 class="flex items-center flex-[3] mb-2 text-md font-medium text-gray-900 dark:text-gray-300">KTP
                                 Direksi **</label>
                             <div class="flex-[4]">
-                                <input name="file_director_id_card" value="{{ $data->file_director_id_card }}"
+                                {{-- <input name="file_director_id_card" value="{{ $data->file_director_id_card }}"
                                     class="p-2.5 block w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 cursor-pointer dark:text-gray-400 focus:outline-none focus:border-transparent dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400"
-                                    aria-describedby="user_avatar_help" id="user_avatar" type="text">
+                                    aria-describedby="user_avatar_help" id="user_avatar" type="text"> --}}
+                                <div class="flex flex-row">
+
+                                    <a href="{{ route('download-Drafting', substr($data->file_director_id_card, 16)) }}"
+                                        style="font-size:24px ">
+                                        <div
+                                            class="bg-[#384094] hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">
+                                            Download
+                                            <i class="fa fa-download"></i>
+
+                                        </div>
+                                    </a>
+
+                                    {{-- {{ substr($data->file_disposition, 14) }} --}}
+                                </div>
                             </div>
                             <div class="grid grid-cols-3 ml-4 gap-2">
                                 {{-- <form action="" class="">
@@ -597,9 +695,23 @@
                                 class="flex items-center flex-[3] mb-2 text-md font-medium text-gray-900 dark:text-gray-300">Akta
                                 Pendirian dan Perubahan Terakhir **</label>
                             <div class="flex-[4]">
-                                <input name="file_deed" value="{{ $data->file_deed }}"
+                                {{-- <input name="file_deed" value="{{ $data->file_deed }}"
                                     class="p-2.5 block w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 cursor-pointer dark:text-gray-400 focus:outline-none focus:border-transparent dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400"
-                                    aria-describedby="user_avatar_help" id="user_avatar" type="text">
+                                    aria-describedby="user_avatar_help" id="user_avatar" type="text"> --}}
+                                <div class="flex flex-row">
+
+                                    <a href="{{ route('download-Drafting', substr($data->file_deed, 16)) }}"
+                                        style="font-size:24px ">
+                                        <div
+                                            class="bg-[#384094] hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">
+                                            Download
+                                            <i class="fa fa-download"></i>
+
+                                        </div>
+                                    </a>
+
+                                    {{-- {{ substr($data->file_disposition, 14) }} --}}
+                                </div>
                             </div>
                             <div class="grid grid-cols-3 ml-4 gap-2">
                                 {{-- <form action="" class="">
@@ -631,9 +743,23 @@
                                 class="flex items-center flex-[3] mb-2 text-md font-medium text-gray-900 dark:text-gray-300">SK
                                 Menkumham **</label>
                             <div class="flex-[4]">
-                                <input name="file_sk_menkumham" value="{{ $data->file_sk_menkumham }}"
+                                {{-- <input name="file_sk_menkumham" value="{{ $data->file_sk_menkumham }}"
                                     class="p-2.5 block w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 cursor-pointer dark:text-gray-400 focus:outline-none focus:border-transparent dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400"
-                                    aria-describedby="user_avatar_help" id="user_avatar" type="text">
+                                    aria-describedby="user_avatar_help" id="user_avatar" type="text"> --}}
+                                <div class="flex flex-row">
+
+                                    <a href="{{ route('download-Drafting', substr($data->file_sk_menkumham, 16)) }}"
+                                        style="font-size:24px ">
+                                        <div
+                                            class="bg-[#384094] hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">
+                                            Download
+                                            <i class="fa fa-download"></i>
+
+                                        </div>
+                                    </a>
+
+                                    {{-- {{ substr($data->file_disposition, 14) }} --}}
+                                </div>
                             </div>
                             <div class="grid grid-cols-3 ml-4 gap-2">
                                 {{-- <form action="" class="">
@@ -665,9 +791,23 @@
                                 class="flex items-center flex-[3] mb-2 text-md font-medium text-gray-900 dark:text-gray-300">Izin
                                 Usaha OSS **</label>
                             <div class="flex-[4]">
-                                <input name="file_business_permit" value="{{ $data->file_business_permit }}"
+                                {{-- <input name="file_business_permit" value="{{ $data->file_business_permit }}"
                                     class="p-2.5 block w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 cursor-pointer dark:text-gray-400 focus:outline-none focus:border-transparent dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400"
-                                    aria-describedby="user_avatar_help" id="user_avatar" type="text">
+                                    aria-describedby="user_avatar_help" id="user_avatar" type="text"> --}}
+                                <div class="flex flex-row">
+
+                                    <a href="{{ route('download-Drafting', substr($data->file_business_permit, 16)) }}"
+                                        style="font-size:24px ">
+                                        <div
+                                            class="bg-[#384094] hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">
+                                            Download
+                                            <i class="fa fa-download"></i>
+
+                                        </div>
+                                    </a>
+
+                                    {{-- {{ substr($data->file_disposition, 14) }} --}}
+                                </div>
                             </div>
                             <div class="grid grid-cols-3 ml-4 gap-2">
                                 {{-- <form action="" class="">
@@ -699,9 +839,23 @@
                                 class="flex items-center flex-[3] mb-2 text-md font-medium text-gray-900 dark:text-gray-300">Nomor
                                 Induk Berusaha (NIB) **</label>
                             <div class="flex-[4]">
-                                <input name="file_nib" value="{{ $data->file_nib }}"
+                                {{-- <input name="file_nib" value="{{ $data->file_nib }}"
                                     class="p-2.5 block w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 cursor-pointer dark:text-gray-400 focus:outline-none focus:border-transparent dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400"
-                                    aria-describedby="user_avatar_help" id="user_avatar" type="text">
+                                    aria-describedby="user_avatar_help" id="user_avatar" type="text"> --}}
+                                <div class="flex flex-row">
+
+                                    <a href="{{ route('download-Drafting', substr($data->file_nib, 16)) }}"
+                                        style="font-size:24px ">
+                                        <div
+                                            class="bg-[#384094] hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">
+                                            Download
+                                            <i class="fa fa-download"></i>
+
+                                        </div>
+                                    </a>
+
+                                    {{-- {{ substr($data->file_disposition, 14) }} --}}
+                                </div>
                             </div>
                             <div class="grid grid-cols-3 ml-4 gap-2">
                                 {{-- <form action="" class="">
@@ -733,9 +887,23 @@
                                 class="flex items-center flex-[3] mb-2 text-md font-medium text-gray-900 dark:text-gray-300">Nomor
                                 Pokok Wajib Pajak Perusahaan (NPWP) **</label>
                             <div class="flex-[4]">
-                                <input name="file_npwp_company" value="{{ $data->file_npwp_company }}"
+                                {{-- <input name="file_npwp_company" value="{{ $data->file_npwp_company }}"
                                     class="p-2.5 block w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 cursor-pointer dark:text-gray-400 focus:outline-none focus:border-transparent dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400"
-                                    aria-describedby="user_avatar_help" id="user_avatar" type="text">
+                                    aria-describedby="user_avatar_help" id="user_avatar" type="text"> --}}
+                                <div class="flex flex-row">
+
+                                    <a href="{{ route('download-Drafting', substr($data->file_npwp_company, 16)) }}"
+                                        style="font-size:24px ">
+                                        <div
+                                            class="bg-[#384094] hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">
+                                            Download
+                                            <i class="fa fa-download"></i>
+
+                                        </div>
+                                    </a>
+
+                                    {{-- {{ substr($data->file_disposition, 14) }} --}}
+                                </div>
                             </div>
                             <div class="grid grid-cols-3 ml-4 gap-2">
                                 {{-- <form action="" class="">
@@ -767,9 +935,23 @@
                                 class="flex items-center flex-[3] mb-2 text-md font-medium text-gray-900 dark:text-gray-300">Izin
                                 Lokasi OSS **</label>
                             <div class="flex-[4]">
-                                <input name="file_location_permit" value="{{ $data->file_location_permit }}"
+                                {{-- <input name="file_location_permit" value="{{ $data->file_location_permit }}"
                                     class="p-2.5 block w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 cursor-pointer dark:text-gray-400 focus:outline-none focus:border-transparent dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400"
-                                    aria-describedby="user_avatar_help" id="user_avatar" type="text">
+                                    aria-describedby="user_avatar_help" id="user_avatar" type="text"> --}}
+                                <div class="flex flex-row">
+
+                                    <a href="{{ route('download-Drafting', substr($data->file_location_permit, 16)) }}"
+                                        style="font-size:24px ">
+                                        <div
+                                            class="bg-[#384094] hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">
+                                            Download
+                                            <i class="fa fa-download"></i>
+
+                                        </div>
+                                    </a>
+
+                                    {{-- {{ substr($data->file_disposition, 14) }} --}}
+                                </div>
                             </div>
 
                             <div class="grid grid-cols-3 ml-4 gap-2">
@@ -802,9 +984,23 @@
                                 class="flex items-center flex-[3] mb-2 text-md font-medium text-gray-900 dark:text-gray-300">Sertipikat
                                 / Girik</label>
                             <div class="flex-[4]">
-                                <input name="file_setificate" value="{{ $data->file_setificate }}"
+                                {{-- <input name="file_setificate" value="{{ $data->file_setificate }}"
                                     class="p-2.5 block w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 cursor-pointer dark:text-gray-400 focus:outline-none focus:border-transparent dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400"
-                                    aria-describedby="user_avatar_help" id="user_avatar" type="text">
+                                    aria-describedby="user_avatar_help" id="user_avatar" type="text"> --}}
+                                <div class="flex flex-row">
+
+                                    <a href="{{ route('download-Drafting', substr($data->file_setificate, 16)) }}"
+                                        style="font-size:24px ">
+                                        <div
+                                            class="bg-[#384094] hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">
+                                            Download
+                                            <i class="fa fa-download"></i>
+
+                                        </div>
+                                    </a>
+
+                                    {{-- {{ substr($data->file_disposition, 14) }} --}}
+                                </div>
                             </div>
 
                             <div class="grid grid-cols-3 ml-4 gap-2">
@@ -837,9 +1033,23 @@
                                 class="flex items-center flex-[3] mb-2 text-md font-medium text-gray-900 dark:text-gray-300">Izin
                                 Mendirikan Bangunan</label>
                             <div class="flex-[4]">
-                                <input name="file_imb" value="{{ $data->file_imb }}"
+                                {{-- <input name="file_imb" value="{{ $data->file_imb }}"
                                     class="p-2.5 block w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 cursor-pointer dark:text-gray-400 focus:outline-none focus:border-transparent dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400"
-                                    aria-describedby="user_avatar_help" id="user_avatar" type="text">
+                                    aria-describedby="user_avatar_help" id="user_avatar" type="text"> --}}
+                                <div class="flex flex-row">
+
+                                    <a href="{{ route('download-Drafting', substr($data->file_imb, 16)) }}"
+                                        style="font-size:24px ">
+                                        <div
+                                            class="bg-[#384094] hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">
+                                            Download
+                                            <i class="fa fa-download"></i>
+
+                                        </div>
+                                    </a>
+
+                                    {{-- {{ substr($data->file_disposition, 14) }} --}}
+                                </div>
                             </div>
 
                             <div class="grid grid-cols-3 ml-4 gap-2">
@@ -872,9 +1082,23 @@
                                 class="flex items-center flex-[3] mb-2 text-md font-medium text-gray-900 dark:text-gray-300">SPPT
                                 & STTS (PBB)</label>
                             <div class="flex-[4]">
-                                <input name="file_sppt1" value="{{ $data->file_sppt1 }}"
+                                {{-- <input name="file_sppt1" value="{{ $data->file_sppt1 }}"
                                     class="p-2.5 block w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 cursor-pointer dark:text-gray-400 focus:outline-none focus:border-transparent dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400"
-                                    aria-describedby="user_avatar_help" id="user_avatar" type="text">
+                                    aria-describedby="user_avatar_help" id="user_avatar" type="text"> --}}
+                                <div class="flex flex-row">
+
+                                    <a href="{{ route('download-Drafting', substr($data->file_sppt1, 16)) }}"
+                                        style="font-size:24px ">
+                                        <div
+                                            class="bg-[#384094] hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">
+                                            Download
+                                            <i class="fa fa-download"></i>
+
+                                        </div>
+                                    </a>
+
+                                    {{-- {{ substr($data->file_disposition, 14) }} --}}
+                                </div>
                             </div>
 
                             <div class="grid grid-cols-3 ml-4 gap-2">
@@ -907,9 +1131,23 @@
                                 class="flex items-center flex-[3] mb-2 text-md font-medium text-gray-900 dark:text-gray-300">Kwitansi
                                 DP</label>
                             <div class="flex-[4]">
-                                <input name="file_sppt2" value="{{ $data->file_sppt2 }}"
+                                {{-- <input name="file_sppt2" value="{{ $data->file_sppt2 }}"
                                     class="p-2.5 block w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 cursor-pointer dark:text-gray-400 focus:outline-none focus:border-transparent dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400"
-                                    aria-describedby="user_avatar_help" id="user_avatar" type="text">
+                                    aria-describedby="user_avatar_help" id="user_avatar" type="text"> --}}
+                                <div class="flex flex-row">
+
+                                    <a href="{{ route('download-Drafting', substr($data->file_sppt2, 16)) }}"
+                                        style="font-size:24px ">
+                                        <div
+                                            class="bg-[#384094] hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">
+                                            Download
+                                            <i class="fa fa-download"></i>
+
+                                        </div>
+                                    </a>
+
+                                    {{-- {{ substr($data->file_disposition, 14) }} --}}
+                                </div>
                             </div>
 
                             <div class="grid grid-cols-3 ml-4 gap-2">
@@ -942,9 +1180,23 @@
                                 class="flex items-center flex-[3] mb-2 text-md font-medium text-gray-900 dark:text-gray-300">Kwitansi
                                 Pelunasan</label>
                             <div class="flex-[4]">
-                                <input name="file_sppt3" value="{{ $data->file_sppt3 }}"
+                                {{-- <input name="file_sppt3" value="{{ $data->file_sppt3 }}"
                                     class="p-2.5 block w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 cursor-pointer dark:text-gray-400 focus:outline-none focus:border-transparent dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400"
-                                    aria-describedby="user_avatar_help" id="user_avatar" type="text">
+                                    aria-describedby="user_avatar_help" id="user_avatar" type="text"> --}}
+                                <div class="flex flex-row">
+
+                                    <a href="{{ route('download-Drafting', substr($data->file_sppt3, 16)) }}"
+                                        style="font-size:24px ">
+                                        <div
+                                            class="bg-[#384094] hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">
+                                            Download
+                                            <i class="fa fa-download"></i>
+
+                                        </div>
+                                    </a>
+
+                                    {{-- {{ substr($data->file_disposition, 14) }} --}}
+                                </div>
                             </div>
 
                             <div class="grid grid-cols-3 ml-4 gap-2">
@@ -977,9 +1229,23 @@
                                 class="flex items-center flex-[3] mb-2 text-md font-medium text-gray-900 dark:text-gray-300">Asli
                                 Surat Kuasa</label>
                             <div class="flex-[4]">
-                                <input name="file_procuration" value="{{ $data->file_procuration }}"
+                                {{-- <input name="file_procuration" value="{{ $data->file_procuration }}"
                                     class="p-2.5 block w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 cursor-pointer dark:text-gray-400 focus:outline-none focus:border-transparent dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400"
-                                    aria-describedby="user_avatar_help" id="user_avatar" type="text">
+                                    aria-describedby="user_avatar_help" id="user_avatar" type="text"> --}}
+                                <div class="flex flex-row">
+
+                                    <a href="{{ route('download-Drafting', substr($data->file_procuration, 16)) }}"
+                                        style="font-size:24px ">
+                                        <div
+                                            class="bg-[#384094] hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">
+                                            Download
+                                            <i class="fa fa-download"></i>
+
+                                        </div>
+                                    </a>
+
+                                    {{-- {{ substr($data->file_disposition, 14) }} --}}
+                                </div>
                             </div>
 
                             <div class="grid grid-cols-3 ml-4 gap-2">
@@ -1012,9 +1278,23 @@
                                 class="flex items-center flex-[3] mb-2 text-md font-medium text-gray-900 dark:text-gray-300">Perjanjian
                                 Sewa Sebelumnya</label>
                             <div class="flex-[4]">
-                                <input name="file_previous_agreement" value="{{ $data->file_previous_agreement }}"
+                                {{-- <input name="file_previous_agreement" value="{{ $data->file_previous_agreement }}"
                                     class="p-2.5 block w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 cursor-pointer dark:text-gray-400 focus:outline-none focus:border-transparent dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400"
-                                    aria-describedby="user_avatar_help" id="user_avatar" type="text">
+                                    aria-describedby="user_avatar_help" id="user_avatar" type="text"> --}}
+                                <div class="flex flex-row">
+
+                                    <a href="{{ route('download-Drafting', substr($data->file_previous_agreement, 16)) }}"
+                                        style="font-size:24px ">
+                                        <div
+                                            class="bg-[#384094] hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">
+                                            Download
+                                            <i class="fa fa-download"></i>
+
+                                        </div>
+                                    </a>
+
+                                    {{-- {{ substr($data->file_disposition, 14) }} --}}
+                                </div>
                             </div>
 
                             <div class="grid grid-cols-3 ml-4 gap-2">
@@ -1047,9 +1327,23 @@
                                 class="flex items-center flex-[3] mb-2 text-md font-medium text-gray-900 dark:text-gray-300">Surat
                                 Kuasa Direksi</label>
                             <div class="flex-[4]">
-                                <input name="file_director_procuration" value="{{ $data->file_director_procuration }}"
+                                {{-- <input name="file_director_procuration" value="{{ $data->file_director_procuration }}"
                                     class="p-2.5 block w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 cursor-pointer dark:text-gray-400 focus:outline-none focus:border-transparent dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400"
-                                    aria-describedby="user_avatar_help" id="user_avatar" type="text">
+                                    aria-describedby="user_avatar_help" id="user_avatar" type="text"> --}}
+                                <div class="flex flex-row">
+
+                                    <a href="{{ route('download-Drafting', substr($data->file_director_procuration, 16)) }}"
+                                        style="font-size:24px ">
+                                        <div
+                                            class="bg-[#384094] hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">
+                                            Download
+                                            <i class="fa fa-download"></i>
+
+                                        </div>
+                                    </a>
+
+                                    {{-- {{ substr($data->file_disposition, 14) }} --}}
+                                </div>
                             </div>
 
                             <div class="grid grid-cols-3 ml-4 gap-2">

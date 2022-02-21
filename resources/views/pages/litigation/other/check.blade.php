@@ -143,10 +143,23 @@
                             <label for="date"
                                 class="flex items-center flex-[3] mb-2 text-md font-medium text-gray-900 dark:text-gray-300">Dokumen</label>
                             <div class="flex-[4]">
-                                <input value="{{ $data->other->file_document }}"
+                                {{-- <input value="{{ $data->other->file_document }}"
                                     class="p-2.5 block w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 cursor-pointer dark:text-gray-400 focus:outline-none focus:border-transparent dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400"
                                     aria-describedby="user_avatar_help" id="user_avatar" type="text" name="file_document"
-                                    required>
+                                    required> --}}
+                                <div class="flex flex-row">
+
+                                    <a href="{{ route('download-litigation', substr($data->other->file_document, 18)) }}"
+                                        style="font-size:24px ">
+                                        <div
+                                            class="bg-[#384094] hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">
+                                            Download
+                                            <i class="fa fa-download"></i>
+
+                                        </div>
+                                    </a>
+                                    {{-- {{ substr($data->file_disposition, 14) }} --}}
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -156,10 +169,23 @@
                                 class="flex items-center flex-[3] mb-2 text-md font-medium text-gray-900 dark:text-gray-300">Bukti
                                 1</label>
                             <div class="flex-[4]">
-                                <input value="{{ $data->other->file_proof1 }}"
+                                {{-- <input value="{{ $data->other->file_proof1 }}"
                                     class="p-2.5 block w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 cursor-pointer dark:text-gray-400 focus:outline-none focus:border-transparent dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400"
                                     aria-describedby="user_avatar_help" id="user_avatar" type="text" name="file_proof1"
-                                    required>
+                                    required> --}}
+                                <div class="flex flex-row">
+
+                                    <a href="{{ route('download-litigation', substr($data->other->file_proof1, 18)) }}"
+                                        style="font-size:24px ">
+                                        <div
+                                            class="bg-[#384094] hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">
+                                            Download
+                                            <i class="fa fa-download"></i>
+
+                                        </div>
+                                    </a>
+                                    {{-- {{ substr($data->file_disposition, 14) }} --}}
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -169,10 +195,23 @@
                                 class="flex items-center flex-[3] mb-2 text-md font-medium text-gray-900 dark:text-gray-300">Bukti
                                 2</label>
                             <div class="flex-[4]">
-                                <input value="{{ $data->other->file_proof2 }}"
+                                {{-- <input value="{{ $data->other->file_proof2 }}"
                                     class="p-2.5 block w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 cursor-pointer dark:text-gray-400 focus:outline-none focus:border-transparent dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400"
                                     aria-describedby="user_avatar_help" id="user_avatar" type="text" name="file_proof2"
-                                    required>
+                                    required> --}}
+                                <div class="flex flex-row">
+
+                                    <a href="{{ route('download-litigation', substr($data->other->file_proof2, 18)) }}"
+                                        style="font-size:24px ">
+                                        <div
+                                            class="bg-[#384094] hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">
+                                            Download
+                                            <i class="fa fa-download"></i>
+
+                                        </div>
+                                    </a>
+                                    {{-- {{ substr($data->file_disposition, 14) }} --}}
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -182,10 +221,23 @@
                                 class="flex items-center flex-[3] mb-2 text-md font-medium text-gray-900 dark:text-gray-300">Bukti
                                 3</label>
                             <div class="flex-[4]">
-                                <input value="{{ $data->other->file_proof3 }}"
+                                {{-- <input value="{{ $data->other->file_proof3 }}"
                                     class="p-2.5 block w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 cursor-pointer dark:text-gray-400 focus:outline-none focus:border-transparent dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400"
                                     aria-describedby="user_avatar_help" id="user_avatar" type="text" name="file_proof3"
-                                    required>
+                                    required> --}}
+                                <div class="flex flex-row">
+
+                                    <a href="{{ route('download-litigation', substr($data->other->file_proof3, 18)) }}"
+                                        style="font-size:24px ">
+                                        <div
+                                            class="bg-[#384094] hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">
+                                            Download
+                                            <i class="fa fa-download"></i>
+
+                                        </div>
+                                    </a>
+                                    {{-- {{ substr($data->file_disposition, 14) }} --}}
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -196,10 +248,22 @@
                         <label for="date"
                             class="flex items-center flex-[3] mb-2 text-md font-medium text-gray-900 dark:text-gray-300">Disposisi</label>
                         <div class="flex-[4]">
-                            <input value="{{ $data->other->file_disposition }}"
+                            {{-- <input value="{{ $data->other->file_disposition }}"
                                 class="p-2.5 block w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 cursor-pointer dark:text-gray-400 focus:outline-none focus:border-transparent dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400"
                                 aria-describedby="user_avatar_help" id="user_avatar" type="text" name="file_disposition"
-                                required>
+                                required> --}}
+                            <div class="flex flex-row">
+
+                                <a href="{{ route('download-litigation', substr($data->other->file_disposition, 18)) }}"
+                                    style="font-size:24px ">
+                                    <div class="bg-[#384094] hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">
+                                        Download
+                                        <i class="fa fa-download"></i>
+
+                                    </div>
+                                </a>
+                                {{-- {{ substr($data->file_disposition, 14) }} --}}
+                            </div>
                         </div>
                     </div>
                     <div class="flex">
@@ -207,10 +271,22 @@
                             class="flex items-center flex-[3] mb-2 text-md font-medium text-gray-900 dark:text-gray-300">Dokumen
                             Lainnya</label>
                         <div class="flex-[4]">
-                            <input value="{{ $data->other->file_other_document }}"
+                            {{-- <input value="{{ $data->other->file_other_document }}"
                                 class="p-2.5 block w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 cursor-pointer dark:text-gray-400 focus:outline-none focus:border-transparent dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400"
                                 aria-describedby="user_avatar_help" id="user_avatar" type="text" name="file_other_document"
-                                required>
+                                required> --}}
+                            <div class="flex flex-row">
+
+                                <a href="{{ route('download-litigation', substr($data->other->file_other_document, 18)) }}"
+                                    style="font-size:24px ">
+                                    <div class="bg-[#384094] hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">
+                                        Download
+                                        <i class="fa fa-download"></i>
+
+                                    </div>
+                                </a>
+                                {{-- {{ substr($data->file_disposition, 14) }} --}}
+                            </div>
                         </div>
                     </div>
                 </div>

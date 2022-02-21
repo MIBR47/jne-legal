@@ -16,4 +16,7 @@ class Fraud extends Model
 
     public $incrementing = false;
 
+    public function cs(){
+        return $this->hasOne(Cs::class,'form_id','id');
+    }
 }

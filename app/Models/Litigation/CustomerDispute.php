@@ -24,4 +24,7 @@ class CustomerDispute extends Model
     //     });
     // }
 
+    public function cs(){
+        return $this->hasOne(Cs::class,'form_id','id');
+    }
 }

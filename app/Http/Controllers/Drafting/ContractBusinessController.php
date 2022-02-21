@@ -28,14 +28,6 @@ class ContractBusinessController extends Controller
                                 Check
                             </button>
                         </a>
-                        <a href = "' . route('cd-finish', $cd->id) . '">
-                            <button type="button" class="text-white bg-blue-700
-                                hover:bg-blue-800 focus:ring-4 focus:ring-blue-300
-                                font-medium rounded-full text-sm px-5 py-4 text-center mr-2 mb-2
-                                dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
-                                Finish
-                            </button>
-                        </a>
                     ';
                 })
 
@@ -62,14 +54,6 @@ class ContractBusinessController extends Controller
                                 font-medium rounded-full text-sm px-5 py-4 text-center mr-2 mb-2
                                 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
                                 Check
-                            </button>
-                        </a>
-                        <a href = "' . route('cd-finish', $cd->id) . '">
-                            <button type="button" class="text-white bg-blue-700
-                                hover:bg-blue-800 focus:ring-4 focus:ring-blue-300
-                                font-medium rounded-full text-sm px-5 py-4 text-center mr-2 mb-2
-                                dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
-                                Finish
                             </button>
                         </a>
                     ';
