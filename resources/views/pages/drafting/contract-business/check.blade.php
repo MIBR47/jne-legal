@@ -419,6 +419,20 @@
                                 <input name="file_sk_menkumham" value="{{ $data->file_sk_menkumham }}"
                                     class="p-2.5 block w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 cursor-pointer dark:text-gray-400 focus:outline-none focus:border-transparent dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400"
                                     aria-describedby="user_avatar_help" id="user_avatar" type="text">
+                                <div class="flex flex-row">
+
+                                    <a href="{{ route('download-Drafting', substr($data->file_sk_menkumham, 16)) }}"
+                                        style="font-size:24px ">
+                                        <div
+                                            class="bg-[#384094] hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">
+                                            Download
+                                            <i class="fa fa-download"></i>
+
+                                        </div>
+                                    </a>
+
+                                    {{-- {{ substr($data->file_disposition, 14) }} --}}
+                                </div>
                             </div>
                             <div class="grid grid-cols-3 ml-4 gap-2">
                                 {{-- <form action="" class="">
@@ -453,6 +467,20 @@
                                 <input name="file_nib" value="{{ $data->file_nib }}"
                                     class="p-2.5 block w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 cursor-pointer dark:text-gray-400 focus:outline-none focus:border-transparent dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400"
                                     aria-describedby="user_avatar_help" id="user_avatar" type="text">
+                                <div class="flex flex-row">
+
+                                    <a href="{{ route('download-Drafting', substr($data->file_nib, 16)) }}"
+                                        style="font-size:24px ">
+                                        <div
+                                            class="bg-[#384094] hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">
+                                            Download
+                                            <i class="fa fa-download"></i>
+
+                                        </div>
+                                    </a>
+
+                                    {{-- {{ substr($data->file_disposition, 14) }} --}}
+                                </div>
                             </div>
                             <div class="grid grid-cols-3 ml-4 gap-2">
                                 {{-- <form action="" class="">
@@ -487,6 +515,20 @@
                                 <input name="file_npwp" value="{{ $data->file_npwp }}"
                                     class="p-2.5 block w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 cursor-pointer dark:text-gray-400 focus:outline-none focus:border-transparent dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400"
                                     aria-describedby="user_avatar_help" id="user_avatar" type="text">
+                                <div class="flex flex-row">
+
+                                    <a href="{{ route('download-Drafting', substr($data->file_npwp, 16)) }}"
+                                        style="font-size:24px ">
+                                        <div
+                                            class="bg-[#384094] hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">
+                                            Download
+                                            <i class="fa fa-download"></i>
+
+                                        </div>
+                                    </a>
+
+                                    {{-- {{ substr($data->file_disposition, 14) }} --}}
+                                </div>
                             </div>
                             <div class="grid grid-cols-3 ml-4 gap-2">
                                 {{-- <form action="" class="">
@@ -521,6 +563,20 @@
                                 <input name="file_business_permit" value="{{ $data->file_business_permit }}"
                                     class="p-2.5 block w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 cursor-pointer dark:text-gray-400 focus:outline-none focus:border-transparent dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400"
                                     aria-describedby="user_avatar_help" id="user_avatar" type="text">
+                                <div class="flex flex-row">
+
+                                    <a href="{{ route('download-Drafting', substr($data->file_business_permit, 16)) }}"
+                                        style="font-size:24px ">
+                                        <div
+                                            class="bg-[#384094] hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">
+                                            Download
+                                            <i class="fa fa-download"></i>
+
+                                        </div>
+                                    </a>
+
+                                    {{-- {{ substr($data->file_disposition, 14) }} --}}
+                                </div>
                             </div>
                             <div class="grid grid-cols-3 ml-4 gap-2">
                                 {{-- <form action="" class="">
@@ -555,6 +611,20 @@
                                 <input name="file_director_id_card" value="{{ $data->file_director_id_card }}"
                                     class="p-2.5 block w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 cursor-pointer dark:text-gray-400 focus:outline-none focus:border-transparent dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400"
                                     aria-describedby="user_avatar_help" id="user_avatar" type="text">
+                                <div class="flex flex-row">
+
+                                    <a href="{{ route('download-Drafting', substr($data->file_director_id_card, 16)) }}"
+                                        style="font-size:24px ">
+                                        <div
+                                            class="bg-[#384094] hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">
+                                            Download
+                                            <i class="fa fa-download"></i>
+
+                                        </div>
+                                    </a>
+
+                                    {{-- {{ substr($data->file_disposition, 14) }} --}}
+                                </div>
                             </div>
                             <div class="grid grid-cols-3 ml-4 gap-2">
                                 {{-- <form action="" class="">
@@ -589,6 +659,20 @@
                                 <input name="file_internal_memo" value="{{ $data->file_internal_memo }}"
                                     class="p-2.5 block w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 cursor-pointer dark:text-gray-400 focus:outline-none focus:border-transparent dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400"
                                     aria-describedby="user_avatar_help" id="user_avatar" type="text">
+                                <div class="flex flex-row">
+
+                                    <a href="{{ route('download-Drafting', substr($data->file_internal_memo, 16)) }}"
+                                        style="font-size:24px ">
+                                        <div
+                                            class="bg-[#384094] hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">
+                                            Download
+                                            <i class="fa fa-download"></i>
+
+                                        </div>
+                                    </a>
+
+                                    {{-- {{ substr($data->file_disposition, 14) }} --}}
+                                </div>
                             </div>
                             <div class="grid grid-cols-3 ml-4 gap-2">
                                 {{-- <form action="" class="">
@@ -622,6 +706,20 @@
                                 <input name="file_other" value="{{ $data->file_other }}"
                                     class="p-2.5 block w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 cursor-pointer dark:text-gray-400 focus:outline-none focus:border-transparent dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400"
                                     aria-describedby="user_avatar_help" id="user_avatar" type="text">
+                                <div class="flex flex-row">
+
+                                    <a href="{{ route('download-Drafting', substr($data->file_other, 16)) }}"
+                                        style="font-size:24px ">
+                                        <div
+                                            class="bg-[#384094] hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">
+                                            Download
+                                            <i class="fa fa-download"></i>
+
+                                        </div>
+                                    </a>
+
+                                    {{-- {{ substr($data->file_disposition, 14) }} --}}
+                                </div>
                             </div>
                             <div class="grid grid-cols-3 ml-4 gap-2">
                                 {{-- <form action="" class="">
