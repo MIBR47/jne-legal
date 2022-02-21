@@ -85,12 +85,12 @@ class OtherController extends Controller
         $name5 = $request->file('file_disposition')->getClientOriginalName();
         $name6 = $request->file('file_other_document')->getClientOriginalName();
 
-        $validatedData['file_document'] = $request->file('file_document')->storeAs('public/files/file_document', $name, 'public');
-        $validatedData['file_proof1'] = $request->file('file_proof1')->storeAs('public/files/file_proof1', $name2, 'public');
-        $validatedData['file_proof2'] = $request->file('file_proof2')->storeAs('public/files/file_proof2', $name3, 'public');
-        $validatedData['file_proof3'] = $request->file('file_proof3')->storeAs('public/files/file_proof3', $name4, 'public');
-        $validatedData['file_disposition'] = $request->file('file_disposition')->storeAs('public/files/file_disposition', $name5, 'public');
-        $validatedData['file_other_document'] = $request->file('file_other_document')->storeAs('public/files/file_other_document', $name6, 'public');
+        $validatedData['file_document'] = $request->file('file_document')->storeAs('public/litigation', $name, 'public');
+        $validatedData['file_proof1'] = $request->file('file_proof1')->storeAs('public/litigation', $name2, 'public');
+        $validatedData['file_proof2'] = $request->file('file_proof2')->storeAs('public/litigation', $name3, 'public');
+        $validatedData['file_proof3'] = $request->file('file_proof3')->storeAs('public/litigation', $name4, 'public');
+        $validatedData['file_disposition'] = $request->file('file_disposition')->storeAs('public/litigation', $name5, 'public');
+        $validatedData['file_other_document'] = $request->file('file_other_document')->storeAs('public/litigation', $name6, 'public');
 
 
 

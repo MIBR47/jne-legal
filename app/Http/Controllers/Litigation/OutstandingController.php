@@ -87,12 +87,12 @@ class OutstandingController extends Controller
         $name5 = $request->file('file_disposition')->getClientOriginalName();
         $name6 = $request->file('file_other_document')->getClientOriginalName();
 
-        $validatedData['file_data_recap'] = $request->file('file_data_recap')->storeAs('public/files/file_data_recap', $name, 'public');
-        $validatedData['file_document_proof'] = $request->file('file_document_proof')->storeAs('public/files/file_document_proof', $name2, 'public');
-        $validatedData['file_agreement'] = $request->file('file_agreement')->storeAs('public/files/file_agreement', $name3, 'public');
-        $validatedData['file_billing_proof'] = $request->file('file_billing_proof')->storeAs('public/files/file_billing_proof', $name4, 'public');
-        $validatedData['file_disposition'] = $request->file('file_disposition')->storeAs('public/files/file_disposition', $name5, 'public');
-        $validatedData['file_other_document'] = $request->file('file_other_document')->storeAs('public/files/file_other_document', $name6, 'public');
+        $validatedData['file_data_recap'] = $request->file('file_data_recap')->storeAs('public/litigation', $name, 'public');
+        $validatedData['file_document_proof'] = $request->file('file_document_proof')->storeAs('public/litigation', $name2, 'public');
+        $validatedData['file_agreement'] = $request->file('file_agreement')->storeAs('public/litigation', $name3, 'public');
+        $validatedData['file_billing_proof'] = $request->file('file_billing_proof')->storeAs('public/litigation', $name4, 'public');
+        $validatedData['file_disposition'] = $request->file('file_disposition')->storeAs('public/litigation', $name5, 'public');
+        $validatedData['file_other_document'] = $request->file('file_other_document')->storeAs('public/litigation', $name6, 'public');
 
 
 

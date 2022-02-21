@@ -30,39 +30,40 @@
     </style>
     <div class="flex flex-col gap-4 mx-36 my-4">
         <h1 class="text-4xl mb-4 text-black capitalize font-medium">Litigasi Team CS</h1>
-        <form class="mt-4" method="post" enctype="multipart/form-data"
-            action="{{ route('cs-update-post', $data->id) }}">
-            @csrf
-            <div class="tab">
-                <div class="grid grid-cols-2 gap-16 mb-4">
-                    <div class="flex flex-col gap-4">
-                        <div class="flex">
-                            <label for="text"
-                                class="flex items-center flex-[3] mb-2 text-md font-medium text-gray-900 dark:text-gray-300">ID
-                                Dokumen</label>
-                            <div class="flex-[4]">
-                                <input type="text" id="text" value="{{ $data->id }}" name="id"
-                                    class="bg-gray-50 border border-gray-300 text-gray-900 text-md rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                                    placeholder="" readonly>
-                            </div>
-                        </div>
-                        <input type="hidden" name="user_id" value="{{ auth()->user()->id }}">
-                    </div>
 
-                    <div class="flex flex-col gap-4">
-                        <div class="flex">
-                            <label for="date"
-                                class="flex items-center flex-[3] mb-2 text-md font-medium text-gray-900 dark:text-gray-300">Nomor
-                                Dokumen Litigasi</label>
-                            <div class="flex-[4]">
-                                <input type="text" id="date" name="form_id" value="{{ $data->form_id }}"
-                                    class="bg-gray-50 border border-gray-300 text-gray-900 text-md rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                                    placeholder="" readonly>
-                            </div>
+        <div class="tab">
+            <div class="grid grid-cols-2 gap-16 mb-4">
+                <div class="flex flex-col gap-4">
+                    <div class="flex">
+                        <label for="text"
+                            class="flex items-center flex-[3] mb-2 text-md font-medium text-gray-900 dark:text-gray-300">ID
+                            Dokumen</label>
+                        <div class="flex-[4]">
+                            <input type="text" id="text" value="{{ $data->id }}" name="id"
+                                class="bg-gray-50 border border-gray-300 text-gray-900 text-md rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                                placeholder="" readonly>
+                        </div>
+                    </div>
+                    <input type="hidden" name="user_id" value="{{ auth()->user()->id }}">
+                </div>
+
+                <div class="flex flex-col gap-4">
+                    <div class="flex">
+                        <label for="date"
+                            class="flex items-center flex-[3] mb-2 text-md font-medium text-gray-900 dark:text-gray-300">Nomor
+                            Dokumen Litigasi</label>
+                        <div class="flex-[4]">
+                            <input type="text" id="date" name="form_id" value="{{ $data->form_id }}"
+                                class="bg-gray-50 border border-gray-300 text-gray-900 text-md rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                                placeholder="" readonly>
                         </div>
                     </div>
                 </div>
             </div>
+        </div>
+        <form class="mt-4" method="post" enctype="multipart/form-data"
+            action="{{ route('cs-update-post', $data->id) }}">
+            @csrf
             <div class="tab">
                 <div class="flex flex-col gap-4 mb-4">
 

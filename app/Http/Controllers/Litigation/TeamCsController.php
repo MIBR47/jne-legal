@@ -12,11 +12,10 @@ class TeamCsController extends Controller
 
     public function index()
     {
-        if (request()->ajax())
-        {
+        if (request()->ajax()) {
             $cs = 'CS';
             $name = 'LEGAL MANAGER';
-            $query = Cs::query()->where('status', 'LIKE', '%'.$name.'%')->orWhere('status', '=', 'PENDING')->orWhere('status', 'LIKE', '%'.$cs.'%')->orWhere('status', '=', 'Kasus selesai penggantian')->orWhere('status', '=', 'Perdamaian')->orWhere('status', '=', 'Lewat >3 Bulan');
+            $query = Cs::query()->where('status', 'LIKE', '%' . $name . '%')->orWhere('status', '=', 'PENDING')->orWhere('status', 'LIKE', '%' . $cs . '%')->orWhere('status', '=', 'Kasus selesai penggantian')->orWhere('status', '=', 'Perdamaian')->orWhere('status', '=', 'Lewat >3 Bulan');
             return DataTables::of($query)
                 ->addIndexColumn()
                 ->addColumn('action', function ($cs) {
@@ -33,7 +32,7 @@ class TeamCsController extends Controller
                     ';
                     } elseif ($cs->status == 'Lewat >3 Bulan') {
                         return '
-                        <a href = "'.route('cs-update',$cs->id).'">
+                        <a href = "' . route('cs-update', $cs->id) . '">
                             <button type="button" class="text-white bg-blue-700
                                 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300
                                 font-medium rounded-full text-sm px-5 py-4 text-center mr-2 mb-2
@@ -52,7 +51,7 @@ class TeamCsController extends Controller
                                 Finish
                             </button>
                         </a>
-                        <a href = "'.route('cs-close',$cs->id).'">
+                        <a href = "' . route('cs-close', $cs->id) . '">
                             <button type="button" class="text-white bg-red-700
                                 hover:bg-red-800 focus:ring-4 focus:ring-red-300
                                 font-medium rounded-full text-sm px-5 py-4 text-center mr-2 mb-2
@@ -172,19 +171,20 @@ class TeamCsController extends Controller
         // if($request->file('file_response_letter'))
         // dd($data['file_response_letter']);
         $name1 = $request->file('file_acceptance_letter')->getClientOriginalName();
-        $data['file_acceptance_letter'] = $request->file('file_acceptance_letter')->storeAs('public/files/file_acceptance_letter',$name1,'public');
+        $data['file_acceptance_letter'] = $request->file('file_acceptance_letter')->storeAs('public/files/file_acceptance_letter', $name1, 'public');
 
         $name2 = $request->file('file_case_report')->getClientOriginalName();
-        $data['file_case_report'] = $request->file('file_case_report')->storeAs('public/files/file_case_report',$name2,'public');
+        $data['file_case_report'] = $request->file('file_case_report')->storeAs('public/files/file_case_report', $name2, 'public');
 
         $name3 = $request->file('file_invoice')->getClientOriginalName();
-        $data['file_invoice'] = $request->file('file_invoice')->storeAs('public/files/file_invoice',$name3,'public');
+        $data['file_invoice'] = $request->file('file_invoice')->storeAs('public/files/file_invoice', $name3, 'public');
 
         $item->update([
             'file_acceptance_letter' => $data['file_acceptance_letter'],
             'file_case_report' => $data['file_case_report'],
             'file_invoice' => $data['file_invoice'],
-            'status' => $request->status]);
+            'status' => $request->status
+        ]);
 
         return redirect()->route('team-cs-dashboard');
     }

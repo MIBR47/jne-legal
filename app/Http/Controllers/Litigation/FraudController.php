@@ -89,13 +89,13 @@ class FraudController extends Controller
         $name3 = $request->file('file_investigation_document')->getClientOriginalName();
         $name4 = $request->file('file_other_evidence')->getClientOriginalName();
 
-        $validatedData['file_document_proof'] = $request->file('file_document_proof')->storeAs('public/files/file_document_proof', $name1, 'public');
-        $validatedData['file_perpetrator_statement'] = $request->file('file_perpetrator_statement')->storeAs('public/files/file_perpetrator_statement', $name2, 'public');
-        $validatedData['file_witness_statement'] = $request->file('file_witness_statement')->storeAs('public/files/file_witness_statement', $name3, 'public');
-        $validatedData['file_other'] = $request->file('file_other')->storeAs('public/files/file_other', $name4, 'public');
-        $validatedData['file_evidence_documentation'] = $request->file('file_evidence_documentation')->storeAs('public/files/file_evidence_documentation', $name2, 'public');
-        $validatedData['file_investigation_document'] = $request->file('file_investigation_document')->storeAs('public/files/file_investigation_document', $name3, 'public');
-        $validatedData['file_other_evidence'] = $request->file('file_other_evidence')->storeAs('public/files/file_other_evidence', $name4, 'public');
+        $validatedData['file_document_proof'] = $request->file('file_document_proof')->storeAs('public/litigation', $name1, 'public');
+        $validatedData['file_perpetrator_statement'] = $request->file('file_perpetrator_statement')->storeAs('public/litigation', $name2, 'public');
+        $validatedData['file_witness_statement'] = $request->file('file_witness_statement')->storeAs('public/litigation', $name3, 'public');
+        $validatedData['file_other'] = $request->file('file_other')->storeAs('public/litigation', $name4, 'public');
+        $validatedData['file_evidence_documentation'] = $request->file('file_evidence_documentation')->storeAs('public/litigation', $name2, 'public');
+        $validatedData['file_investigation_document'] = $request->file('file_investigation_document')->storeAs('public/litigation', $name3, 'public');
+        $validatedData['file_other_evidence'] = $request->file('file_other_evidence')->storeAs('public/litigation', $name4, 'public');
 
         // $save = new Permit();
 
