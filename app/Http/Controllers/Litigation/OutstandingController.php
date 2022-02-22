@@ -80,12 +80,12 @@ class OutstandingController extends Controller
         $id = $validatedData['id'];
         $user_id = $request->user_id;
 
-        $name = $request->file('file_data_recap')->getClientOriginalName();
-        $name2 = $request->file('file_document_proof')->getClientOriginalName();
-        $name3 = $request->file('file_agreement')->getClientOriginalName();
-        $name4 = $request->file('file_billing_proof')->getClientOriginalName();
-        $name5 = $request->file('file_disposition')->getClientOriginalName();
-        $name6 = $request->file('file_other_document')->getClientOriginalName();
+        $name = time() . '-' . $request->file('file_data_recap')->getClientOriginalName();
+        $name2 = time() . '-' . $request->file('file_document_proof')->getClientOriginalName();
+        $name3 = time() . '-' . $request->file('file_agreement')->getClientOriginalName();
+        $name4 = time() . '-' . $request->file('file_billing_proof')->getClientOriginalName();
+        $name5 = time() . '-' . $request->file('file_disposition')->getClientOriginalName();
+        $name6 = time() . '-' . $request->file('file_other_document')->getClientOriginalName();
 
         $validatedData['file_data_recap'] = $request->file('file_data_recap')->storeAs('public/litigation', $name, 'public');
         $validatedData['file_document_proof'] = $request->file('file_document_proof')->storeAs('public/litigation', $name2, 'public');

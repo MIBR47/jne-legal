@@ -78,15 +78,15 @@ class CustomerController extends Controller
         // ]);
         #
 
-        $name1 = $request->file('file_mom')->getClientOriginalName();
-        $name2 = $request->file('file_agreement_draft')->getClientOriginalName();
-        $name3 = $request->file('file_claim_form')->getClientOriginalName();
-        $name4 = $request->file('file_sk_menkumham')->getClientOriginalName();
-        $name5 = $request->file('file_nib')->getClientOriginalName();
-        $name6 = $request->file('file_npwp')->getClientOriginalName();
-        $name7 = $request->file('file_business_permit')->getClientOriginalName();
-        $name8 = $request->file('file_director_id_card')->getClientOriginalName();
-        $name9 = $request->file('file_other')->getClientOriginalName();
+        $name1 = time() . '-' . $request->file('file_mom')->getClientOriginalName();
+        $name2 = time() . '-' . $request->file('file_agreement_draft')->getClientOriginalName();
+        $name3 = time() . '-' . $request->file('file_claim_form')->getClientOriginalName();
+        $name4 = time() . '-' . $request->file('file_sk_menkumham')->getClientOriginalName();
+        $name5 = time() . '-' . $request->file('file_nib')->getClientOriginalName();
+        $name6 = time() . '-' . $request->file('file_npwp')->getClientOriginalName();
+        $name7 = time() . '-' . $request->file('file_business_permit')->getClientOriginalName();
+        $name8 = time() . '-' . $request->file('file_director_id_card')->getClientOriginalName();
+        $name9 = time() . '-' . $request->file('file_other')->getClientOriginalName();
 
         $data['file_mom'] = $request->file('file_mom')->storeAs('public/Drafting', $name1, 'public');
         $data['file_agreement_draft'] = $request->file('file_agreement_draft')->storeAs('public/Drafting', $name2, 'public');

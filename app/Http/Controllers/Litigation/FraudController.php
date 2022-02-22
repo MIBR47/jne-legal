@@ -81,13 +81,13 @@ class FraudController extends Controller
         $id = $validatedData['id'];
         $user_id = $request->user_id;
 
-        $name1 = $request->file('file_document_proof')->getClientOriginalName();
-        $name2 = $request->file('file_perpetrator_statement')->getClientOriginalName();
-        $name3 = $request->file('file_witness_statement')->getClientOriginalName();
-        $name4 = $request->file('file_other')->getClientOriginalName();
-        $name2 = $request->file('file_evidence_documentation')->getClientOriginalName();
-        $name3 = $request->file('file_investigation_document')->getClientOriginalName();
-        $name4 = $request->file('file_other_evidence')->getClientOriginalName();
+        $name1 = time() . '-' . $request->file('file_document_proof')->getClientOriginalName();
+        $name2 = time() . '-' . $request->file('file_perpetrator_statement')->getClientOriginalName();
+        $name3 = time() . '-' . $request->file('file_witness_statement')->getClientOriginalName();
+        $name4 = time() . '-' . $request->file('file_other')->getClientOriginalName();
+        $name2 = time() . '-' . $request->file('file_evidence_documentation')->getClientOriginalName();
+        $name3 = time() . '-' . $request->file('file_investigation_document')->getClientOriginalName();
+        $name4 = time() . '-' . $request->file('file_other_evidence')->getClientOriginalName();
 
         $validatedData['file_document_proof'] = $request->file('file_document_proof')->storeAs('public/litigation', $name1, 'public');
         $validatedData['file_perpetrator_statement'] = $request->file('file_perpetrator_statement')->storeAs('public/litigation', $name2, 'public');

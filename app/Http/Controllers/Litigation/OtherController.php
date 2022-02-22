@@ -79,12 +79,12 @@ class OtherController extends Controller
         $id = $validatedData['id'];
         $user_id = $request->user_id;
 
-        $name = $request->file('file_document')->getClientOriginalName();
-        $name2 = $request->file('file_proof1')->getClientOriginalName();
-        $name3 = $request->file('file_proof2')->getClientOriginalName();
-        $name4 = $request->file('file_proof3')->getClientOriginalName();
-        $name5 = $request->file('file_disposition')->getClientOriginalName();
-        $name6 = $request->file('file_other_document')->getClientOriginalName();
+        $name = time() . '-' . $request->file('file_document')->getClientOriginalName();
+        $name2 = time() . '-' . $request->file('file_proof1')->getClientOriginalName();
+        $name3 = time() . '-' . $request->file('file_proof2')->getClientOriginalName();
+        $name4 = time() . '-' . $request->file('file_proof3')->getClientOriginalName();
+        $name5 = time() . '-' . $request->file('file_disposition')->getClientOriginalName();
+        $name6 = time() . '-' . $request->file('file_other_document')->getClientOriginalName();
 
         $validatedData['file_document'] = $request->file('file_document')->storeAs('public/litigation', $name, 'public');
         $validatedData['file_proof1'] = $request->file('file_proof1')->storeAs('public/litigation', $name2, 'public');
